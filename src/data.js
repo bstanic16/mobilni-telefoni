@@ -7,7 +7,7 @@ export const storeProducts = [
   {
     id: 1,
     title: "Google Pixel - Black",
-    img: "img/product-1.png",
+    img: "img/product-9.png",
     price: 10,
     company: "GOOGLE",
     info:
@@ -19,7 +19,7 @@ export const storeProducts = [
   {
     id: 2,
     title: "Samsung S7",
-    img: "img/product-2.png",
+    img: "img/product-10.png",
     price: 16,
     company: "SAMSUNG",
     info:

@@ -9,7 +9,6 @@ import Details from './components/Details';
 import Default from './components/Default';
 import Modal from './components/Modal';
 
-
 function App() {
   return (
     <React.Fragment>
