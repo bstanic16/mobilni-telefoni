@@ -28,7 +28,7 @@ export default class Cart extends Component {
                             )
                         }
                     }}
-                </ProductConsumer>>
+                </ProductConsumer>
             </section>
         )
     }

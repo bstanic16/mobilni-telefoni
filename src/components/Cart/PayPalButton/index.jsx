@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-function Product({ product }) {
+function Product({ product, total, result, history }) {
     const [paidFor, setPaidFor] = useState(false);
     const [error, setError] = useState(null);
     const paypalRef = useRef();
@@ -12,19 +12,31 @@ function Product({ product }) {
                     return actions.order.create({
                         purchase_units: [
                             {
-                                description: product.description,
+                                description: result,
                                 amount: {
                                     currency_code: 'USD',
-                                    value: product.price,
+                                    value: total,
                                 },
                             },
                         ],
                     });
                 },
                 onApprove: async (data, actions) => {
-                    const order = await actions.order.capture();
-                    setPaidFor(true);
-                    console.log(order);
+                    return actions.order.capture().then(function (details) {
+                        setPaidFor(true);
+                        alert('Transaction competed by' + details.payer.name.given_name);
+                        history.push('/');
+                        return fetch('/paypal-transaction-compelete', {
+                            method: 'post',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                orderID: data.orderID
+                            })
+                        })
+                    }
+                    )
                 },
                 onError: err => {
                     setError(err);
@@ -32,103 +44,61 @@ function Product({ product }) {
                 },
             })
             .render(paypalRef.current);
-    }, [product.description, product.price]);
-
+    }, [result, total]);
+    console.log("Gornji:", product)
     if (paidFor) {
         return (
             <div>
-                <h1>Congrats, you just bought {product.description}!</h1>
+                <h1>Congrats, you just bought {result}!</h1>
             </div>
         );
-    }
 
+    }
     return (
-        <div>
-            {error && <div>Uh oh, an error occurred! {error.message}</div>}
-            <h1>
-                {product.description} for ${product.price}
-            </h1>
+        <>
+            <div>
+                <div>
+                    {error && <div>Uh oh, an error occurred! {error.message}</div>}
+                </div>
+            </div>
             <div ref={paypalRef} style={{ width: '20%' }} />
-        </div>
+        </>
     );
 }
 
-function App({ value }) {
-    console.log("PAYPAL", value)
-    const product = {
-        price: value.cartTotal,
-        name: value.detailProduct.title,
-        description: value.detailProduct.title,
-    };
+function App({ value, history }) {
+    console.log("PAYPAL", value.cart)
+    console.log(value.cartTotal)
+    const product = value.cart.map(item => {
+        return {
+            id: item.id,
+            price: item.price,
+            description: item.title,
+            name: item.title
+        }
+    })
+    console.log('PRODUCT:', product);
 
     return (
         <div className="App">
-            <Product product={product} />
+            {product.map(item => {
+                var result = '';
+                product.forEach(function (str) {
+                    result += str.description + ', '
+                })
+                console.log("RESULT", result)
+                if (product.length > 1) {
+                    product.length = 1
+                }
+                if (product.length === 1) {
+                    return (
+                        <Product key={item.id} history={history} product={item} products={product} total={value.cartTotal} result={result} />
+                    )
+                }
+
+            })}
         </div>
     );
 }
 
 export default App;
-
-
-
-
-
-
-// import React from 'react';
-// import PaypalExpressBtn from 'react-paypal-express-checkout';
-
-// export default class MyApp extends React.Component {
-//     render() {
-//         const onSuccess = (payment) => {
-//             // Congratulation, it came here means everything's fine!
-//             console.log("The payment was succeeded!", payment);
-
-//             this.props.clearCart();
-//             this.props.history.push('/');
-//             // You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
-//         }
-
-//         const onCancel = (data) => {
-//             // User pressed "cancel" or close Paypal's popup!
-//             console.log('The payment was cancelled!', data);
-//             // You can bind the "data" object's value to your state or props or whatever here, please see below for sample returned data
-//         }
-
-//         const onError = (err) => {
-//             // The main Paypal's script cannot be loaded or somethings block the loading of that script!
-//             console.log("Error!", err);
-//             // Because the Paypal's main script is loaded asynchronously from "https://www.paypalobjects.com/api/checkout.js"
-//             // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
-//         }
-
-//         let env = 'sandbox'; // you can set here to 'production' for production
-//         let currency = 'USD'; // or you can set this value from your props or state
-//         // let total = 1; // same as above, this is the total amount (based on currency) to be paid by using Paypal express checkout
-//         // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
-
-//         const client = {
-//             sandbox: process.env.REACT_APP_APP_ID,
-//             production: 'YOUR-PRODUCTION-APP-ID',
-//         }
-
-//         // In order to get production's app-ID, you will have to send your app to Paypal for approval first
-//         // For sandbox app-ID (after logging into your developer account, please locate the "REST API apps" section, click "Create App"):
-//         //   => https://developer.paypal.com/docs/classic/lifecycle/sb_credentials/
-//         // For production app-ID:
-//         //   => https://developer.paypal.com/docs/classic/lifecycle/goingLive/
-
-//         // NB. You can also have many Paypal express checkout buttons on page, just pass in the correct amount and they will work!
-//         return (
-//             <PaypalExpressBtn
-//                 env={env}
-//                 client={client}
-//                 currency={currency}
-//                 description={this.props.title}
-//                 total={this.props.total}
-//                 onError={onError}
-//                 onSuccess={onSuccess}
-//                 onCancel={onCancel} />
-//         );
-//     }
-// }
