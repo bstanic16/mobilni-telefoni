@@ -7,6 +7,7 @@ import CartList from './CartList';
 import CartTotals from './CartTotals';
 
 export default class Cart extends Component {
+
     render() {
         return (
             <section>

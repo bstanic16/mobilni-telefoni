@@ -1,10 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Component } from 'react';
+import styled from 'styled-components';
+
+const Paypal = styled.div`
+    width:100%;
+    height:auto;
+    padding-top: 20%;
+    overflow:hidden;
+    display: inline-block;
+`
 
 function Product({ product, total, result, history }) {
     const [paidFor, setPaidFor] = useState(false);
     const [error, setError] = useState(null);
     const paypalRef = useRef();
-
+    console.log("TOTAL:", total)
     useEffect(() => {
         window.paypal
             .Buttons({
@@ -16,7 +25,7 @@ function Product({ product, total, result, history }) {
                                 amount: {
                                     currency_code: 'USD',
                                     value: total,
-                                },
+                                }
                             },
                         ],
                     });
@@ -25,7 +34,7 @@ function Product({ product, total, result, history }) {
                     return actions.order.capture().then(function (details) {
                         setPaidFor(true);
                         alert('Transaction competed by' + details.payer.name.given_name);
-                        history.push('/');
+                        this.props.history.push('/');
                         return fetch('/paypal-transaction-compelete', {
                             method: 'post',
                             headers: {
@@ -61,44 +70,90 @@ function Product({ product, total, result, history }) {
                     {error && <div>Uh oh, an error occurred! {error.message}</div>}
                 </div>
             </div>
-            <div ref={paypalRef} style={{ width: '20%' }} />
+            <Paypal ref={paypalRef} />
         </>
     );
 }
 
-function App({ value, history }) {
-    console.log("PAYPAL", value.cart)
-    console.log(value.cartTotal)
-    const product = value.cart.map(item => {
-        return {
-            id: item.id,
-            price: item.price,
-            description: item.title,
-            name: item.title
-        }
-    })
-    console.log('PRODUCT:', product);
+class App extends Component {
 
-    return (
-        <div className="App">
-            {product.map(item => {
-                var result = '';
-                product.forEach(function (str) {
-                    result += str.description + ', '
-                })
-                console.log("RESULT", result)
-                if (product.length > 1) {
-                    product.length = 1
-                }
-                if (product.length === 1) {
-                    return (
-                        <Product key={item.id} history={history} product={item} products={product} total={value.cartTotal} result={result} />
-                    )
-                }
+    render() {
+        console.log("PAYPAL", this.props.value.cart)
+        console.log("total2:", this.props.value.cartTotal)
+        const product = this.props.value.cart.map(item => {
+            return {
+                id: item.id,
+                price: item.price,
+                description: item.title,
+                name: item.title,
+            }
+        })
+        console.log('PRODUCT:', product);
 
-            })}
-        </div>
-    );
+        return (
+            <div >
+                {product.map(item => {
+                    var result = '';
+                    product.forEach(function (str) {
+                        result += str.description + ', '
+                    })
+                    console.log("RESULT", result)
+                    if (product.length > 0) {
+                        product.length = 0
+                    }
+                    if (product.length === 0) {
+                        console.log("DUZ", product.length)
+                        return (
+                            <Product key={item.id} history={this.props.history} product={item} total={this.props.value.cartTotal} products={product} result={result} />
+                        )
+                    }
+                })}
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App
+
+
+
+// function App({value, history}) {
+
+//     console.log("PAYPAL", value.cart)
+//     console.log(value.cartTotal)
+//     const product = value.cart.map(item => {
+//         return {
+//             id: item.id,
+//             price: item.price,
+//             description: item.title,
+//             name: item.title,
+//             count: item.count
+//         }
+//     })
+//     console.log('PRODUCT:', product);
+
+//     return (
+//         <div className="App">
+//             {product.map(item => {
+//                 console.log("BROJ", item.count)
+
+//                 var result = '';
+//                 product.forEach(function (str) {
+//                     result += str.description + ', '
+//                 })
+//                 console.log("RESULT", result)
+//                 if (product.length > 0) {
+//                     product.length = 0
+//                 }
+//                 if (product.length === 0) {
+//                     console.log("DUZ", product.length)
+//                     return (
+//                         <Product key={item.id} history={history} product={item} products={product} total={value.cartTotal} result={result} />
+//                     )
+//                 }
+//             })}
+//         </div>
+//     );
+// }
+
+// export default App;
