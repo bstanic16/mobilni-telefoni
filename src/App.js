@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import Details from './components/Details';
 import Default from './components/Default';
 import Modal from './components/Modal';
+import Categories from './components/Categories'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Nav></Nav>
       <Switch>
         <Route path="/" exact component={ProductList} />
+        <Route path="/categories" component={Categories} />
         <Route path="/details" component={Details} />
         <Route path="/cart" component={Cart} />
         <Route component={Default} />
