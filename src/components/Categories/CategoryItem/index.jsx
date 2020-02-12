@@ -18,7 +18,7 @@ export default class CategoryItem extends Component {
                                 {(value) => {
                                     console.log(this.state.products);
                                     return value.products.map(product => {
-                                        console.log("PRODUCT CAT:", product)
+                                        // console.log("PRODUCT CAT:", product)
                                         console.log(product.category)
                                         if (product.category === this.props.name)
                                             return (
