@@ -86,16 +86,17 @@ class App extends Component {
                 price: item.price,
                 description: item.title,
                 name: item.title,
+                count: item.count
             }
         })
         console.log('PRODUCT:', product);
-
+        console.log("COUNT:", product.count)
         return (
             <div >
                 {product.map(item => {
                     var result = '';
                     product.forEach(function (str) {
-                        result += str.description + ', '
+                        result += str.description + ' - (' + str.count + '),'
                     })
                     console.log("RESULT", result)
                     if (product.length > 0) {
@@ -114,46 +115,3 @@ class App extends Component {
 }
 
 export default App
-
-
-
-// function App({value, history}) {
-
-//     console.log("PAYPAL", value.cart)
-//     console.log(value.cartTotal)
-//     const product = value.cart.map(item => {
-//         return {
-//             id: item.id,
-//             price: item.price,
-//             description: item.title,
-//             name: item.title,
-//             count: item.count
-//         }
-//     })
-//     console.log('PRODUCT:', product);
-
-//     return (
-//         <div className="App">
-//             {product.map(item => {
-//                 console.log("BROJ", item.count)
-
-//                 var result = '';
-//                 product.forEach(function (str) {
-//                     result += str.description + ', '
-//                 })
-//                 console.log("RESULT", result)
-//                 if (product.length > 0) {
-//                     product.length = 0
-//                 }
-//                 if (product.length === 0) {
-//                     console.log("DUZ", product.length)
-//                     return (
-//                         <Product key={item.id} history={history} product={item} products={product} total={value.cartTotal} result={result} />
-//                     )
-//                 }
-//             })}
-//         </div>
-//     );
-// }
-
-// export default App;
