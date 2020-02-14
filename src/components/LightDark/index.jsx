@@ -5,19 +5,19 @@ import { ReactComponent as Moon } from '../svgs/moon.svg';
 import styled from 'styled-components'
 
 const LightDark = ({ theme, toggleTheme }) => {
-    const isLight = theme === 'light';
-    return (
-        <ToggleContainer onClick={toggleTheme} lightTheme={isLight}>
-            <Sun />
-            <Moon />
-        </ToggleContainer>
+  const isLight = theme === 'light';
+  return (
+    <ToggleContainer onClick={toggleTheme} lightTheme={isLight}>
+      <Sun />
+      <Moon />
+    </ToggleContainer>
 
-    )
+  )
 }
 
 LightDark.propTypes = {
-    theme: string.isRequired,
-    toggleTheme: func.isRequired
+  theme: string.isRequired,
+  toggleTheme: func.isRequired
 }
 
 export default LightDark
@@ -25,18 +25,23 @@ export default LightDark
 const ToggleContainer = styled.button`
   background: ${({ theme }) => theme.gradient};
   border: 2px solid var(--mainYellow);
-  border-radius: 30px;
+  border-radius: 20px;
   cursor: pointer;
   display: flex;
   font-size: 0.5rem;
-  justify-content: space-between;
-  margin: 0 auto;
   overflow: hidden;
   padding: 0.5rem;
   position: relative;
   width: 8rem;
   height: 4rem;
-
+  outline:none;
+  top: 0.5rem;
+  left: 0.5rem;
+  margin-right: auto!important;
+  &:focus {
+    outline: none;
+  }
+  
   svg {
     height: auto;
     width: 2.5rem;
