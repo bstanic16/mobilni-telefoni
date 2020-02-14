@@ -16,8 +16,8 @@ export default class Categories extends Component {
         scope: false,
         boots: false,
         kevlar: false,
-        od: 0,
-        do: 0,
+        min: 0,
+        max: 0,
         clicked: false
     }
 
@@ -68,15 +68,15 @@ export default class Categories extends Component {
         })
     }
 
-    odHanlder = (e) => {
+    minHanlder = (e) => {
         this.setState({
-            od: e.target.value,
+            min: e.target.value,
             clicked: false
         })
     }
-    doHanlder = (e) => {
+    maxHanlder = (e) => {
         this.setState({
-            do: e.target.value,
+            max: e.target.value,
             clicked: false
         })
     }
@@ -88,15 +88,15 @@ export default class Categories extends Component {
     }
 
     render() {
-        console.log("od", this.state.od)
-        console.log("do", this.state.do)
+        console.log("od", this.state.min)
+        console.log("do", this.state.max)
         console.log("CLICKED:", this.state.clicked)
         return (
             <>
-                <ProductWrapper className="py-5">
+                <ProductWrapper className="py-3">
                     <div className="container">
                         <Title name="select" title="category" />
-                        <div className="row justify-content-center py-3 ">
+                        <div className="row justify-content-center py-2">
                             <ButtonContainer onClick={this.knifesHanlder}>Knifes</ButtonContainer>
                             <ButtonContainer onClick={this.bagsHandler}>Bags</ButtonContainer>
                             <ButtonContainer onClick={this.scopeHandler}>Scopes</ButtonContainer>
@@ -104,8 +104,9 @@ export default class Categories extends Component {
                             <ButtonContainer onClick={this.kevlarHander}>Kevlar vest</ButtonContainer>
                         </div>
                         <div className="row justify-content-center p-2">
-                            <Input type="text" placeholder="OD" onChange={this.odHanlder} />
-                            <Input type="text" placeholder="DO" onChange={this.doHanlder} />
+                            <Price>Price: </Price>
+                            <Input type="text" placeholder="Min" onChange={this.minHanlder} />
+                            <Input type="text" placeholder="Max" onChange={this.maxHanlder} />
                             <ButtonContainer onClick={this.clickedHandler}>SEARCH</ButtonContainer>
                         </div>
                         <div className="row">
@@ -179,4 +180,9 @@ const Input = styled.input`
     &:focus {
         outline:none;
     }
+`
+
+const Price = styled.h3`
+    color: var(--lightBlue);
+    padding: 0.2rem 0.5rem;
 `
