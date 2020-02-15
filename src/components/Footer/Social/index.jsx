@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import { ReactComponent as Instagram } from '../../svgs/instagram.svg';
 import { ReactComponent as Facebook } from '../../svgs/facebook.svg';

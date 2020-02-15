@@ -23,8 +23,8 @@ LightDark.propTypes = {
 export default LightDark
 
 const ToggleContainer = styled.button`
-  background: ${({ theme }) => theme.gradient};
-  border: 2px solid var(--mainYellow);
+  background: var(--lightBlue);
+  border: 2px solid var(--lightBlue);
   border-radius: 20px;
   cursor: pointer;
   display: flex;

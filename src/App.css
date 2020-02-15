@@ -5,6 +5,10 @@
   --mainDark: #232528;
   --mainYellow: #ffa400;
 }
+a:hover {
+  text-decoration: none!important;
+}
+
 body {
   font-family: "Oswald", sans-serif !important;
   background: var(--mainWhite)!important; 

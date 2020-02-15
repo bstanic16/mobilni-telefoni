@@ -139,7 +139,7 @@ export default class Categories extends Component {
                                         )
                                     }
                                     return value.products.map(product => {
-                                        if (this.state.clicked === true && (this.state.od <= product.price && this.state.do >= product.price)) {
+                                        if (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price)) {
                                             return <Product key={product.id} product={product} />
                                         }
                                         if (this.state.clicked === false) {
