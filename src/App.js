@@ -14,6 +14,7 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
 import LightDark from './components/LightDark';
+import Footer from './components/Footer';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -40,6 +41,7 @@ function App() {
           <Route component={Default} />
         </Switch>
         <Modal />
+        <Footer />
       </React.Fragment>
     </ThemeProvider>
   );

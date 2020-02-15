@@ -34,13 +34,13 @@ export default class NavBar extends Component {
                         </Link>
                     </li>
                 </ul>
-                <ul className="navbar-nav align-items-center">
+                {/* <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-3">
                         <Link to="/contact" className="nav-link">
                             Contact
                         </Link>
                     </li>
-                </ul>
+                </ul> */}
                 <Link to="/cart" className="ml-auto ">
                     <ButtonContainer>
                         <span className="mr-2">

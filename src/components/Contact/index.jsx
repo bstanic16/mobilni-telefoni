@@ -11,7 +11,7 @@ export default class Contact extends Component {
                 <div className="container">
                     <Title name="contact" title="us" />
                     <div className="row justify-content-center">
-                        <form action="" className="row justify-content-center">
+                        <Form action="" className="row justify-content-center">
                             <div className="col-9 py-2">
                                 <Input type="text" placeholder="firstname" />
                                 <Input type="text" placeholder="lastname" />
@@ -25,7 +25,7 @@ export default class Contact extends Component {
                             <div className="col-9 py-2 justify-content-center align-items-center">
                                 <ButtonContainer>SUBMIT</ButtonContainer>
                             </div>
-                        </form>
+                        </Form>
                     </div>
                 </div>
             </ProductWrapper>
@@ -34,3 +34,8 @@ export default class Contact extends Component {
 }
 
 const ProductWrapper = styled.section``
+
+const Form = styled.form`
+    width: 90%;
+    margin: auto;
+`

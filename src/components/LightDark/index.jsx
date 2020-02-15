@@ -31,20 +31,21 @@ const ToggleContainer = styled.button`
   font-size: 0.5rem;
   overflow: hidden;
   padding: 0.5rem;
+  justify-content: space-between;
   position: relative;
-  width: 8rem;
-  height: 4rem;
+  width: 4rem;
+  height: auto;
   outline:none;
   top: 0.5rem;
-  left: 0.5rem;
-  margin-right: auto!important;
+  right: 0.5rem;
+  margin-left: auto!important;
   &:focus {
     outline: none;
   }
   
   svg {
-    height: auto;
-    width: 2.5rem;
+    width: 4rem;
+    height:auto;
     transition: all 0.2s linear;
     
     &:first-child {

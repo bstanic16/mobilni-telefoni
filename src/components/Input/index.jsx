@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Input = styled.input`
     width:100%;
+    background: var(--lightBlue);
     text-transform:capitalize;
     font-size: 1.4rem;
-    background: transparent;
     border: 0.05rem solid var(--mainDark);
     border-color: var(--mainDark);
     color: var(--mainDark);
@@ -26,7 +26,7 @@ export const Text = styled.textarea`
     width:100%;
     text-transform:capitalize;
     font-size: 1.4rem;
-    background: transparent;
+    background: var(--lightBlue);
     border: 0.05rem solid var(--mainDark);
     border-color: var(--mainDark);
     color: var(--mainDark);
