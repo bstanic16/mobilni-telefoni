@@ -9,7 +9,11 @@ export default function Social() {
 
     return (
         <>
+
             <Main>
+                <Text>
+                    follow us
+                </Text>
                 <a href="https://www.instagram.com/">
                     <Instagram />
                 </a>
@@ -23,18 +27,22 @@ export default function Social() {
         </>
     )
 }
+
+const Text = styled.h3`
+    text-align:center;
+    text-transform:capitalize;
+    color: var(--mainYellow);
+    
+`
 const Main = styled.section`
-    width:40%;
+    width:60%;
     margin:auto;
     height:auto;
-    /* background: darkred; */
-    display: flex;
     justify-content:center;
-    padding: 2rem;
+    text-align:center;
     svg {
         width: 4rem;
         height:auto;
-        /* background: var(--lightBlue)!important; */
         padding: 0.5rem;
         transition: all 0.2s linear;
         cursor:pointer;

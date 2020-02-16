@@ -4,7 +4,9 @@ export const lightTheme = {
     toggleBorder: '#FFF',
     gradient: 'linear-gradient(#39598A, #79D7ED)',
     textTitle: 'black',
-    textBlue: 'var(--mainBlue)'
+    textBlue: 'var(--mainBlue)',
+    imgContainer: 'var(--mainWhite)',
+    imgContainerBorder: 'var(--mainWhite)'
 }
 
 export const darkTheme = {
@@ -13,5 +15,7 @@ export const darkTheme = {
     toggleBorder: '#6B8096',
     gradient: 'linear-gradient(#091236, #1E215D)',
     textTitle: 'white',
-    textBlue: 'var(--lightBlue)'
+    textBlue: 'var(--lightBlue)',
+    imgContainer: 'var(--mainDark)',
+    imgContainerBorder: 'var(--mainYellow)'
 }

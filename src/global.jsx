@@ -8,10 +8,15 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.1s linear;
   }
   .text-title{
-    color: ${({ theme }) => theme.textTitle}
+    color: ${({ theme }) => theme.textTitle};
   }
 
   .text-blue {
-  color: ${({ theme }) => theme.textBlue}
+  color: ${({ theme }) => theme.textBlue};
+}
+
+.img-container {
+  background: ${({ theme }) => theme.imgContainer};
+  border: 0px;
 }
   `
