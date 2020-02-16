@@ -12,7 +12,7 @@ export default function Social() {
 
             <Main>
                 <Text>
-                    follow us
+                    follow uss
                 </Text>
                 <a href="https://www.instagram.com/">
                     <Instagram />
