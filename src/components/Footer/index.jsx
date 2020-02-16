@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ButtonContainer } from '../Button';
 import Social from './Social';
+import Copy from './Copy';
 
 export default class Footer extends Component {
     render() {
@@ -30,6 +31,7 @@ export default class Footer extends Component {
                         </Item>
                     </Nav>
                     <Social />
+                    <Copy />
                 </ProductWrapper>
             </>
         )
