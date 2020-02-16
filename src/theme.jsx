@@ -10,12 +10,17 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-    body: '#363537',
+    body: '#131217',
     text: '#FAFAFA',
     toggleBorder: '#6B8096',
     gradient: 'linear-gradient(#091236, #1E215D)',
     textTitle: 'white',
+<<<<<<< HEAD
     textBlue: 'var(--lightBlue)',
     imgContainer: 'var(--mainDark)',
     imgContainerBorder: 'var(--mainYellow)'
 }
+=======
+    textBlue: 'var(--lightBlue)'
+}
+>>>>>>> fdf2d0496aa113529ad5b238d03298330c05b599
