@@ -17,7 +17,8 @@ export const GlobalStyles = createGlobalStyle`
 
 .img-container {
   background: ${({ theme }) => theme.imgContainer};
-  border: 0px;
+  border: 2px solid var(--mainYellow);
+  border-radius: 20px;
 }
 
 .columns-title{

@@ -48,3 +48,6 @@ body {
   font-size: 1.2rem!important;
   color: var(--mainYellow);
 }
+.product-list{
+  padding: 2rem 0rem;
+}

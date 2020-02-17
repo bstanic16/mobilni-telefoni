@@ -3,7 +3,8 @@ import Product from '../Product';
 import Title from '../Title';
 import { ProductConsumer } from '../../context';
 import { storeProducts } from '../../data';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import Slider from '../Slider';
 
 export default class ProductList extends Component {
     state = {
@@ -16,7 +17,8 @@ export default class ProductList extends Component {
                 <ProductWrapper className="py-5">
                     <div className="container">
                         <Title name="our" title="products" />
-                        <div className="row">
+                        <Slider />
+                        <div className="row product-list">
                             <ProductConsumer>
                                 {(value) => {
                                     return value.products.map(product => {
@@ -32,4 +34,6 @@ export default class ProductList extends Component {
     }
 }
 
-const ProductWrapper = styled.section``
+const ProductWrapper = styled.section`
+    
+`
