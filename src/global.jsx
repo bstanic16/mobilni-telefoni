@@ -19,4 +19,20 @@ export const GlobalStyles = createGlobalStyle`
   background: ${({ theme }) => theme.imgContainer};
   border: 0px;
 }
+
+.columns-title{
+  color: ${({ theme }) => theme.cartColumns};
+}
+
+.cart-item {
+  color: ${({ theme }) => theme.cartItem};
+}
+
+.btn-black{
+  background: ${({ theme }) => theme.btnBlack};
+}
+
+.text-totals{
+  color: ${({ theme }) => theme.textTotals};
+}
   `

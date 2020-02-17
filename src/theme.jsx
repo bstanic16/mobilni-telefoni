@@ -6,7 +6,11 @@ export const lightTheme = {
     textTitle: 'black',
     textBlue: 'var(--mainBlue)',
     imgContainer: 'var(--mainWhite)',
-    imgContainerBorder: 'var(--mainWhite)'
+    imgContainerBorder: 'var(--mainWhite)',
+    cartColumns: 'var(--mainDark)',
+    cartItem: 'var(--mainDark)',
+    btnBlack: 'transparent',
+    textTotals: 'var(--mainDark)'
 }
 
 export const darkTheme = {
@@ -17,5 +21,9 @@ export const darkTheme = {
     textTitle: 'white',
     textBlue: 'var(--lightBlue)',
     imgContainer: 'var(--mainDark)',
-    imgContainerBorder: 'var(--mainYellow)'
+    imgContainerBorder: 'var(--mainYellow)',
+    cartColumns: 'var(--mainWhite)',
+    cartItem: 'var(--mainWhite)',
+    btnBlack: 'var(--lightBlue)',
+    textTotals: 'var(--mainYellow)'
 }

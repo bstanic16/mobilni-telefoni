@@ -11,12 +11,17 @@ export default class Footer extends Component {
             <>
                 <ProductWrapper>
                     <Main>
-                        <Title>welcome to phone store</Title>
+                        <Title>phone store</Title>
                     </Main>
-                    <Nav className="d-block d-sm-block d-md-inline-block d-lg-flex">
+                    <Nav className="d-block d-sm-block d-md-flex d-lg-flex">
                         <Item>
-                            <Link to="/contact">
-                                <ItemText>Contact us</ItemText>
+                            <Link to="/">
+                                <ItemText>Products</ItemText>
+                            </Link>
+                        </Item>
+                        <Item>
+                            <Link to="/categories">
+                                <ItemText>Categories</ItemText>
                             </Link>
                         </Item>
                         <Item>
@@ -24,6 +29,13 @@ export default class Footer extends Component {
                                 <ItemText>About us</ItemText>
                             </Link>
                         </Item>
+                        <Item>
+                            <Link to="/contact">
+                                <ItemText>Contact us</ItemText>
+                            </Link>
+                        </Item>
+
+                        {/* sta staviti ovde */}
                         <Item>
                             <Link to="/about">
                                 <ItemText>About us</ItemText>
@@ -58,7 +70,6 @@ const Title = styled.h1`
 const Nav = styled.div`
     width:100%;
     height:auto;
-    background:purple;
     display:flex;
     padding: 0.5rem 0rem;
 `
@@ -68,7 +79,6 @@ const Item = styled.div`
     height:auto;
     margin:auto;
     cursor:pointer;
-    color: var(--mainYellow)!important;
     &:hover {
         color:green;
     }
@@ -77,4 +87,10 @@ const Item = styled.div`
 const ItemText = styled.h4`
     text-transform:capitalize;
     text-align:center;
+    color: var(--mainYellow)!important;
+    padding: 0.3rem 0;
+    &:hover {
+        background: var(--lightBlue);
+        border-radius: 20px;
+    }
 `

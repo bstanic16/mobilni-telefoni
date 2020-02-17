@@ -12,7 +12,7 @@ export default function Social() {
 
             <Main>
                 <Text>
-                    follow uss
+                    follow us
                 </Text>
                 <a href="https://www.instagram.com/">
                     <Instagram />
@@ -41,7 +41,7 @@ const Main = styled.section`
     justify-content:center;
     text-align:center;
     svg {
-        width: 4rem;
+        width: 3rem;
         height:auto;
         padding: 0.5rem;
         transition: all 0.2s linear;

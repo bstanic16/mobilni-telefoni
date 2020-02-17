@@ -15,4 +15,5 @@ const Title = styled.h5`
     font-size: 1.1rem;
     padding: 1.2rem 0rem;
     margin: 0;
+    color: var(--mainWhite);
 `

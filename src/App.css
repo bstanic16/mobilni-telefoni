@@ -34,12 +34,12 @@ body {
   text-transform: capitalize;
   font-size: 0.8rem !important;
   color: var(--mainDark);
-  border-radius: 0 !important;
   border: 0.15rem solid var(--mainDark)!important;
+  border-radius: 25px!important;
 }
 
 .btn-black:hover {
-  background: var(--mainDark)!important;
+  background: var(--mainYellow)!important;
   color: var(--mainWhite)!important;
 }
 
