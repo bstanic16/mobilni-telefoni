@@ -4,7 +4,8 @@ import Title from '../Title';
 import { ProductConsumer } from '../../context';
 import { storeProducts } from '../../data';
 import styled from 'styled-components';
-import Slider from '../Slider';
+// import Slider from '../Slider';
+import List from '../SliderList';
 
 export default class ProductList extends Component {
     state = {
@@ -17,7 +18,7 @@ export default class ProductList extends Component {
                 <ProductWrapper className="py-5">
                     <div className="container">
                         <Title name="our" title="products" />
-                        <Slider />
+                        <List />
                         <div className="row product-list">
                             <ProductConsumer>
                                 {(value) => {
