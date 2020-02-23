@@ -20,18 +20,18 @@ export default class Modal extends Component {
                                 <div className="container">
                                     <div className="row">
                                         <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
-                                            <h5>item added to the cart</h5>
+                                            <h5>proizvod dodat u korpu</h5>
                                             <img src={img} alt="slik" className="img-fluid" />
                                             <h5>{title}</h5>
-                                            <h5 className="text-muted">price: $ {price}</h5>
-                                            <Link to="/">
+                                            <h5 className="text-muted">cena: $ {price}</h5>
+                                            <Link to="/categories">
                                                 <ButtonContainer onClick={() => closeModal()}>
-                                                    store
+                                                    Nastavi kupovinu
                                                 </ButtonContainer>
                                             </Link>
                                             <Link to="/cart">
                                                 <ButtonContainer cart onClick={() => closeModal()}>
-                                                    go to cart
+                                                    Korpa
                                                 </ButtonContainer>
                                             </Link>
                                         </div>

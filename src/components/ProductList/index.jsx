@@ -4,7 +4,6 @@ import Title from '../Title';
 import { ProductConsumer } from '../../context';
 import { storeProducts } from '../../data';
 import styled from 'styled-components';
-// import Slider from '../Slider';
 import List from '../SliderList';
 
 export default class ProductList extends Component {
@@ -17,7 +16,7 @@ export default class ProductList extends Component {
             <React.Fragment>
                 <ProductWrapper className="py-5">
                     <div className="container">
-                        <Title name="our" title="products" />
+                        <Title name="nasi" title="proizvodi" />
                         <List />
                         <div className="row product-list">
                             <ProductConsumer>

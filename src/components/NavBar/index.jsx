@@ -23,30 +23,23 @@ export default class NavBar extends Component {
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-5">
                         <Link to="/" className="nav-link">
-                            Products
+                            Proizvodi
                         </Link>
                     </li>
                 </ul>
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-5">
                         <Link to="/categories" className="nav-link">
-                            Categories
+                            Kategorije
                         </Link>
                     </li>
                 </ul>
-                {/* <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ml-3">
-                        <Link to="/contact" className="nav-link">
-                            Contact
-                        </Link>
-                    </li>
-                </ul> */}
                 <Link to="/cart" className="ml-auto ">
                     <ButtonContainer>
                         <span className="mr-2">
                             <i className="fas fa-cart-plus"></i>
                         </span>
-                        my cart
+                        korpa
                     </ButtonContainer>
                 </Link>
             </NavWrapper>

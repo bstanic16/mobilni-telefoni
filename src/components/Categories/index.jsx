@@ -6,19 +6,34 @@ import { storeProducts } from '../../data';
 import Product from '../Product';
 import CategoryItem from './CategoryItem';
 import { ButtonContainer } from '../Button';
-
+import Pagination from '../Pagination';
 
 export default class Categories extends Component {
-    state = {
-        products: storeProducts,
-        knifes: false,
-        bags: false,
-        scope: false,
-        boots: false,
-        kevlar: false,
-        min: 0,
-        max: 0,
-        clicked: false
+    constructor() {
+        super()
+
+        let exampleItems = [...storeProducts];
+        this.state = {
+            products: storeProducts,
+            knifes: false,
+            bags: false,
+            scope: false,
+            boots: false,
+            kevlar: false,
+            min: 0,
+            max: 0,
+            clicked: false,
+            exampleItems: exampleItems,
+            pageOfItems: [],
+        }
+        this.onChangePage = this.onChangePage.bind(this);
+    }
+    maskeClicked = () => {
+        this.setState({ maskeClicked: !this.state.maskeClicked })
+    }
+
+    onChangePage(pageOfItems) {
+        this.setState({ pageOfItems: pageOfItems })
     }
 
     knifesHanlder = () => {
@@ -83,39 +98,33 @@ export default class Categories extends Component {
 
     clickedHandler = () => {
         this.setState({
-            clicked: !this.state.clicked
+            clicked: !this.state.clicked,
         })
     }
 
     render() {
         console.log("od", this.state.min)
         console.log("do", this.state.max)
-        console.log("CLICKED:", this.state.clicked)
         return (
             <>
                 <ProductWrapper className="py-3">
                     <div className="container">
-                        <Title name="select" title="category" />
+                        <Title name="izaberi" title="kategoriju" />
                         <div className="row justify-content-center py-2">
-                            <ButtonContainer onClick={this.knifesHanlder}>Knifes</ButtonContainer>
-                            <ButtonContainer onClick={this.bagsHandler}>Bags</ButtonContainer>
-                            <ButtonContainer onClick={this.scopeHandler}>Scopes</ButtonContainer>
-                            <ButtonContainer onClick={this.bootsHandler}>Boots</ButtonContainer>
-                            <ButtonContainer onClick={this.kevlarHander}>Kevlar vest</ButtonContainer>
-                        </div>
-                        <div className="row justify-content-center p-2">
-                            <Price>Price: </Price>
-                            <Input type="text" placeholder="Min" onChange={this.minHanlder} />
-                            <Input type="text" placeholder="Max" onChange={this.maxHanlder} />
-                            <ButtonContainer onClick={this.clickedHandler}>SEARCH</ButtonContainer>
+                            <ButtonContainer onClick={this.knifesHanlder}>Maske</ButtonContainer>
+                            <ButtonContainer onClick={this.bagsHandler}>Folije</ButtonContainer>
+                            <ButtonContainer onClick={this.scopeHandler}>Punjaci</ButtonContainer>
+                            <ButtonContainer onClick={this.bootsHandler}>Slusalice</ButtonContainer>
+                            <ButtonContainer onClick={this.kevlarHander}>Drzaci za mobilni</ButtonContainer>
                         </div>
                         <div className="row">
                             <ProductConsumer>
                                 {(value) => {
                                     console.log("KATEGORIJE:", this.state.products);
+
                                     if (this.state.knifes === true) {
                                         return (
-                                            <CategoryItem name="knifes" />
+                                            <CategoryItem name="knifes" clicked={this.state.clicked} min={this.state.min} max={this.state.max} />
                                         )
                                     }
                                     if (this.state.bags === true) {
@@ -138,19 +147,27 @@ export default class Categories extends Component {
                                             <CategoryItem name="kevlar" />
                                         )
                                     }
-                                    return value.products.map(product => {
-                                        if (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price)) {
-                                            return <Product key={product.id} product={product} />
-                                        }
-                                        if (this.state.clicked === false) {
-                                            return <Product key={product.id} product={product} />
-                                        }
-                                    })
+                                    return (
+                                        <>
+                                            {this.state.pageOfItems.map(product => {
+                                                if (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price)) {
+                                                    return (
+                                                        <>
+                                                            <Product key={product.id} product={product} />
+                                                        </>
+                                                    )
+                                                }
+                                                if (this.state.clicked === false) {
+                                                    return <Product key={product.id} product={product} />
+                                                }
+                                            })}
+                                            <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+                                        </>
+                                    )
                                 }}
                             </ProductConsumer>
                         </div>
                     </div>
-
                 </ProductWrapper>
 
             </>

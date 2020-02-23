@@ -15,8 +15,10 @@ import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
 import LightDark from './components/LightDark';
 import Footer from './components/Footer';
+import About from './components/About';
 
 function App() {
+
   const [theme, setTheme] = useState('light');
   console.log(theme)
   const toggleTheme = () => {
@@ -38,6 +40,7 @@ function App() {
           <Route path="/details" component={Details} />
           <Route path="/cart" component={Cart} />
           <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} />
           <Route component={Default} />
         </Switch>
         <Modal />

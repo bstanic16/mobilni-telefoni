@@ -6,6 +6,7 @@ import Copy from './Copy';
 
 export default class Footer extends Component {
     render() {
+        console.log("PROPS:", this.props.children);
         return (
             <>
                 <ProductWrapper>
@@ -49,10 +50,19 @@ export default class Footer extends Component {
     }
 }
 
+
+
 const ProductWrapper = styled.section`
     width:100%;
     height:auto;
     background: var(--mainBlue);
+                bottom:0;                          
+                left:0; 
+    #bottom {
+                position:absolute;                  
+                bottom:0;                          
+                left:0; 
+    }
 `
 
 const Main = styled.div`
