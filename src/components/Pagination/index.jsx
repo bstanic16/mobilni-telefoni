@@ -12,7 +12,7 @@ const propTypes = {
 
 const defaultProps = {
     initialPage: 1,
-    pageSize: 10,
+    pageSize: 18,
 
 }
 
@@ -61,13 +61,13 @@ class Pagination extends React.Component {
         currentPage = currentPage || 1;
 
         // default page size is 10
-        pageSize = pageSize || 10;
+        pageSize = pageSize || 9;
 
         // calculate total pages
         var totalPages = Math.ceil(totalItems / pageSize);
 
         var startPage, endPage;
-        if (totalPages <= 10) {
+        if (totalPages <= 18) {
             // less than 10 total pages so show all
             startPage = 1;
             endPage = totalPages;
@@ -107,7 +107,6 @@ class Pagination extends React.Component {
     }
 
     render() {
-        console.log("ITEMS:", this.state.items)
         var pager = this.state.pager;
 
         if (!pager.pages || pager.pages.length <= 1) {

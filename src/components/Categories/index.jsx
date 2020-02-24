@@ -6,7 +6,6 @@ import { storeProducts } from '../../data';
 import Product from '../Product';
 import CategoryItem from './CategoryItem';
 import { ButtonContainer } from '../Button';
-import Pagination from '../Pagination';
 
 export default class Categories extends Component {
     constructor() {
@@ -23,17 +22,10 @@ export default class Categories extends Component {
             min: 0,
             max: 0,
             clicked: false,
-            exampleItems: exampleItems,
-            pageOfItems: [],
         }
-        this.onChangePage = this.onChangePage.bind(this);
     }
     maskeClicked = () => {
         this.setState({ maskeClicked: !this.state.maskeClicked })
-    }
-
-    onChangePage(pageOfItems) {
-        this.setState({ pageOfItems: pageOfItems })
     }
 
     knifesHanlder = () => {
@@ -149,7 +141,7 @@ export default class Categories extends Component {
                                     }
                                     return (
                                         <>
-                                            {this.state.pageOfItems.map(product => {
+                                            {this.state.products.map(product => {
                                                 if (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price)) {
                                                     return (
                                                         <>
@@ -161,7 +153,6 @@ export default class Categories extends Component {
                                                     return <Product key={product.id} product={product} />
                                                 }
                                             })}
-                                            <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
                                         </>
                                     )
                                 }}
@@ -175,31 +166,4 @@ export default class Categories extends Component {
     }
 }
 
-
 const ProductWrapper = styled.section``
-
-const Input = styled.input`
-    text-transform:capitalize;
-    font-size: 1.4rem;
-    background: transparent;
-    border: 0.05rem solid var(--lightBlue);
-    border-color: ${p => p.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
-    color: ${p => p.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
-    border-radius: 0.5rem;
-    padding: 0.2rem 0.5rem;
-    cursor:pointer;
-    margin: 0.2rem 0.5rem 0.2rem 0;
-    transition: all 0.5s ease-in-out;
-    &:hover {
-        background:${p => p.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
-        color: var(--mainBlue);
-    }
-    &:focus {
-        outline:none;
-    }
-`
-
-const Price = styled.h3`
-    color: var(--lightBlue);
-    padding: 0.2rem 0.5rem;
-`

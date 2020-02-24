@@ -4,42 +4,45 @@ import { ProductConsumer } from '../../../context';
 import { storeProducts } from '../../../data';
 import Product from '../../Product';
 import { ButtonContainer } from '../../Button';
+import Pagination from '../../Pagination';
 
 export default class CategoryItem extends Component {
-    state = {
-        products: storeProducts,
-        min: 0,
-        max: 0,
-        clicked: false
+    constructor() {
+        super()
+
+        let exampleItems = [...storeProducts];
+        this.state = {
+            products: storeProducts,
+            min: 0,
+            max: 0,
+            clicked: false,
+            exampleItems: exampleItems,
+            pageOfItems: []
+        }
+        this.onChangePage = this.onChangePage.bind(this);
     }
 
+    onChangePage(pageOfItems) {
+        this.setState({ pageOfItems: pageOfItems })
+    }
+
+
     ascendingSort = () => {
-        let mapp = this.state.products.sort((a, b) => Number(a.price) > Number(b.price));
+        let mapp = this.state.exampleItems.sort((a, b) => Number(a.price) > Number(b.price));
         console.log("Descending:", mapp);
         this.setState({
-            products: mapp,
+            pageOfItems: mapp,
+            exampleItems: mapp,
             clicked: false
         })
-        // const niz = []
-        // this.state.products.map(item => {
-        //     if (item.category === this.props.name) {
-        //         niz.push(item)
-        //     }
-        // })
-        // console.log("NIZ", niz);
-        // let arrASC = niz.sort((a, b) => Number(a.price) > Number(b.price))
-        // console.log("NIZIZIZIZ", arrASC)
-        // this.setState({
-        //     products: arrASC,
-        //     clicked: false
-        // })
     }
 
     descendingSort = () => {
-        let mapp = this.state.products.sort((a, b) => Number(b.price) > Number(a.price));
-        console.log("Descending:", mapp);
+        let mapp = this.state.exampleItems.sort((a, b) => Number(b.price) > Number(a.price));
+        console.log("Descending:", this.state.pageOfItems);
         this.setState({
-            products: mapp,
+            pageOfItems: mapp,
+            exampleItems: mapp,
             clicked: false
         })
     }
@@ -80,10 +83,7 @@ export default class CategoryItem extends Component {
                     <div className="row justify-content-center">
                         <ProductConsumer>
                             {(value) => {
-                                return this.state.products.map(product => {
-                                    console.log("CLICKED:", this.state.clicked);
-                                    console.log("od", this.state.min);
-                                    console.log("od", this.state.max);
+                                return this.state.pageOfItems.map(product => {
                                     if (product.category === this.props.name && (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price))) {
                                         return (
                                             <>
@@ -102,6 +102,7 @@ export default class CategoryItem extends Component {
                         </ProductConsumer>
                     </div>
                 </ProductWrapper>
+                <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
             </>
         )
     }
