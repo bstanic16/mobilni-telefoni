@@ -5,6 +5,7 @@ import { ProductConsumer } from '../../context';
 import { storeProducts } from '../../data';
 import styled from 'styled-components';
 import List from '../SliderList';
+import ButtonUp from '../ButtonUp';
 
 export default class ProductList extends Component {
     state = {
@@ -28,6 +29,7 @@ export default class ProductList extends Component {
                             </ProductConsumer>
                         </div>
                     </div>
+                    <ButtonUp></ButtonUp>
                 </ProductWrapper>
             </React.Fragment>
         )

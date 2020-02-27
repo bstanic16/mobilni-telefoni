@@ -4,7 +4,8 @@ import { ProductConsumer } from '../../../context';
 import { storeProducts } from '../../../data';
 import Product from '../../Product';
 import { ButtonContainer } from '../../Button';
-import Pagination from '../../Pagination';
+// import Pagination from '../../Pagination';
+import Pagination from 'jw-react-pagination';
 
 export default class CategoryItem extends Component {
     constructor() {
@@ -33,6 +34,7 @@ export default class CategoryItem extends Component {
         this.setState({
             pageOfItems: mapp,
             exampleItems: mapp,
+            products: mapp,
             clicked: false
         })
     }
@@ -43,6 +45,7 @@ export default class CategoryItem extends Component {
         this.setState({
             pageOfItems: mapp,
             exampleItems: mapp,
+            products: mapp,
             clicked: false
         })
     }
@@ -101,12 +104,19 @@ export default class CategoryItem extends Component {
                             }}
                         </ProductConsumer>
                     </div>
+                    <Pages>
+                        <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+                    </Pages>
                 </ProductWrapper>
-                <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
             </>
         )
     }
 }
+
+const Pages = styled.div`
+    width: 100%;
+    text-align:center;
+`
 
 const ProductWrapper = styled.section`
     width:100%;

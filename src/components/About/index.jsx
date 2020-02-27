@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Title from '../Title';
+import ButtonUp from '../ButtonUp';
 
 export default function About() {
     return (
@@ -17,6 +18,7 @@ export default function About() {
                         Kod nas mozete pronaci veliki izbor artikala renomiranih proizvodjaca po izuzetno povoljnim cenama.
                         Kupovina na BLABLA je odlican nacin da opremite Vas mobilni telefon. Mi smo online prodavnica preglednog sadrzaja i jednostavnog procesa kupovine.
                     </Text>
+                    <Block></Block>
                     <Text>
                         Mobilni telefon ima veliki znacaj u svakodnevnom životu i pomoću njega možemo da stupimo u kontakt sa bilo kim na svetu. Preko njega komuniciramo, informišemo se o svemu što je u našoj sferi interesovanja, igramo se... Naša ideja je da obezbedimo najbolju moguću zaštitu mobilnog telefona i da Vam omogućimo rezervni deo ukoliko je potreban.
                         U samo par klikova pronađite asortiman artikala namenjen za Vaš mobilni telefon, izaberite artikal i poručite. Ono što vidite na sajtu je dostupno za poručivanje.
@@ -36,7 +38,7 @@ export default function About() {
                         <Text>Vizija kompanije BLABLA je da pruzi najvisi nivo usluge na domacem trzistu uz stalne inovacije i obogacivanje proizvodnog asortimana. Tu viziju ce ostvariti u saradnji sa svojim partnerima, koji dele iste ciljeve.</Text>
                     </SubTitle>
                 </Main>
-
+                <ButtonUp></ButtonUp>
             </ProductWrapper>
         </>
     )
@@ -44,6 +46,13 @@ export default function About() {
 
 const ProductWrapper = styled.section`
     padding: 2rem 0rem;
+    @media(max-width: 568px) {
+        width: 100%;
+    }
+    @media(max-width: 320px) {
+        width: 100%;
+    }
+    
 `
 
 const CompanyDesc = styled.div`
@@ -52,6 +61,12 @@ const CompanyDesc = styled.div`
     height:auto;
     text-align:center;
     padding: 1.5rem 0rem;
+    @media(max-width: 320px) {
+        width: 100%;
+    }
+    @media(max-width: 568px) {
+        width: 100%;
+    }
 `
 
 const Main = styled.div`
@@ -59,6 +74,12 @@ const Main = styled.div`
     margin:auto;
     height:auto;
     display:flex;
+    @media(max-width: 320px) {
+        display:block;
+    }
+    @media(max-width: 568px) {
+        width: 100%;
+    }
 `
 
 const SubTitle = styled.div`
@@ -66,8 +87,16 @@ const SubTitle = styled.div`
     height:auto;
     text-align:center;
     padding: 1rem 0rem;
+    @media(max-width: 320px) {
+        width:90%;
+    }
+    @media(max-width: 768px) {
+        width: 100%;
+    }
+    
 `
 const Titlee = styled.h2`
+    width:100%;
     color:var(--mainYellow);
     padding: 1rem 0rem;
 `
@@ -76,11 +105,22 @@ const Text = styled.p`
     color:black;
     width: 80%;
     margin:auto;
-    padding: 1.5rem;
+    padding: 1.5rem 0.5rem;
     line-height:1.6;
     border: 2px solid var(--mainBlue);
     border-radius: 20px;
     background: var(--lightBlue);
+    @media(max-width: 320px) {
+        width: 90%;
+    }
+    @media(max-width: 568px) {
+        width: 90%;
+    }
+
+    @media(max-width: 768px) {
+        width: 95%;
+        margin:auto;
+    }
 `
 
 const WhyUs = styled.div`
@@ -102,4 +142,17 @@ const WhyUsText = styled.h5`
     text-align:center;
     color: var(--lightBlue);
     line-height:2;
+    @media(max-width: 320px) {
+        width: 90%;
+    }
+    @media(max-width: 568px) {
+        width: 90%;
+    }
+    @media(max-width: 768px) {
+        width: 80%;
+    }
+`
+
+const Block = styled.div`
+    padding: 0.5rem 0rem;
 `

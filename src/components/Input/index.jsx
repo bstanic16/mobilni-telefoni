@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Input = styled.input`
     width:100%;
     background: var(--lightBlue);
-    text-transform:capitalize;
     font-size: 1.4rem;
     border: 0.05rem solid var(--mainDark);
     border-color: var(--mainDark);

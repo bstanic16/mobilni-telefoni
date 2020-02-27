@@ -6,6 +6,8 @@ import { storeProducts } from '../../data';
 import Product from '../Product';
 import CategoryItem from './CategoryItem';
 import { ButtonContainer } from '../Button';
+import Pagination from 'jw-react-pagination';
+import ButtonUp from '../ButtonUp';
 
 export default class Categories extends Component {
     constructor() {
@@ -22,8 +24,16 @@ export default class Categories extends Component {
             min: 0,
             max: 0,
             clicked: false,
+            exampleItems: exampleItems,
+            pageOfItems: []
         }
+        this.onChangePage = this.onChangePage.bind(this);
     }
+
+    onChangePage(pageOfItems) {
+        this.setState({ pageOfItems: pageOfItems })
+    }
+
     maskeClicked = () => {
         this.setState({ maskeClicked: !this.state.maskeClicked })
     }
@@ -141,7 +151,7 @@ export default class Categories extends Component {
                                     }
                                     return (
                                         <>
-                                            {this.state.products.map(product => {
+                                            {this.state.pageOfItems.map(product => {
                                                 if (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price)) {
                                                     return (
                                                         <>
@@ -153,11 +163,17 @@ export default class Categories extends Component {
                                                     return <Product key={product.id} product={product} />
                                                 }
                                             })}
+                                            <Pages>
+                                                <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+                                            </Pages>
+                                            <ButtonUp></ButtonUp>
                                         </>
                                     )
                                 }}
                             </ProductConsumer>
+
                         </div>
+
                     </div>
                 </ProductWrapper>
 
@@ -167,3 +183,8 @@ export default class Categories extends Component {
 }
 
 const ProductWrapper = styled.section``
+
+const Pages = styled.div`
+    width: 100%;
+    text-align:center;
+`
