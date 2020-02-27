@@ -74,10 +74,14 @@ export default class CategoryItem extends Component {
             <>
                 <ProductWrapper className="">
                     <div className="row justify-content-center p-2">
-                        <Price>Cena: </Price>
-                        <Input type="text" placeholder="Od" onChange={this.minHanlder} />
-                        <Input type="text" placeholder="Do" onChange={this.maxHanlder} />
-                        <ButtonContainer onClick={this.clickedHandler}>SEARCH</ButtonContainer>
+                        <Mains>
+                            <Price>Cena: </Price>
+                            <Input type="text" placeholder="Od" onChange={this.minHanlder} />
+                            <Input type="text" placeholder="Do" onChange={this.maxHanlder} />
+                            <Button>
+                                <ButtonContainer onClick={this.clickedHandler}>SEARCH</ButtonContainer>
+                            </Button>
+                        </Mains>
                     </div>
                     <div className="row justify-content-center p-2">
                         <ButtonContainer onClick={this.ascendingSort}>Sortiraj po ceni rastuce</ButtonContainer>
@@ -113,6 +117,37 @@ export default class CategoryItem extends Component {
     }
 }
 
+const Mains = styled.div`
+    width:90%;
+    margin:auto;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    @media(max-width: 320px) {
+        display:block;
+        text-align:center;
+        .input{
+            text-align:center;
+        }
+    }
+
+    @media(max-width: 768px) {
+        display:block;
+        text-align:center;
+        .input{
+            text-align:center;
+        }
+    }
+
+    @media(max-width: 568px) {
+        display:block;
+        text-align:center;
+        .input{
+            text-align:center;
+        }
+    }
+`
+
 const Pages = styled.div`
     width: 100%;
     text-align:center;
@@ -145,4 +180,9 @@ const Input = styled.input`
 const Price = styled.h3`
     color: var(--lightBlue);
     padding: 0.2rem 0.5rem;
+    text-align:center;
+`
+
+const Button = styled.div`
+    text-align:center;
 `

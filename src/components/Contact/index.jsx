@@ -95,13 +95,10 @@ const ProductWrapper = styled.section`
 
     @media(max-width: 568px) {
         width: 100%;
-        background: blue;
     }
 
     @media(max-width: 320px) {
         width: 100%;
-        background: green;
-
     }
 `
 
