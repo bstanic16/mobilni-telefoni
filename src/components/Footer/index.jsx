@@ -6,7 +6,6 @@ import Copy from './Copy';
 
 export default class Footer extends Component {
     render() {
-        console.log("PROPS:", this.props.children);
         return (
             <>
                 <ProductWrapper>

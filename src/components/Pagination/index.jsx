@@ -12,7 +12,7 @@ const propTypes = {
 
 const defaultProps = {
     initialPage: 1,
-    pageSize: 18,
+    pageSize: 9,
 
 }
 
@@ -61,13 +61,13 @@ class Pagination extends React.Component {
         currentPage = currentPage || 1;
 
         // default page size is 10
-        pageSize = pageSize || 9;
+        pageSize = pageSize || 10;
 
         // calculate total pages
         var totalPages = Math.ceil(totalItems / pageSize);
 
         var startPage, endPage;
-        if (totalPages <= 18) {
+        if (totalPages <= 9) {
             // less than 10 total pages so show all
             startPage = 1;
             endPage = totalPages;
@@ -86,11 +86,11 @@ class Pagination extends React.Component {
         }
 
         // calculate start and end item indexes
-        var startIndex = (currentPage - 1) * pageSize;
+        var startIndex = (currentPage) * pageSize;
         var endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
 
         // create an array of pages to ng-repeat in the pager control
-        var pages = [...Array((endPage + 1) - startPage).keys()].map(i => startPage + i);
+        var pages = [...Array((endPage) - startPage).keys()].map(i => startPage + i);
 
         // return object with all pager properties required by the view
         return {
@@ -137,4 +137,11 @@ const Main = styled.div`
     width:100vw;
     height:auto;
     text-align:center;
+`
+
+const Active = styled.li`
+    color:green;
+`
+const Disabled = styled.li`
+    color:yellow;
 `

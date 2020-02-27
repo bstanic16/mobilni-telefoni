@@ -15,7 +15,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    category: "bags"
+    category: "knifes"
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    category: "bags"
+    category: "knifes"
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    category: "kevlar"
+    category: "knifes"
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    category: "scope"
+    category: "knifes"
   },
   {
     id: 5,
@@ -80,7 +80,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    category: "scope"
+    category: "knifes"
   },
   {
     id: 7,
@@ -106,7 +106,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    category: "kevlar"
+    category: "knifes"
   },
   {
     id: 9,
@@ -119,7 +119,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    category: "boots"
+    category: "knifes"
   },
   {
     id: 10,
@@ -132,7 +132,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    category: "boots"
+    category: "knifes"
   },
   {
     id: 11,
@@ -145,7 +145,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    category: "boots"
+    category: "knifes"
   },
   {
     id: 12,
