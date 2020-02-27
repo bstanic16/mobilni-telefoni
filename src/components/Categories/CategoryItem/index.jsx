@@ -4,8 +4,8 @@ import { ProductConsumer } from '../../../context';
 import { storeProducts } from '../../../data';
 import Product from '../../Product';
 import { ButtonContainer } from '../../Button';
-// import Pagination from '../../Pagination';
 import Pagination from 'jw-react-pagination';
+import ButtonUp from '../../ButtonUp';
 
 export default class CategoryItem extends Component {
     constructor() {
@@ -111,6 +111,7 @@ export default class CategoryItem extends Component {
                     <Pages>
                         <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
                     </Pages>
+                    <ButtonUp></ButtonUp>
                 </ProductWrapper>
             </>
         )
