@@ -171,12 +171,9 @@ export default class Categories extends Component {
                                     )
                                 }}
                             </ProductConsumer>
-
                         </div>
-
                     </div>
                 </ProductWrapper>
-
             </>
         )
     }

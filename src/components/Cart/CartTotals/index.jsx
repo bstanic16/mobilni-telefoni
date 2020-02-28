@@ -15,7 +15,7 @@ class CartTotals extends Component {
     }
 
     render() {
-        const { cartSubTotal, cartTax, cartTotal, clearCart, title, cart } = this.props.value;
+        const { cartSubTotal, cartTax, cartTotal, clearCart, cart } = this.props.value;
         console.log("VAZNO:", this.props.value);
         console.log("Cart count:", cart.count);
         return (

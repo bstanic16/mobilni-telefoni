@@ -18,9 +18,15 @@ export default class CategoryItem extends Component {
             max: 0,
             clicked: false,
             exampleItems: exampleItems,
-            pageOfItems: []
+            pageOfItems: [],
+            productName: '',
+            productClicked: false
         }
         this.onChangePage = this.onChangePage.bind(this);
+    }
+
+    onProductNameChange = (event) => {
+        this.setState({ productName: event.target.value })
     }
 
     onChangePage(pageOfItems) {
@@ -30,42 +36,57 @@ export default class CategoryItem extends Component {
 
     ascendingSort = () => {
         let mapp = this.state.exampleItems.sort((a, b) => Number(a.price) > Number(b.price));
-        console.log("Descending:", mapp);
         this.setState({
             pageOfItems: mapp,
             exampleItems: mapp,
             products: mapp,
-            clicked: false
+            clicked: false,
+            productClicked: false,
+            min: 0,
+            max: 0
         })
     }
 
     descendingSort = () => {
         let mapp = this.state.exampleItems.sort((a, b) => Number(b.price) > Number(a.price));
-        console.log("Descending:", this.state.pageOfItems);
         this.setState({
             pageOfItems: mapp,
-            exampleItems: mapp,
             products: mapp,
-            clicked: false
+            exampleItems: mapp,
+            clicked: false,
+            productClicked: false,
+            min: 0,
+            max: 0
         })
     }
 
     minHanlder = (e) => {
         this.setState({
             min: e.target.value,
-            clicked: false
+            clicked: false,
+            productClicked: false
         })
     }
     maxHanlder = (e) => {
         this.setState({
             max: e.target.value,
-            clicked: false
+            clicked: false,
+            productClicked: false
         })
     }
 
     clickedHandler = () => {
+        console.log("Clicked: ", this.state.clicked)
         this.setState({
             clicked: !this.state.clicked,
+            productClicked: false
+        })
+    }
+
+    clickedProductHandler = () => {
+        console.log("handler: ", this.state.productName)
+        this.setState({
+            productClicked: !this.state.productClicked,
         })
     }
 
@@ -84,6 +105,12 @@ export default class CategoryItem extends Component {
                         </Mains>
                     </div>
                     <div className="row justify-content-center p-2">
+                        <Input type="text" placeholder="Naziv proizvoda" onChange={this.onProductNameChange} />
+                        <Button>
+                            <ButtonContainer onClick={this.clickedProductHandler}>SEARCH</ButtonContainer>
+                        </Button>
+                    </div>
+                    <div className="row justify-content-center p-2">
                         <ButtonContainer onClick={this.ascendingSort}>Sortiraj po ceni rastuce</ButtonContainer>
                         <ButtonContainer onClick={this.descendingSort}>Sortrtiraj po ceni opadajuce</ButtonContainer>
                     </div>
@@ -91,22 +118,36 @@ export default class CategoryItem extends Component {
                         <ProductConsumer>
                             {(value) => {
                                 return this.state.pageOfItems.map(product => {
-                                    if (product.category === this.props.name && (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price))) {
+                                    let pName = this.state.productName.toLowerCase()
+                                    let title = product.title.toLowerCase()
+
+                                    if ((this.state.productClicked === false && product.category === this.props.name && this.state.clicked === true) && (this.state.min <= product.price && this.state.max >= product.price)) {
                                         return (
                                             <>
                                                 <Product key={product.id} product={product} />
                                             </>
                                         )
-                                    } else if (this.state.clicked === false && product.category === this.props.name) {
+                                    } else if ((this.state.clicked === false && this.state.productClicked === true) && title.includes(pName)) {
+                                        console.log("PRODUCTS: ", product)
                                         return (
                                             <>
                                                 <Product key={product.id} product={product} />
                                             </>
                                         )
+                                    } else {
+                                        if ((this.state.clicked === false && this.state.productClicked === false) && product.category === this.props.name) {
+                                            return (
+                                                <>
+                                                    <Product key={product.id} product={product} />
+                                                </>
+                                            )
+                                        }
+
                                     }
                                 })
                             }}
                         </ProductConsumer>
+
                     </div>
                     <Pages>
                         <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
@@ -118,7 +159,7 @@ export default class CategoryItem extends Component {
     }
 }
 
-const Mains = styled.div`
+const Mains = styled.form`
     width:90%;
     margin:auto;
     text-align:center;

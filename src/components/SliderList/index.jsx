@@ -42,7 +42,7 @@ const CarouselPage = () => {
                         </MDBView>
                         <MDBCarouselCaption>
                             <h3 className="h3-responsive">Strong mask</h3>
-                            <img style={{ width: '100px', height: '100px' }} src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" />
+                            <img style={{ width: '100px', height: '100px' }} src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="alt1" />
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium culpa voluptatem molestias officiis beatae magnam voluptatibus veniam! Hic harum, obcaecati sunt eligendi possimus, nesciunt eum impedit excepturi accusamus at ab!</p>
                         </MDBCarouselCaption>
                     </MDBCarouselItem>
