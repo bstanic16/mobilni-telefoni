@@ -105,8 +105,6 @@ export default class Categories extends Component {
     }
 
     render() {
-        console.log("od", this.state.min)
-        console.log("do", this.state.max)
         return (
             <>
                 <ProductWrapper className="py-3">
@@ -126,7 +124,7 @@ export default class Categories extends Component {
 
                                     if (this.state.knifes === true) {
                                         return (
-                                            <CategoryItem name="knifes" clicked={this.state.clicked} min={this.state.min} max={this.state.max} />
+                                            <CategoryItem name="knifes" />
                                         )
                                     }
                                     if (this.state.bags === true) {
@@ -152,6 +150,7 @@ export default class Categories extends Component {
                                     return (
                                         <>
                                             {this.state.pageOfItems.map(product => {
+
                                                 if (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price)) {
                                                     return (
                                                         <>
@@ -166,12 +165,12 @@ export default class Categories extends Component {
                                             <Pages>
                                                 <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
                                             </Pages>
-                                            <ButtonUp></ButtonUp>
                                         </>
                                     )
                                 }}
                             </ProductConsumer>
                         </div>
+                        <ButtonUp></ButtonUp>
                     </div>
                 </ProductWrapper>
             </>

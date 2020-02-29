@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PayPalButton from '../PayPalButton';
+// import PayPalButton from '../PayPalButton';
 import { ButtonContainer } from '../../Button'
 import Checkout from '../CheckoutForm';
 import styled from 'styled-components';
