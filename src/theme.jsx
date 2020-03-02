@@ -10,7 +10,9 @@ export const lightTheme = {
     cartColumns: 'var(--mainDark)',
     cartItem: 'var(--mainDark)',
     btnBlack: 'transparent',
-    textTotals: 'var(--mainDark)'
+    textTotals: 'var(--mainDark)',
+    headlineText: 'var(--mainBlue)',
+    descText: 'var(--lightBlue)'
 }
 
 export const darkTheme = {
@@ -19,11 +21,13 @@ export const darkTheme = {
     toggleBorder: '#6B8096',
     gradient: 'linear-gradient(#091236, #1E215D)',
     textTitle: 'white',
-    textBlue: 'var(--mainBlue)',
+    textBlue: 'var(--mainYellow)',
     imgContainer: 'var(--mainDark)',
     imgContainerBorder: 'var(--mainYellow)',
     cartColumns: 'var(--mainWhite)',
     cartItem: 'var(--mainWhite)',
     btnBlack: 'var(--lightBlue)',
-    textTotals: 'var(--mainYellow)'
+    textTotals: 'var(--mainYellow)',
+    headlineText: 'var(--lightBlue)',
+    descText: 'var(--mainYellow)'
 }

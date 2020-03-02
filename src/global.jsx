@@ -12,9 +12,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .text-blue {
-  color: ${({ theme }) => theme.textBlue};
-}
-
+    color: ${({ theme }) => theme.textBlue};
+  } 
 .img-container {
   background: ${({ theme }) => theme.imgContainer};
   border: 2px solid var(--lightBlue);
@@ -35,5 +34,14 @@ export const GlobalStyles = createGlobalStyle`
 
 .text-totals{
   color: ${({ theme }) => theme.textTotals};
+}
+
+.headline-text{
+  color: ${({ theme }) => theme.headlineText};
+
+}
+
+.description-text{
+  color: ${({ theme }) => theme.descText};
 }
   `

@@ -4,7 +4,7 @@ import Title from '../Title';
 import { ProductConsumer } from '../../context';
 import { storeProducts } from '../../data';
 import styled from 'styled-components';
-import List from '../SliderList';
+import Carousel from '../SliderList';
 import ButtonUp from '../ButtonUp';
 
 export default class ProductList extends Component {
@@ -18,7 +18,7 @@ export default class ProductList extends Component {
                 <ProductWrapper className="py-5">
                     <div className="container">
                         <Title name="nasi" title="proizvodi" />
-                        <List />
+                        <Carousel />
                         <div className="row product-list">
                             <ProductConsumer>
                                 {(value) => {
