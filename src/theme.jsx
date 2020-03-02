@@ -19,7 +19,7 @@ export const darkTheme = {
     toggleBorder: '#6B8096',
     gradient: 'linear-gradient(#091236, #1E215D)',
     textTitle: 'white',
-    textBlue: 'var(--lightBlue)',
+    textBlue: 'var(--mainBlue)',
     imgContainer: 'var(--mainDark)',
     imgContainerBorder: 'var(--mainYellow)',
     cartColumns: 'var(--mainWhite)',

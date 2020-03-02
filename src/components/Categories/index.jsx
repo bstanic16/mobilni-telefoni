@@ -124,7 +124,7 @@ export default class Categories extends Component {
 
                                     if (this.state.knifes === true) {
                                         return (
-                                            <CategoryItem name="knifes" />
+                                            <CategoryItem name="knifes" clicked={this.state.clicked} min={this.state.min} max={this.state.max} />
                                         )
                                     }
                                     if (this.state.bags === true) {
@@ -150,17 +150,17 @@ export default class Categories extends Component {
                                     return (
                                         <>
                                             {this.state.pageOfItems.map(product => {
-
-                                                if (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price)) {
-                                                    return (
-                                                        <>
-                                                            <Product key={product.id} product={product} />
-                                                        </>
-                                                    )
-                                                }
-                                                if (this.state.clicked === false) {
-                                                    return <Product key={product.id} product={product} />
-                                                }
+                                                return <Product key={product.id} product={product} />
+                                                // if (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price)) {
+                                                //     return (
+                                                //         <>
+                                                //             <Product key={product.id} product={product} />
+                                                //         </>
+                                                //     )
+                                                // }
+                                                // if (this.state.clicked === false) {
+                                                //     return <Product key={product.id} product={product} />
+                                                // }
                                             })}
                                             <Pages>
                                                 <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />

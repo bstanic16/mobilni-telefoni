@@ -6,7 +6,7 @@ import { ProductConsumer } from '../../context';
 
 const ProductWrapper = styled.div`
     .card {
-        border-radius: 20px;
+        border-radius: 30px;
         border:0;
         transition: all 1s linear;
     }
@@ -21,7 +21,7 @@ const ProductWrapper = styled.div`
             box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
         }
         .card-footer {
-            border-radius: 0 0 20px 20px;
+            border-radius: 0 0 30px 30px;
             background: var(--lightBlue);
         }
     }

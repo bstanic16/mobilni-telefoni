@@ -35,48 +35,44 @@ export default class CategoryItem extends Component {
 
 
     ascendingSort = () => {
-        let mapp = this.state.exampleItems.sort((a, b) => Number(a.price) > Number(b.price));
+        let mapp = this.state.exampleItems.sort((a, b) => {
+            return a.price - b.price
+        });
         this.setState({
             pageOfItems: mapp,
             exampleItems: mapp,
             products: mapp,
             clicked: false,
             productClicked: false,
-            min: 0,
-            max: 0
         })
     }
 
     descendingSort = () => {
-        let mapp = this.state.exampleItems.sort((a, b) => Number(b.price) > Number(a.price));
+        let mapp = this.state.exampleItems.sort((a, b) => {
+            return b.price - a.price
+        });
         this.setState({
             pageOfItems: mapp,
             products: mapp,
             exampleItems: mapp,
             clicked: false,
             productClicked: false,
-            min: 0,
-            max: 0
         })
     }
 
     minHanlder = (e) => {
         this.setState({
             min: e.target.value,
-            clicked: false,
-            productClicked: false
         })
     }
     maxHanlder = (e) => {
         this.setState({
             max: e.target.value,
-            clicked: false,
-            productClicked: false
         })
     }
 
-    clickedHandler = () => {
-        console.log("Clicked: ", this.state.clicked)
+    clickedHandler = (e) => {
+        e.preventDefault()
         this.setState({
             clicked: !this.state.clicked,
             productClicked: false
@@ -87,10 +83,12 @@ export default class CategoryItem extends Component {
         console.log("handler: ", this.state.productName)
         this.setState({
             productClicked: !this.state.productClicked,
+            clicked: false
         })
     }
 
     render() {
+        console.log("CLICKED:", this.state.clicked)
         return (
             <>
                 <ProductWrapper className="">
@@ -100,7 +98,9 @@ export default class CategoryItem extends Component {
                             <Input type="text" placeholder="Od" onChange={this.minHanlder} />
                             <Input type="text" placeholder="Do" onChange={this.maxHanlder} />
                             <Button>
-                                <ButtonContainer onClick={this.clickedHandler}>SEARCH</ButtonContainer>
+                                <ButtonContainer onClick={this.clickedHandler}>
+                                    {this.state.clicked === true ? 'CLOSE' : 'SEARCH'}
+                                </ButtonContainer>
                             </Button>
                         </Mains>
                     </div>
@@ -120,7 +120,20 @@ export default class CategoryItem extends Component {
                                 return this.state.pageOfItems.map(product => {
                                     let pName = this.state.productName.toLowerCase()
                                     let str = product.title.toLowerCase()
-                                    if ((this.state.productClicked === false && product.category === this.props.name && this.state.clicked === true) && (this.state.min <= product.price && this.state.max >= product.price)) {
+                                    // if (product.category === this.props.name && (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price))) {
+                                    //     return (
+                                    //         <>
+                                    //             <Product key={product.id} product={product} />
+                                    //         </>
+                                    //     )
+                                    // } else if (this.state.clicked === false && product.category === this.props.name) {
+                                    //     return (
+                                    //         <>
+                                    //             <Product key={product.id} product={product} />
+                                    //         </>
+                                    //     )
+                                    // }
+                                    if (product.category === this.props.name && (this.state.productClicked === false && this.state.clicked === true) && (this.state.min <= product.price && this.state.max >= product.price)) {
                                         return (
                                             <>
                                                 <Product key={product.id} product={product} />
@@ -132,7 +145,7 @@ export default class CategoryItem extends Component {
                                                 <Product key={product.id} product={product} />
                                             </>
                                         )
-                                    } else if ((this.state.clicked === false && this.state.productClicked === false) && product.category === this.props.name) {
+                                    } else if (product.category === this.props.name && (this.state.clicked === false && this.state.productClicked === false)) {
                                         return (
                                             <>
                                                 <Product key={product.id} product={product} />
