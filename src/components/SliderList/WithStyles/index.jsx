@@ -10,7 +10,7 @@ const Main = styled.div`
 `
 
 const Texts = styled.div`
-    width:80%;
+    width:90%;
     height:200px;
     margin:auto;
 `
@@ -18,6 +18,8 @@ const Texts = styled.div`
 const Title = styled.h3`
     text-align:center;
     height:auto;
+    font-size:1.3rem;
+    padding: 1rem 0rem;
 `
 
 const Desc = styled.p`
@@ -29,7 +31,6 @@ const Desc = styled.p`
 const Image = styled.img`
     width:100%;
     height:auto;
-
 `
 
 export default function WithStyles({ description, image, headline }) {
@@ -40,7 +41,6 @@ export default function WithStyles({ description, image, headline }) {
                 <Title className="headline-text">{headline}</Title>
                 <Desc className="description-text">{description}</Desc>
             </Texts>
-
         </Main>
     )
 }
