@@ -61,6 +61,9 @@ export default class Contact extends Component {
         if (this.state.name.length < 3) {
             this.printError("nameErr", "Unesite vase ime")
             nameErr = true
+        } else if (this.state.name.length >= 3) {
+            nameErr = false
+            this.printError("nameErr", "")
         } else {
             nameErr = false
         }
@@ -68,6 +71,9 @@ export default class Contact extends Component {
         if (this.state.lastname.length < 3) {
             this.printError("lastnameErr", "Unesite vase prezime")
             lastnameErr = true
+        } else if (this.state.lastname.length >= 3) {
+            nameErr = false
+            this.printError("lastnameErr", "")
         } else {
             lastnameErr = false
         }
@@ -78,6 +84,9 @@ export default class Contact extends Component {
         if (atPos < 1 || dotPos < atPos + 2 || dotPos + 2 >= mail.length) {
             this.printError("emailErr", "Unesite vasu pravu e-mail adresu")
             emailErr = true
+        } else if (mail) {
+            emailErr = false
+            this.printError("emailErr", "")
         } else {
             emailErr = false
         }
@@ -85,6 +94,9 @@ export default class Contact extends Component {
         if (this.state.message.length < 5) {
             this.printError("messageErr", "Vasa poruka mora sadrzati minimum 50 karaktera")
             messageErr = true
+        } else if (this.state.message.length >= 5) {
+            messageErr = false
+            this.printError("messageErr", "")
         } else {
             messageErr = false
         }
