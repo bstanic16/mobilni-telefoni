@@ -14,12 +14,14 @@ const ProductWrapper = styled.div`
         background: transparent;
         border-top: transparent;
         transition: all 0.3s linear;
+        border-radius: 0 0 30px 30px;
     }
     &:hover {
         .card {
             /* border: 0.04rem solid rgba(0,0,0,0.2); */
-            box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+            box-shadow: 3px 3px 6px 0px rgba(0,0,0.5,0.5);
             color: var(--mainYellow)!important;
+            transform: scale(1.1);
         }
         .card-footer {
             border-radius: 0 0 30px 30px;
@@ -35,6 +37,7 @@ const ProductWrapper = styled.div`
     }
     .img-container:hover .card-img-top{
         transform: scale(1.1);
+        transition: all 0.7s linear;
     }
     .cart-btn {
         position: absolute;

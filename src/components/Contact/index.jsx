@@ -15,65 +15,126 @@ export default class Contact extends Component {
     }
 
     onNameChange = (event) => {
-        this.setState({ name: event.target.value })
+        this.setState({
+            name: event.target.value
+        })
     }
 
     onLastnameChange = (event) => {
-        this.setState({ lastname: event.target.value })
+        this.setState({
+            lastname: event.target.value
+        })
     }
 
     onEmailChange = (event) => {
-        this.setState({ email: event.target.value })
+        this.setState({
+            email: event.target.value
+        })
     }
 
     onMessageChange = (event) => {
-        this.setState({ message: event.target.value })
+        this.setState({
+            message: event.target.value
+        })
     }
 
     resetForm = () => {
-        this.setState({ name: '', lastname: '', email: '', message: '' })
+        this.setState({
+            name: '',
+            lastname: '',
+            email: '',
+            message: ''
+        })
         this.refs.form.reset()
     }
+    printError = (elemId, hintMsg) => {
+        document.getElementById(elemId).innerHTML = hintMsg;
+    }
+
     handleSubmit = (e) => {
         e.preventDefault()
-        var template_params = {
-            email: this.state.email,
-            name: this.state.name,
-            lastname: this.state.lastname,
-            message: this.state.message
+        var nameErr
+        var lastnameErr
+        var emailErr
+        var messageErr
+        console.log("TESITRANJE: ", this.state)
+        if (this.state.name.length < 3) {
+            this.printError("nameErr", "Unesite vase ime")
+            nameErr = true
+        } else {
+            nameErr = false
         }
-        var service_id = "gmail";
-        var template_id = "contact_us";
-        let user_id = 'user_dz7QTL5TBraMGcZXsErjz'
-        emailjs.send(service_id, template_id, template_params, user_id)
-            .then((response) => {
-                console.log("SUCCESS!", response.status, response.text)
-                if (response.status === 200) {
-                    alert("MessageSent")
-                    this.resetForm()
-                }
-            }, err => {
-                console.log("Failed: ", err);
-            })
+
+        if (this.state.lastname.length < 3) {
+            this.printError("lastnameErr", "Unesite vase prezime")
+            lastnameErr = true
+        } else {
+            lastnameErr = false
+        }
+
+        let mail = this.state.email
+        let atPos = mail.indexOf("@");
+        let dotPos = mail.lastIndexOf(".");
+        if (atPos < 1 || dotPos < atPos + 2 || dotPos + 2 >= mail.length) {
+            this.printError("emailErr", "Unesite vasu pravu e-mail adresu")
+            emailErr = true
+        } else {
+            emailErr = false
+        }
+
+        if (this.state.message.length < 5) {
+            this.printError("messageErr", "Vasa poruka mora sadrzati minimum 50 karaktera")
+            messageErr = true
+        } else {
+            messageErr = false
+        }
+
+        if ((nameErr || lastnameErr || emailErr || messageErr) === true) {
+            return false
+        } else {
+            var template_params = {
+                email: this.state.email,
+                name: this.state.name,
+                lastname: this.state.lastname,
+                message: this.state.message
+            }
+            var service_id = "gmail";
+            var template_id = "contact_us";
+            let user_id = 'user_dz7QTL5TBraMGcZXsErjz'
+            emailjs.send(service_id, template_id, template_params, user_id)
+                .then((response) => {
+                    console.log("SUCCESS!", response.status, response.text)
+                    if (response.status === 200) {
+                        alert("MessageSent")
+                        this.resetForm()
+                    }
+                }, err => {
+                    console.log("Failed: ", err);
+                })
+        }
+
     }
     render() {
         console.log(this.state);
-
         return (
             <ProductWrapper className="py-5">
                 <div className="container">
-                    <Title name="contact" title="us" />
+                    <Title name="kontaktirajte" title="nas" />
                     <div className="row justify-content-center">
                         <Form action="contact-form" className="row justify-content-center" ref="form">
                             <div className="col-9 py-2">
-                                <Input type="text" placeholder="firstname" id="name" onChange={this.onNameChange} name="name" />
-                                <Input type="text" placeholder="lastname" id="lastname" onChange={this.onLastnameChange} name="lastname" />
+                                <Input type="text" placeholder="Ime" id="name" onChange={this.onNameChange} name="name" required minLength="3" maxLength="20" />
+                                <Error id="nameErr"></Error>
+                                <Input type="text" placeholder="Prezime" id="lastname" onChange={this.onLastnameChange} name="lastname" required minLength="3" maxLength="20" />
+                                <Error id="lastnameErr"></Error>
                             </div>
                             <div className="col-9 py-2">
-                                <Input type="text" placeholder="email" id="email" onChange={this.onEmailChange} name="email" />
+                                <Input type="text" placeholder="E-mail" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
+                                <Error id="emailErr"></Error>
                             </div>
                             <div className="col-9 py-2">
-                                <Text placeholder="message" id="message" onChange={this.onMessageChange} name="message"></Text>
+                                <Text placeholder="Vasa poruka" id="message" onChange={this.onMessageChange} name="message" required minLength="5" maxLenght="500" ></Text>
+                                <Error id="messageErr"></Error>
                             </div>
                             <div className="col-9 py-2 justify-content-center align-items-center">
                                 <ButtonContainer onClick={this.handleSubmit}>SUBMIT</ButtonContainer>
@@ -85,6 +146,12 @@ export default class Contact extends Component {
         )
     }
 }
+
+const Error = styled.div`
+    color:green;
+    text-align:center;
+    font-family: "Permanent Marker", cursive;
+`
 
 const ProductWrapper = styled.section`
     width:100%;

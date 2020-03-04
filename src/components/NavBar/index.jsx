@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../logo2.png';
+import logo from '../../logo1.png';
 import { ButtonContainer } from '../Button';
 import styled from 'styled-components';
 
@@ -16,33 +16,35 @@ const NavWrapper = styled.nav`
 export default class NavBar extends Component {
     render() {
         return (
-            <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
-                <Link to="/">
-                    <img src={logo} alt="logo" className="navbar-brand" style={{ width: '60px', height: '70px' }} />
-                </Link>
-                <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ml-5">
-                        <Link to="/" className="nav-link">
-                            Proizvodi
+            <>
+                <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5" >
+                    <Link to="/">
+                        <img src={logo} alt="logo" className="navbar-brand" style={{ width: '60px', height: '70px' }} />
+                    </Link>
+                    <ul className="navbar-nav align-items-center">
+                        <li className="nav-item ml-2">
+                            <Link to="/" className="nav-link">
+                                Proizvodi
                         </Link>
-                    </li>
-                </ul>
-                <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ml-5">
-                        <Link to="/categories" className="nav-link">
-                            Kategorije
+                        </li>
+                    </ul>
+                    <ul className="navbar-nav align-items-center">
+                        <li className="nav-item ml-2">
+                            <Link to="/categories" className="nav-link">
+                                Kategorije
                         </Link>
-                    </li>
-                </ul>
-                <Link to="/cart" className="ml-auto ">
-                    <ButtonContainer>
-                        <span className="mr-2">
-                            <i className="fas fa-cart-plus"></i>
-                        </span>
-                        korpa
+                        </li>
+                    </ul>
+                    <Link to="/cart" className="ml-auto ">
+                        <ButtonContainer>
+                            <span className="mr-2">
+                                <i className="fas fa-cart-plus"></i>
+                            </span>
+                            korpa
                     </ButtonContainer>
-                </Link>
-            </NavWrapper>
+                    </Link>
+                </NavWrapper>
+            </>
         )
     }
 }

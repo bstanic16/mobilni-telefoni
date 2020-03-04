@@ -19,6 +19,12 @@ export const Input = styled.input`
     &:focus {
         outline:none;
     }
+    &:invalid{
+        border: 4px solid red;
+    }
+    &:valid {
+        border: 4px solid var(--mainYellow);
+    }
 `
 
 export const Text = styled.textarea`
@@ -40,5 +46,11 @@ export const Text = styled.textarea`
     }
     &:focus {
         outline:none;
+    }
+    &:invalid{
+        border: 4px dashed red;
+    }
+    &:valid {
+        border: 4px solid var(--mainYellow);
     }
 `
