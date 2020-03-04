@@ -131,7 +131,7 @@ export default class Contact extends Component {
         return (
             <ProductWrapper className="py-5">
                 <div className="container">
-                    <Title name="kontaktirajte" title="nas" />
+                    <Title name="Contact" title="us" />
                     <div className="row justify-content-center">
                         <Form action="contact-form" className="row justify-content-center" ref="form">
                             <div className="col-9 py-2">
@@ -167,6 +167,7 @@ const Error = styled.div`
 
 const ProductWrapper = styled.section`
     width:100%;
+    overflow:hidden;
     @media(max-width: 768px) {
         width: 100%;
         margin:auto;
