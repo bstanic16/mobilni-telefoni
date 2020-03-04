@@ -10,8 +10,8 @@ const Main = styled.div`
 `
 
 const Texts = styled.div`
-    width:90%;
-    height:200px;
+    width:95%;
+    height:auto;
     margin:auto;
 `
 
@@ -23,7 +23,7 @@ const Title = styled.h3`
 `
 
 const Desc = styled.p`
-    width:90%;
+    width:100%;
     margin:auto;
     height:auto;
     text-align:center;
