@@ -6,6 +6,7 @@ import WithStyles from './WithStyles';
 import Image1 from '../svgs/futrola1.jpg'
 import Image2 from '../svgs/futrola2.jpg'
 import Image3 from '../svgs/futrola3.jpg'
+import Image4 from '../svgs/futrola4.jpg'
 
 const Main = styled.div`
     width:100%;
@@ -40,7 +41,7 @@ export default class Carousell extends Component {
                                 max: 3000,
                                 min: 1024
                             },
-                            items: 3,
+                            items: 4,
                             partialVisibilityGutter: 40
                         },
                         mobile: {
@@ -83,7 +84,7 @@ export default class Carousell extends Component {
                     <WithStyles
                         description="Fixing CSS load order/style.chunk.css incorrect in Nextjs"
                         headline="w3js.com - web front-end studio"
-                        image="https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                        image={Image4}
                     />
                     <WithStyles
                         description="React Carousel with Server Side Rendering Support – Part 1"

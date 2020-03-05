@@ -9,7 +9,7 @@ export const storeProducts = [
     title: "Futrola BI FOLD HANMAN II za Samsung G985F Galaxy S20 Plus crna ",
     img: "img/futrola1.jpg",
     price: 1815,
-    company: "GOOGLE",
+    company: "Samsung",
     info:
       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
     inCart: false,
@@ -22,7 +22,7 @@ export const storeProducts = [
     title: "Futrola Full Cover magnetic frame za Iphone XS Max crna",
     img: "img/futrola2.jpg",
     price: 2904,
-    company: "SAMSUNG",
+    company: "Apple",
     info:
       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
     inCart: false,
