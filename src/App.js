@@ -17,6 +17,7 @@ import LightDark from './components/LightDark';
 import Footer from './components/Footer';
 import About from './components/About';
 import ScrollToTop from './components/ScrollToTop';
+import Infos from './components/Infos';
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/cart" component={Cart} />
             <Route path="/contact" component={Contact} />
             <Route path="/about" component={About} />
+            <Route path="/informacije" component={Infos} />
             <Route component={Default} />
           </Switch>
           <Modal />

@@ -12,7 +12,8 @@ export const lightTheme = {
     btnBlack: 'transparent',
     textTotals: 'var(--mainDark)',
     headlineText: 'var(--mainBlue)',
-    descText: 'var(--lightBlue)'
+    descText: 'var(--lightBlue)',
+    titleB: 'var(--mainBlue)'
 }
 
 export const darkTheme = {
@@ -29,5 +30,6 @@ export const darkTheme = {
     btnBlack: 'var(--lightBlue)',
     textTotals: 'var(--mainYellow)',
     headlineText: 'var(--lightBlue)',
-    descText: 'var(--mainYellow)'
+    descText: 'var(--mainYellow)',
+    titleB: 'var(--mainYellow)'
 }

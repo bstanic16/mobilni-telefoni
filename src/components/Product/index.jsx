@@ -37,7 +37,7 @@ const ProductWrapper = styled.div`
     }
     .img-container:hover .card-img-top{
         transform: scale(1.1);
-        transition: all 0.7s linear;
+        transition: all 0.1s linear;
     }
     .cart-btn {
         position: absolute;
@@ -91,7 +91,7 @@ export default class Product extends Component {
                             {title}
                         </p>
                         <h5 className="text-blue font-italic mb-0">
-                            <span className="mr-1">$</span>
+                            <span className="mr-1">RSD</span>
                             {price}
                         </h5>
                     </div>

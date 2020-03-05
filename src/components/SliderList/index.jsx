@@ -3,7 +3,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styled from 'styled-components';
 import WithStyles from './WithStyles';
-import Image1 from '../svgs/product-1.png'
+import Image1 from '../svgs/futrola1.jpg'
+import Image2 from '../svgs/futrola2.jpg'
+import Image3 from '../svgs/futrola3.jpg'
 
 const Main = styled.div`
     width:100%;
@@ -71,12 +73,12 @@ export default class Carousell extends Component {
                     <WithStyles
                         description="Hello my friend. This is some test text for our products. You will be able to edit this div, and to add custom css.. Best regards"
                         headline="Samsung Galaxy S10 Earphones"
-                        image={Image1}
+                        image={Image2}
                     />
                     <WithStyles
                         description="Hello my friend. This is some test text for our products. You will be able to edit this div, and to add custom css.. Best regards"
                         headline="Samsung Galaxy S10 Glass cover"
-                        image={Image1}
+                        image={Image3}
                     />
                     <WithStyles
                         description="Fixing CSS load order/style.chunk.css incorrect in Nextjs"

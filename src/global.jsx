@@ -41,7 +41,13 @@ export const GlobalStyles = createGlobalStyle`
 
 }
 
-.description-text{
-  color: ${({ theme }) => theme.descText};
-}
+  .description-text{
+    color: ${({ theme }) => theme.descText};
+  }
+  
+  .titleb {
+    color: ${({ theme }) => theme.titleB};
+  }
+
   `
+

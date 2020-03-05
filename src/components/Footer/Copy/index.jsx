@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function Copy() {
     return (
         <>
-            <Title>copyright © by LALALAL. all rights reserved  </Title>
+            <Title>copyright © by BStech. all rights reserved  </Title>
         </>
     )
 }

@@ -24,14 +24,14 @@ export default class NavBar extends Component {
                     <ul className="navbar-nav align-items-center">
                         <li className="nav-item ml-2">
                             <Link to="/" className="nav-link">
-                                Proizvodi
+                                Pocetna
                         </Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav align-items-center">
                         <li className="nav-item ml-2">
                             <Link to="/categories" className="nav-link">
-                                Kategorije
+                                Proizvodi
                         </Link>
                         </li>
                     </ul>

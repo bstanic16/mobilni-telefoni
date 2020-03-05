@@ -18,7 +18,7 @@ const Texts = styled.div`
 const Title = styled.h3`
     text-align:center;
     height:auto;
-    font-size:1.3rem;
+    font-size:1.4rem;
     padding: 1rem 0rem;
 `
 

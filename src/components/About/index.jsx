@@ -14,9 +14,9 @@ export default function About() {
                 </WhyUs>
                 <CompanyDesc>
                     <Text>
-                        BLABLA je firma koja se bavi prodajom opreme i rezervnih delova za mobilne telefone, tablete i laptop racunare.
+                        BStech je firma koja se bavi prodajom opreme i rezervnih delova za mobilne telefone, tablete i laptop racunare.
                         Kod nas mozete pronaci veliki izbor artikala renomiranih proizvodjaca po izuzetno povoljnim cenama.
-                        Kupovina na BLABLA je odlican nacin da opremite Vas mobilni telefon. Mi smo online prodavnica preglednog sadrzaja i jednostavnog procesa kupovine.
+                        Kupovina na BStech je odlican nacin da opremite Vas mobilni telefon. Mi smo online prodavnica preglednog sadrzaja i jednostavnog procesa kupovine.
                     </Text>
                     <Block></Block>
                     <Text>
@@ -26,7 +26,7 @@ export default function About() {
                 </CompanyDesc>
                 <WhyUs>
                     <WhyUsTitle>zasto mi?</WhyUsTitle>
-                    <WhyUsText>Blabla kao mobilna platforma zadovoljava sve kriterijume kvalitete usluga i iskustva, nudi izuzetnu fleksibilnost i interaktivnost. Nasim potrosacima obezbedjujemo trenutno najtrazenije modele mobilnih telefona u skladu sa svim svetskim trendovima. Od dolaska BLABL platforme, trudimo se da budemo odgovoran i pouzdan partner nasim korisnicima.</WhyUsText>
+                    <WhyUsText>BStech kao mobilna platforma zadovoljava sve kriterijume kvalitete usluga i iskustva, nudi izuzetnu fleksibilnost i interaktivnost. Nasim potrosacima obezbedjujemo trenutno najtrazenije modele mobilnih telefona u skladu sa svim svetskim trendovima. Od dolaska BStech platforme, trudimo se da budemo odgovoran i pouzdan partner nasim korisnicima.</WhyUsText>
                 </WhyUs>
                 <Main>
                     <SubTitle>
@@ -35,7 +35,7 @@ export default function About() {
                     </SubTitle>
                     <SubTitle>
                         <Titlee>Vizija</Titlee>
-                        <Text>Vizija kompanije BLABLA je da pruzi najvisi nivo usluge na domacem trzistu uz stalne inovacije i obogacivanje proizvodnog asortimana. Tu viziju ce ostvariti u saradnji sa svojim partnerima, koji dele iste ciljeve.</Text>
+                        <Text>Vizija kompanije BStech je da pruzi najvisi nivo usluge na domacem trzistu uz stalne inovacije i obogacivanje proizvodnog asortimana. Tu viziju ce ostvariti u saradnji sa svojim partnerima, koji dele iste ciljeve.</Text>
                     </SubTitle>
                 </Main>
                 <ButtonUp></ButtonUp>

@@ -6,9 +6,9 @@ https://www.iconfinder.com/Makoto_msk */
 export const storeProducts = [
   {
     id: 1,
-    title: "Military Bag",
-    img: "img/product-1.png",
-    price: 10,
+    title: "Futrola BI FOLD HANMAN II za Samsung G985F Galaxy S20 Plus crna ",
+    img: "img/futrola1.jpg",
+    price: 1815,
     company: "GOOGLE",
     info:
       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
@@ -19,9 +19,9 @@ export const storeProducts = [
   },
   {
     id: 2,
-    title: "Bag",
-    img: "img/product-2.png",
-    price: 16,
+    title: "Futrola Full Cover magnetic frame za Iphone XS Max crna",
+    img: "img/futrola2.jpg",
+    price: 2904,
     company: "SAMSUNG",
     info:
       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
@@ -32,9 +32,9 @@ export const storeProducts = [
   },
   {
     id: 3,
-    title: "Kevlar 1",
-    img: "img/product-3.png",
-    price: 8,
+    title: "Futrola Sparkly star za Huawei P Smart Z/Y9 Prime 2019 crna",
+    img: "img/futrola3.jpg",
+    price: 1541,
     company: "htc",
     info:
       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
@@ -45,9 +45,9 @@ export const storeProducts = [
   },
   {
     id: 4,
-    title: "Scope 1",
-    img: "img/product-4.png",
-    price: 18,
+    title: "Futrola I LOVE YOU za Iphone X/XS pink ",
+    img: "img/futrola4.jpg",
+    price: 649,
     company: "htc",
     info:
       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
@@ -58,9 +58,9 @@ export const storeProducts = [
   },
   {
     id: 5,
-    title: "knife 1",
-    img: "img/product-5.png",
-    price: 24,
+    title: "Futrola Glittering Stripe za Huawei Mate 20 Lite roze",
+    img: "img/futrola5.jpg",
+    price: 850,
     company: "htc",
     info:
       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
@@ -71,9 +71,9 @@ export const storeProducts = [
   },
   {
     id: 6,
-    title: "Scope 2",
-    img: "img/product-6.png",
-    price: 17,
+    title: "Futrola BACK CLEAR za Huawei P20 Lite crna ",
+    img: "img/futrola6.jpg",
+    price: 999,
     company: "apple",
     info:
       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",

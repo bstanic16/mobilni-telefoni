@@ -3,6 +3,7 @@ import { Input, Text } from '../../Input';
 import { ButtonContainer } from '../../Button';
 import styled from 'styled-components';
 import emailjs from 'emailjs-com';
+import PurchaseInfo from '../../PurchaseInfo';
 
 export default class CheckoutForm extends Component {
     state = {
@@ -14,7 +15,8 @@ export default class CheckoutForm extends Component {
         adress: '',
         clicked: this.props.clicked,
         cartTotal: this.props.cartTotal,
-        result: ''
+        result: '',
+        purchased: false
     }
 
     onNameChange = (event) => {
@@ -133,7 +135,7 @@ export default class CheckoutForm extends Component {
                 .then((response) => {
                     console.log("SUCCESS!", response.status, response.text)
                     if (response.status === 200) {
-                        alert("MessageSent")
+                        this.setState({ purchased: true })
                         this.resetForm()
                     }
                 }, err => {
@@ -200,9 +202,9 @@ export default class CheckoutForm extends Component {
                                 <div className="col-9 py-2 justify-content-center align-items-center">
                                     <ButtonContainer onClick={this.handleSubmit}>SUBMIT</ButtonContainer>
                                 </div>
+                                {this.state.purchased === true ? <PurchaseInfo /> : null}
                             </Form>
                         </Main>
-
                     )
                 })}
 

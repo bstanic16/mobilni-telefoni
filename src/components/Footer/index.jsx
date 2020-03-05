@@ -10,34 +10,33 @@ export default class Footer extends Component {
             <>
                 <ProductWrapper>
                     <Main>
-                        <Title>phone store</Title>
+                        <Title>BS tech</Title>
                     </Main>
                     <Nav className="d-block d-sm-block d-md-flex d-lg-flex">
                         <Item>
                             <Link to="/">
-                                <ItemText>Products</ItemText>
+                                <ItemText>Pocetna</ItemText>
                             </Link>
                         </Item>
                         <Item>
                             <Link to="/categories">
-                                <ItemText>Categories</ItemText>
+                                <ItemText>Proizvodi</ItemText>
                             </Link>
                         </Item>
                         <Item>
                             <Link to="/about">
-                                <ItemText>About us</ItemText>
+                                <ItemText>O nama</ItemText>
                             </Link>
                         </Item>
                         <Item>
                             <Link to="/contact">
-                                <ItemText>Contact us</ItemText>
+                                <ItemText>Kontaktirajte nas</ItemText>
                             </Link>
                         </Item>
 
-                        {/* sta staviti ovde */}
                         <Item>
-                            <Link to="/about">
-                                <ItemText>About us</ItemText>
+                            <Link to="/informacije">
+                                <ItemText>Informacije</ItemText>
                             </Link>
                         </Item>
                     </Nav>
@@ -73,6 +72,7 @@ const Title = styled.h1`
     text-transform:capitalize;
     text-align:center;
     color: var(--mainYellow);
+    font-family: "Permanent Marker", cursive;
 `
 
 const Nav = styled.div`
