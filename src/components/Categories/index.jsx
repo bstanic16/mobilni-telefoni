@@ -151,19 +151,10 @@ export default class Categories extends Component {
                                         <>
                                             {this.state.pageOfItems.map(product => {
                                                 return <Product key={product.id} product={product} />
-                                                // if (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price)) {
-                                                //     return (
-                                                //         <>
-                                                //             <Product key={product.id} product={product} />
-                                                //         </>
-                                                //     )
-                                                // }
-                                                // if (this.state.clicked === false) {
-                                                //     return <Product key={product.id} product={product} />
-                                                // }
+
                                             })}
                                             <Pages>
-                                                <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+                                                <Pagination pageSize={24} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} />
                                             </Pages>
                                         </>
                                     )
@@ -177,6 +168,33 @@ export default class Categories extends Component {
         )
     }
 }
+const customLabels = {
+    first: 'Prva',
+    last: 'Poslednja',
+    previous: 'Prethodna',
+    next: 'Sledeca'
+}
+
+const customStyles = {
+    ul: {
+        borderRadius: '50px',
+        border: '0',
+    },
+    li: {
+        border: '0',
+        justifyContent: 'space-beetween'
+    },
+    a: {
+        color: 'var(--mainDark)',
+        fontWeight: 'bold',
+        // backgroundColor: 'var(--lightBlue)',
+        paddingRight: '1rem',
+        paddingLeft: '1rem',
+        border: '0'
+
+    },
+}
+
 
 const ProductWrapper = styled.section``
 

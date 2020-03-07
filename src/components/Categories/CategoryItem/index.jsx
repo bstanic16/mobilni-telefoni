@@ -11,6 +11,7 @@ export default class CategoryItem extends Component {
     constructor() {
         super()
 
+
         let exampleItems = [...storeProducts];
         this.state = {
             products: storeProducts,
@@ -24,6 +25,7 @@ export default class CategoryItem extends Component {
         }
         this.onChangePage = this.onChangePage.bind(this);
     }
+
 
     onProductNameChange = (event) => {
         this.setState({ productName: event.target.value })
@@ -157,13 +159,40 @@ export default class CategoryItem extends Component {
                         </ProductConsumer>
                     </div>
                     <Pages>
-                        <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+                        <Pagination labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} pageSize={24} />
                     </Pages>
                     <ButtonUp></ButtonUp>
                 </ProductWrapper>
             </>
         )
     }
+}
+
+const customLabels = {
+    first: 'Prva',
+    last: 'Poslednja',
+    previous: 'Prethodna',
+    next: 'Sledeca'
+}
+
+const customStyles = {
+    ul: {
+        borderRadius: '50px',
+        border: '0',
+    },
+    li: {
+        border: '0',
+        justifyContent: 'space-beetween'
+    },
+    a: {
+        color: 'var(--mainDark)',
+        fontWeight: 'bold',
+        // backgroundColor: 'var(--lightBlue)',
+        paddingRight: '1rem',
+        paddingLeft: '1rem',
+        border: '0'
+
+    },
 }
 
 const Mains = styled.form`
@@ -200,7 +229,10 @@ const Mains = styled.form`
 const Pages = styled.div`
     width: 100%;
     text-align:center;
+    padding: 1rem 0rem;
 `
+
+
 
 const ProductWrapper = styled.section`
     width:100%;

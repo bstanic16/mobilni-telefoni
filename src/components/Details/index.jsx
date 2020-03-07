@@ -2,6 +2,29 @@ import React, { Component } from 'react';
 import { ProductConsumer } from '../../context';
 import { Link } from 'react-router-dom';
 import { ButtonContainer } from '../Button';
+import styled from 'styled-components';
+
+const Main = styled.div`
+    width:100%;
+    display:flex;
+    height: auto;
+    @media(max-width: 768px) {
+        width: 100%;
+        display:block;
+    }
+`
+const TwoImage = styled.div`
+    width:50%;
+    height: auto;
+    padding: 2rem 2rem;
+    img:hover {
+        transform: scale(1.7);
+        transition: all ease-in-out 0.5s;
+    }
+    @media(max-width: 768px) {
+        width: 100%;
+    }
+`
 
 export default class Details extends Component {
     render() {
@@ -20,10 +43,14 @@ export default class Details extends Component {
                             <div className="row">
                                 <div className="col-10 mx-auto col-md-6 my-3">
                                     <img src={img} className="img-fluid" alt="img" />
-
-                                    {/* IDE SLIDER ZA 3 SLIKE PO PROIZVODU */}
-                                    {/* <img src={img} className="img-fluid" alt="img" />
-                                    <img src={img} className="img-fluid" alt="img" /> */}
+                                    <Main>
+                                        <TwoImage>
+                                            <img src={img} className="img-fluid" alt="img" />
+                                        </TwoImage>
+                                        <TwoImage>
+                                            <img src={img} className="img-fluid" alt="img" />
+                                        </TwoImage>
+                                    </Main>
                                 </div>
                                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize titleb">
                                     <h2>model: {title}</h2>
@@ -40,7 +67,7 @@ export default class Details extends Component {
                                         {info}
                                     </p>
                                     <div>
-                                        <Link to="/">
+                                        <Link to="/categories">
                                             <ButtonContainer>
                                                 back to products
                                             </ButtonContainer>

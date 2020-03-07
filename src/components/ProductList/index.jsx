@@ -6,11 +6,24 @@ import { storeProducts } from '../../data';
 import styled from 'styled-components';
 import Carousel from '../SliderList';
 import ButtonUp from '../ButtonUp';
+import Pagination from 'jw-react-pagination';
 
 export default class ProductList extends Component {
-    state = {
-        products: storeProducts
+    constructor() {
+        super()
+        let exampleItems = [...storeProducts];
+        this.state = {
+            products: storeProducts,
+            exampleItems: exampleItems,
+            pageOfItems: []
+        }
+        this.onChangePage = this.onChangePage.bind(this);
     }
+
+    onChangePage(pageOfItems) {
+        this.setState({ pageOfItems: pageOfItems })
+    }
+
     render() {
         console.log(this.state.products)
         return (
@@ -22,12 +35,15 @@ export default class ProductList extends Component {
                         <div className="row product-list">
                             <ProductConsumer>
                                 {(value) => {
-                                    return value.products.map(product => {
+                                    return this.state.pageOfItems.map(product => {
                                         return <Product key={product.id} product={product} />
                                     })
                                 }}
                             </ProductConsumer>
                         </div>
+                        <Pages>
+                            <Pagination pageSize={24} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} />
+                        </Pages>
                     </div>
                     <ButtonUp></ButtonUp>
                 </ProductWrapper>
@@ -35,6 +51,39 @@ export default class ProductList extends Component {
         )
     }
 }
+
+const customLabels = {
+    first: 'Prva',
+    last: 'Poslednja',
+    previous: 'Prethodna',
+    next: 'Sledeca'
+}
+
+const customStyles = {
+    ul: {
+        borderRadius: '50px',
+        border: '0',
+    },
+    li: {
+        border: '0',
+        justifyContent: 'space-beetween'
+    },
+    a: {
+        color: 'var(--mainDark)',
+        fontWeight: 'bold',
+        // backgroundColor: 'var(--lightBlue)',
+        paddingRight: '1rem',
+        paddingLeft: '1rem',
+        border: '0'
+
+    },
+}
+
+const Pages = styled.div`
+    width: 100%;
+    text-align:center;
+    padding: 1rem 0rem;
+`
 
 const ProductWrapper = styled.section`
     
