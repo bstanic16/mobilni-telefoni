@@ -1,9 +1,10 @@
 import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './style.css'
 import logo from '../../logo1.png';
 import burger from '../svgs/menu.svg';
+import { ButtonContainer } from '../Button';
 
 class FullPageIntroWithFixedNavbar extends React.Component {
     constructor(props) {
@@ -25,27 +26,56 @@ class FullPageIntroWithFixedNavbar extends React.Component {
         return (
             <div>
                 <header>
-                    <Router>
-                        <MDBNavbar className="Nav" expand="md" >
-                            <MDBNavbarBrand href="/">
-                                <img src={logo} alt="logo" className="navbar-brand" style={{ width: '60px', height: '70px' }} />
-                            </MDBNavbarBrand>
-                            {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} className="NavTog" image={burger} />}
-                            <MDBCollapse isOpen={this.state.collapse} navbar>
-                                <MDBNavbarNav right>
-                                    <MDBNavItem active >
+                    <MDBNavbar className="Nav" expand="md" >
+                        <MDBNavbarBrand href="/">
+                            <img src={logo} alt="logo" className="navbar-brand" style={{ width: '60px', height: '70px' }} />
+                        </MDBNavbarBrand>
+                        {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} className="NavTog" image={burger} />}
+                        <MDBCollapse isOpen={this.state.collapse} navbar>
+                            <MDBNavbarNav right className="nav">
+                                <MDBNavItem>
+                                    <Link to="/">
                                         <MDBNavLink to="/" className="NavLink">Pocetna</MDBNavLink>
-                                    </MDBNavItem>
-                                    <MDBNavItem>
+                                    </Link>
+                                </MDBNavItem>
+                                <MDBNavItem>
+                                    <Link to="/categories">
                                         <MDBNavLink to="/categories" className="NavLink">Proizvodi</MDBNavLink>
-                                    </MDBNavItem>
-                                    <MDBNavItem>
+                                    </Link>
+                                </MDBNavItem>
+                                <MDBNavItem>
+                                    <Link to="/about">
+                                        <MDBNavLink to="/about" className="NavLink">O nama</MDBNavLink>
+                                    </Link>
+                                </MDBNavItem>
+                                <MDBNavItem>
+                                    <Link to="/informacije">
+                                        <MDBNavLink to="/informacije" className="NavLink">Informacije</MDBNavLink>
+                                    </Link>
+                                </MDBNavItem>
+                                <MDBNavItem>
+                                    <Link to="/contact">
+                                        <MDBNavLink to="/contact" className="NavLink">Kontaktirajte nas</MDBNavLink>
+                                    </Link>
+                                </MDBNavItem>
+                                <MDBNavItem>
+                                    <Link to="/print">
                                         <MDBNavLink to="/print" className="NavLink">Print</MDBNavLink>
+                                    </Link>
+                                </MDBNavItem>
+                                <Link to="/cart" className="Cart">
+                                    <MDBNavItem>
+                                        <ButtonContainer>
+                                            <span className="mr-2">
+                                                <i className="fas fa-cart-plus"></i>
+                                            </span>
+                                            korpa
+                                        </ButtonContainer>
                                     </MDBNavItem>
-                                </MDBNavbarNav>
-                            </MDBCollapse>
-                        </MDBNavbar>
-                    </Router>
+                                </Link>
+                            </MDBNavbarNav>
+                        </MDBCollapse>
+                    </MDBNavbar>
                 </header>
             </div>
         );

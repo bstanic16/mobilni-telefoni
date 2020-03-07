@@ -1,5 +1,11 @@
+.nav{
+  align-items:center;
+  padding: 0rem 2rem;
+}
 .Nav {
   background: var(--mainBlue);
+  padding: 0rem 2rem;
+
 }
 
 .NavLink {
@@ -20,3 +26,4 @@
   height:60px;
   color:var(--mainYellow);
 }
+
