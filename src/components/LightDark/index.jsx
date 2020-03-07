@@ -36,7 +36,7 @@ const ToggleContainer = styled.button`
   width: 4rem;
   height: auto;
   outline:none;
-  top: 0.5rem;
+  top: 8.5rem;
   right: 0.5rem;
   margin-left: auto!important;
   &:focus {

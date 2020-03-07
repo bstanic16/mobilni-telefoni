@@ -1,0 +1,22 @@
+.Nav {
+  background: var(--mainBlue);
+}
+
+.NavLink {
+  color: var(--mainWhite);
+  /* font-family: "Oswald", sans-serif !important; */
+  font-family: "Permanent Marker", cursive;
+  text-align:center;
+
+}
+
+.NavLink:hover {
+    color:var(--mainYellow);
+}
+
+.NavTog {
+  border: 0!important;
+  width:60px;
+  height:60px;
+  color:var(--mainYellow);
+}
