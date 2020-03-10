@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Product from '../Product';
 import Title from '../Title';
 import { ProductConsumer } from '../../context';
-import { storeProducts } from '../../data';
+import { storeProducts, detailProduct } from '../../data';
 import styled from 'styled-components';
 import Carousel from '../SliderList';
 import ButtonUp from '../ButtonUp';
@@ -15,7 +15,8 @@ export default class ProductList extends Component {
         this.state = {
             products: storeProducts,
             exampleItems: exampleItems,
-            pageOfItems: []
+            pageOfItems: [],
+            k: detailProduct
         }
         this.onChangePage = this.onChangePage.bind(this);
     }
@@ -32,15 +33,15 @@ export default class ProductList extends Component {
                     <div className="container">
                         <Title name="nasi" title="proizvodi" />
                         <Carousel />
-                        <div className="row product-list">
+                        <Pro className="row product-list">
                             <ProductConsumer>
                                 {(value) => {
-                                    return this.state.pageOfItems.map(product => {
+                                    return this.state.k.map(product => {
                                         return <Product key={product.id} product={product} />
                                     })
                                 }}
                             </ProductConsumer>
-                        </div>
+                        </Pro>
                         <Pages>
                             <Pagination pageSize={24} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} />
                         </Pages>
@@ -86,5 +87,8 @@ const Pages = styled.div`
 `
 
 const ProductWrapper = styled.section`
-    
+`
+
+const Pro = styled.div`
+        
 `

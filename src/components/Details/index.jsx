@@ -18,7 +18,8 @@ const TwoImage = styled.div`
     height: auto;
     padding: 2rem 2rem;
     img:hover {
-        transform: scale(1.7);
+        cursor: zoom-in;
+        transform: scale(1.4);
         transition: all ease-in-out 0.5s;
     }
     @media(max-width: 768px) {
@@ -27,6 +28,15 @@ const TwoImage = styled.div`
 `
 
 export default class Details extends Component {
+    constructor(props) {
+        super(props);
+        this.back = this.back.bind(this);
+    }
+
+    back = () => {
+        this.props.history.goBack();
+        console.log("finish");
+    }
     render() {
         return (
             <ProductConsumer>
@@ -42,7 +52,7 @@ export default class Details extends Component {
                             {/* product info */}
                             <div className="row">
                                 <div className="col-10 mx-auto col-md-6 my-3">
-                                    <img src={img} className="img-fluid" alt="img" />
+                                    <img src={img} className="img-fluid" alt="img" width="400px" />
                                     <Main>
                                         <TwoImage>
                                             <img src={img} className="img-fluid" alt="img" />
@@ -66,12 +76,12 @@ export default class Details extends Component {
                                     <p className="text-muted lead">
                                         {info}
                                     </p>
-                                    <div>
-                                        <Link to="/categories">
-                                            <ButtonContainer>
-                                                back to products
+                                    <div >
+                                        {/* <Link to="/categories"> */}
+                                        <ButtonContainer onClick={this.back}>
+                                            back to products
                                             </ButtonContainer>
-                                        </Link>
+                                        {/* </Link> */}
                                         <ButtonContainer
                                             cart
                                             disabled={inCart ? true : false}

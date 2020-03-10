@@ -6,9 +6,15 @@ import { ProductConsumer } from '../../context';
 
 const ProductWrapper = styled.div`
     .card {
+            perspective: 1300px;
+            transform-style: preserve-3d;
+            transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+            animation: fallPerspective .8s ease-in-out forwards;
+            @keyframes fallPerspective {
+	    100% { transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1; }
+        }
         border-radius: 30px;
         border:0;
-        transition: all 0.3s linear;
     }
     .card-footer {
         background: transparent;

@@ -8,17 +8,25 @@
 
 }
 
+.NavItem {
+  animation:none!important;
+}
+
 .NavLink {
   color: var(--mainWhite);
-  /* font-family: "Oswald", sans-serif !important; */
-  font-family: "Permanent Marker", cursive;
+  font-family: "Oswald", sans-serif !important;
+  /* font-family: "Permanent Marker", cursive; */
   text-align:center;
 
 }
 
 .NavLink:hover {
     color:var(--mainYellow);
+    top:-3px;
+    /* transform:rotate(360deg);
+    transition: all 0.3s; */
 }
+
 
 .NavTog {
   border: 0!important;
@@ -27,3 +35,9 @@
   color:var(--mainYellow);
 }
 
+.Cart {
+  margin-left:auto!important;
+  text-decoration: none!important;
+  text-align:center;
+  list-style-type: none;
+}

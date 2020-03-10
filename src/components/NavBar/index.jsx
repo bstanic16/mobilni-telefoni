@@ -2,7 +2,7 @@ import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import { Link } from 'react-router-dom';
 import './style.css'
-import logo from '../../logo1.png';
+import logo from '../../logo2.png';
 import burger from '../svgs/menu.svg';
 import { ButtonContainer } from '../Button';
 
@@ -32,39 +32,29 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                         </MDBNavbarBrand>
                         {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} className="NavTog" image={burger} />}
                         <MDBCollapse isOpen={this.state.collapse} navbar>
-                            <MDBNavbarNav right className="nav">
-                                <MDBNavItem>
-                                    <Link to="/">
-                                        <MDBNavLink to="/" className="NavLink">Pocetna</MDBNavLink>
-                                    </Link>
+                            <MDBNavbarNav left className="nav">
+                                <MDBNavItem className="NavItem">
+                                    <MDBNavLink to="/" className="NavLink">Pocetna</MDBNavLink>
                                 </MDBNavItem>
-                                <MDBNavItem>
-                                    <Link to="/categories">
-                                        <MDBNavLink to="/categories" className="NavLink">Proizvodi</MDBNavLink>
-                                    </Link>
+                                <MDBNavItem className="NavItem">
+                                    <MDBNavLink to="/categories" className="NavLink">Proizvodi</MDBNavLink>
                                 </MDBNavItem>
-                                <MDBNavItem>
-                                    <Link to="/about">
-                                        <MDBNavLink to="/about" className="NavLink">O nama</MDBNavLink>
-                                    </Link>
+                                <MDBNavItem className="NavItem">
+                                    <MDBNavLink to="/about" className="NavLink">O nama</MDBNavLink>
                                 </MDBNavItem>
-                                <MDBNavItem>
-                                    <Link to="/informacije">
-                                        <MDBNavLink to="/informacije" className="NavLink">Informacije</MDBNavLink>
-                                    </Link>
+                                <MDBNavItem className="NavItem">
+                                    <MDBNavLink to="/informacije" className="NavLink">Informacije</MDBNavLink>
                                 </MDBNavItem>
-                                <MDBNavItem>
-                                    <Link to="/contact">
-                                        <MDBNavLink to="/contact" className="NavLink">Kontaktirajte nas</MDBNavLink>
-                                    </Link>
+                                <MDBNavItem className="NavItem">
+                                    <MDBNavLink to="/contact" className="NavLink">Kontaktirajte nas</MDBNavLink>
                                 </MDBNavItem>
-                                <MDBNavItem>
-                                    <Link to="/print">
-                                        <MDBNavLink to="/print" className="NavLink">Print</MDBNavLink>
-                                    </Link>
+                                <MDBNavItem className="NavItem">
+                                    <MDBNavLink to="/print" className="NavLink">Print</MDBNavLink>
                                 </MDBNavItem>
+                            </MDBNavbarNav>
+                            <div className="Cart">
                                 <Link to="/cart" className="Cart">
-                                    <MDBNavItem>
+                                    <MDBNavItem className="NavItem">
                                         <ButtonContainer>
                                             <span className="mr-2">
                                                 <i className="fas fa-cart-plus"></i>
@@ -73,8 +63,9 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                                         </ButtonContainer>
                                     </MDBNavItem>
                                 </Link>
-                            </MDBNavbarNav>
+                            </div>
                         </MDBCollapse>
+
                     </MDBNavbar>
                 </header>
             </div>
