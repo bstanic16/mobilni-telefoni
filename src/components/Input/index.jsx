@@ -20,10 +20,11 @@ export const Input = styled.input`
         outline:none;
     }
     &:invalid{
-        border: 4px solid red;
+        border-bottom: 6px solid red;
+        /* border: 4px solid red; */
     }
     &:valid {
-        border: 4px solid var(--mainYellow);
+        border: 0px;
     }
 `
 
@@ -48,9 +49,11 @@ export const Text = styled.textarea`
         outline:none;
     }
     &:invalid{
-        border: 4px dashed red;
+        border:0;
+        border-bottom: 4px solid red;
+        /* border: 4px solid red; */
     }
     &:valid {
-        border: 4px solid var(--mainYellow);
+        border: 0px;
     }
 `

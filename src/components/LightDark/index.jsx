@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const LightDark = ({ theme, toggleTheme }) => {
   const isLight = theme === 'light';
   return (
-    <ToggleContainer onClick={toggleTheme} lightTheme={isLight}>
+    <ToggleContainer onClick={toggleTheme} lightTheme={isLight} className="lightDark">
       <Sun />
       <Moon />
     </ToggleContainer>
@@ -23,7 +23,6 @@ LightDark.propTypes = {
 export default LightDark
 
 const ToggleContainer = styled.button`
-  background: var(--mainBlue);
   border: 2px solid var(--mainBlue);
   border-radius: 20px;
   cursor: pointer;
@@ -36,7 +35,7 @@ const ToggleContainer = styled.button`
   width: 4rem;
   height: auto;
   outline:none;
-  top: 8.5rem;
+  top: 3.5rem;
   right: 0.5rem;
   margin-left: auto!important;
   &:focus {

@@ -48,5 +48,12 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.titleB};
   }
 
+  .lightDark {
+    background: ${({ theme }) => theme.lightDark};
+  }
+
+  .price-blue {
+    color: var(--mainBlue);
+  }
   `
 

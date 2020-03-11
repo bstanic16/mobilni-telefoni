@@ -122,19 +122,6 @@ export default class CategoryItem extends Component {
                                 return this.state.pageOfItems.map(product => {
                                     let pName = this.state.productName.toLowerCase()
                                     let str = product.title.toLowerCase()
-                                    // if (product.category === this.props.name && (this.state.clicked === true && (this.state.min <= product.price && this.state.max >= product.price))) {
-                                    //     return (
-                                    //         <>
-                                    //             <Product key={product.id} product={product} />
-                                    //         </>
-                                    //     )
-                                    // } else if (this.state.clicked === false && product.category === this.props.name) {
-                                    //     return (
-                                    //         <>
-                                    //             <Product key={product.id} product={product} />
-                                    //         </>
-                                    //     )
-                                    // }
                                     if (product.category === this.props.name && (this.state.productClicked === false && this.state.clicked === true) && (this.state.min <= product.price && this.state.max >= product.price)) {
                                         return (
                                             <>

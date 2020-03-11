@@ -160,7 +160,7 @@ export default class Contact extends Component {
 }
 
 const Error = styled.div`
-    color:green;
+    color:red;
     text-align:center;
     font-family: "Permanent Marker", cursive;
 `

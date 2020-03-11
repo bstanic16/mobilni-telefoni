@@ -5,19 +5,40 @@ import PropTypes from 'prop-types'
 import { ProductConsumer } from '../../context';
 
 const ProductWrapper = styled.div`
+        perspective: 1300px;
+        /* -webkit-perspective: 1300px;
+	    perspective: 1300px; */
     .card {
-            perspective: 1300px;
-            transform-style: preserve-3d;
-            transform: translateZ(400px) translateY(300px) rotateX(-90deg);
-            animation: fallPerspective .8s ease-in-out forwards;
-            @keyframes fallPerspective {
-	    100% { transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1; }
+        /* -webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform-origin: 50% 50% -300px;
+	transform-origin: 50% 50% -300px;
+	-webkit-transform: rotateX(-180deg);
+	transform: rotateX(-180deg);
+	-webkit-animation: fly .8s ease-in-out forwards;
+    animation: fly .8s ease-in-out forwards;
+    @-webkit-keyframes fly {
+	0% { }
+	100% { -webkit-transform: rotateX(0deg); opacity: 1; }
+}
+
+@keyframes fly {
+	0% { }
+	100% { -webkit-transform: rotateX(0deg); transform: rotateX(0deg); opacity: 1; }
+} */
+        transform-style: preserve-3d;
+        transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+        animation: fallPerspective 1.2s ease-in-out forwards;
+        @keyframes fallPerspective {
+	        100% { transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1 };
         }
         border-radius: 30px;
         border:0;
     }
+
+    
+    
     .card-footer {
-        background: transparent;
         border-top: transparent;
         transition: all 0.3s linear;
         border-radius: 0 0 30px 30px;
@@ -26,8 +47,9 @@ const ProductWrapper = styled.div`
         .card {
             /* border: 0.04rem solid rgba(0,0,0,0.2); */
             box-shadow: 3px 3px 6px 0px rgba(0,0,0.5,0.5);
-            color: var(--mainYellow)!important;
-            transform: scale(1.1);
+            color: var(--mainBlue)!important;
+            transform: scale(1.1)!important;
+            transition: all 0.5s ease-in-out;
         }
         .card-footer {
             border-radius: 0 0 30px 30px;
@@ -91,14 +113,13 @@ export default class Product extends Component {
                                 </button>
                             </div>
                         )}
-
                     </ProductConsumer>
                     {/* cart footer */}
                     <div className="card-footer d-flex justify-content-between">
                         <p className="align-self-center mb-0">
                             {title}
                         </p>
-                        <h5 className="text-blue font-italic mb-0">
+                        <h5 className="font-italic mb-0 price-blue">
                             <span className="mr-1">RSD</span>
                             {price}
                         </h5>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink } from 'mdbreact';
 import { Link } from 'react-router-dom';
 import './style.css'
 import logo from '../../logo2.png';
@@ -23,7 +23,6 @@ class FullPageIntroWithFixedNavbar extends React.Component {
     }
 
     offCollapse = () => {
-        // console.log(this.state.collapse)
         this.setState({
             collapse: false
         });
