@@ -22,6 +22,13 @@ class FullPageIntroWithFixedNavbar extends React.Component {
         });
     }
 
+    offCollapse = () => {
+        // console.log(this.state.collapse)
+        this.setState({
+            collapse: false
+        });
+    }
+
     render() {
         return (
             <div>
@@ -34,22 +41,22 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                         <MDBCollapse isOpen={this.state.collapse} navbar>
                             <MDBNavbarNav left className="nav">
                                 <MDBNavItem className="NavItem">
-                                    <MDBNavLink to="/" className="NavLink">Pocetna</MDBNavLink>
+                                    <MDBNavLink to="/" className="NavLink" onClick={this.offCollapse}>Pocetna</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem className="NavItem">
-                                    <MDBNavLink to="/categories" className="NavLink">Proizvodi</MDBNavLink>
+                                    <MDBNavLink to="/categories" className="NavLink" onClick={this.offCollapse}>Proizvodi</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem className="NavItem">
-                                    <MDBNavLink to="/about" className="NavLink">O nama</MDBNavLink>
+                                    <MDBNavLink to="/about" className="NavLink" onClick={this.offCollapse}>O nama</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem className="NavItem">
-                                    <MDBNavLink to="/informacije" className="NavLink">Informacije</MDBNavLink>
+                                    <MDBNavLink to="/informacije" className="NavLink" onClick={this.offCollapse}>Informacije</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem className="NavItem">
-                                    <MDBNavLink to="/contact" className="NavLink">Kontaktirajte nas</MDBNavLink>
+                                    <MDBNavLink to="/contact" className="NavLink" onClick={this.offCollapse}>Kontaktirajte nas</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem className="NavItem">
-                                    <MDBNavLink to="/print" className="NavLink">Print</MDBNavLink>
+                                    <MDBNavLink to="/print" className="NavLink" onClick={this.offCollapse}>Print</MDBNavLink>
                                 </MDBNavItem>
                             </MDBNavbarNav>
                             <div className="Cart">
