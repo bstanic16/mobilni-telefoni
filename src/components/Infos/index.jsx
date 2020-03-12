@@ -68,6 +68,7 @@ const ProductWrapper = styled.section`
 const Main = styled.div`
             width: 100%;
             height:auto;
+        padding: 1rem 0rem;
         `
 
 const Desc = styled.p`
@@ -98,6 +99,7 @@ const TitleB = styled.h2`
             width:100%;
             text-align: center;
             padding: 1rem 0rem;
+
             @media(max-width: 768px) {
                 width:80%;
                 margin:auto;
@@ -147,8 +149,11 @@ const Transport = styled.div`
 const Details = styled.div`
     width:100%;
     height:auto;
-    padding: 0rem 2rem;
+    padding: 1rem 2rem;
     text-align:center;
+    img {
+        margin-top: 20px;
+    }
 `
 const ProdDesc = styled.p`
     width:100%;
