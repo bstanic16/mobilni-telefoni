@@ -124,7 +124,7 @@ export default class Categories extends Component {
 
                                     if (this.state.knifes === true) {
                                         return (
-                                            <CategoryItem name="knifes" clicked={this.state.clicked} min={this.state.min} max={this.state.max} />
+                                            <CategoryItem name="knifes" />
                                         )
                                     }
                                     if (this.state.bags === true) {
@@ -169,10 +169,10 @@ export default class Categories extends Component {
     }
 }
 const customLabels = {
-    first: 'Prva',
-    last: 'Poslednja',
-    previous: 'Prethodna',
-    next: 'Sledeca'
+    first: '<<',
+    last: '>>',
+    previous: '<',
+    next: '>'
 }
 
 const customStyles = {

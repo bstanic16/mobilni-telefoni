@@ -156,10 +156,10 @@ export default class CategoryItem extends Component {
 }
 
 const customLabels = {
-    first: 'Prva',
-    last: 'Poslednja',
-    previous: 'Prethodna',
-    next: 'Sledeca'
+    first: '<<',
+    last: '>>',
+    previous: '<',
+    next: '>'
 }
 
 const customStyles = {

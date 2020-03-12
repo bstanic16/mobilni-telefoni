@@ -55,10 +55,10 @@ export default class ProductList extends Component {
 }
 
 const customLabels = {
-    first: 'Prva',
-    last: 'Poslednja',
-    previous: 'Prethodna',
-    next: 'Sledeca'
+    first: '<<',
+    last: '>>',
+    previous: '<',
+    next: '>'
 }
 
 const customStyles = {
