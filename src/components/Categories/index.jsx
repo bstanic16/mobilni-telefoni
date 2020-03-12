@@ -308,7 +308,9 @@ const Drop = styled.div`
     } */
 `
 
-const ProductWrapper = styled.section``
+const ProductWrapper = styled.section`
+    overflow: hidden;
+`
 
 const Pages = styled.div`
     width: 100%;

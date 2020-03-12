@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import About from './components/About';
 import ScrollToTop from './components/ScrollToTop';
 import Infos from './components/Infos';
+import Print from './components/Print';
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/about" component={About} />
             <Route path="/informacije" component={Infos} />
+            <Route path="/print" component={Print} />
             <Route component={Default} />
           </Switch>
           <Modal />

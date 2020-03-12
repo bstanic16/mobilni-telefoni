@@ -23,6 +23,9 @@
 .NavLink:hover {
     color:var(--mainYellow);
     top:-3px;
+    border-bottom: 2px solid var(--mainYellow);
+    border-top: 2px solid var(--mainYellow);
+
     /* transform:rotate(360deg);
     transition: all 0.3s; */
 }
