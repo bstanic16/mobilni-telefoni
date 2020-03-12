@@ -11,7 +11,6 @@ export default class CategoryItem extends Component {
     constructor() {
         super()
 
-
         let exampleItems = [...storeProducts];
         this.state = {
             products: storeProducts,
@@ -21,7 +20,8 @@ export default class CategoryItem extends Component {
             exampleItems: exampleItems,
             pageOfItems: [],
             productName: '',
-            productClicked: false
+            productClicked: false,
+            advancedSearch: false
         }
         this.onChangePage = this.onChangePage.bind(this);
     }
@@ -62,6 +62,12 @@ export default class CategoryItem extends Component {
         })
     }
 
+    advancedSearch = () => {
+        this.setState({
+            advancedSearch: !this.state.advancedSearch,
+        })
+    }
+
     minHanlder = (e) => {
         this.setState({
             min: e.target.value,
@@ -81,7 +87,8 @@ export default class CategoryItem extends Component {
         })
     }
 
-    clickedProductHandler = () => {
+    clickedProductHandler = (e) => {
+        e.preventDefault()
         console.log("handler: ", this.state.productName)
         this.setState({
             productClicked: !this.state.productClicked,
@@ -107,10 +114,15 @@ export default class CategoryItem extends Component {
                         </Mains>
                     </div>
                     <div className="row justify-content-center p-2">
-                        <Input type="text" placeholder="Naziv proizvoda" onChange={this.onProductNameChange} />
-                        <Button>
-                            <ButtonContainer onClick={this.clickedProductHandler}>SEARCH</ButtonContainer>
-                        </Button>
+                        <Mains>
+                            <Input type="text" placeholder="Naziv proizvoda" onChange={this.onProductNameChange} />
+                            <Button>
+                                <ButtonContainer onClick={this.clickedProductHandler}>
+                                    {this.state.productClicked === true ? 'CLOSE' : 'SEARCH'}
+                                </ButtonContainer>
+                            </Button>
+                        </Mains>
+
                     </div>
                     <div className="row justify-content-center p-2">
                         <ButtonContainer onClick={this.ascendingSort}>Sortiraj po ceni rastuce</ButtonContainer>
@@ -183,7 +195,6 @@ const customStyles = {
 }
 
 const Mains = styled.form`
-    width:90%;
     margin:auto;
     text-align:center;
     display:flex;
@@ -197,6 +208,7 @@ const Mains = styled.form`
     }
 
     @media(max-width: 768px) {
+    width:90%;
         display:block;
         text-align:center;
         .input{
@@ -252,5 +264,20 @@ const Price = styled.h3`
 `
 
 const Button = styled.div`
-    text-align:center;
+    margin:auto;
+    @media(max-width: 568px) {
+        width:90%;
+        display:block;
+        text-align:center;
+        .input{
+            text-align:center;
+        }
+    }
+    @media(max-width: 320px) {
+        display:block;
+        text-align:center;
+        .input{
+            text-align:center;
+        }
+    }
 `

@@ -55,8 +55,8 @@ export default class ProductList extends Component {
 }
 
 const customLabels = {
-    first: '<<',
-    last: '>>',
+    first: 'Prva',
+    last: 'Poslednja',
     previous: '<',
     next: '>'
 }
@@ -74,8 +74,8 @@ const customStyles = {
         color: 'var(--mainDark)',
         fontWeight: 'bold',
         // backgroundColor: 'var(--lightBlue)',
-        paddingRight: '1rem',
-        paddingLeft: '1rem',
+        paddingRight: '0.8rem',
+        paddingLeft: '0.8rem',
         border: '0'
 
     },
@@ -85,6 +85,9 @@ const Pages = styled.div`
     width: 100%;
     text-align:center;
     padding: 1rem 0rem;
+    @media(max-width: 320px) {
+        padding: 0.3rem 0rem;
+    }
 `
 
 const ProductWrapper = styled.section`

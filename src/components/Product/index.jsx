@@ -49,7 +49,7 @@ const ProductWrapper = styled.div`
             box-shadow: 3px 3px 6px 0px rgba(0,0,0.5,0.5);
             color: var(--mainBlue)!important;
             transform: scale(1.1)!important;
-            transition: all 0.5s ease-in-out;
+            transition: all 1.9s linear!important;
         }
         .card-footer {
             border-radius: 0 0 30px 30px;

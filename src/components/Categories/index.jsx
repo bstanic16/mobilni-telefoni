@@ -16,11 +16,15 @@ export default class Categories extends Component {
         let exampleItems = [...storeProducts];
         this.state = {
             products: storeProducts,
-            knifes: false,
-            bags: false,
-            scope: false,
-            boots: false,
-            kevlar: false,
+            maske: false,
+            folije: false,
+            punjaci: false,
+            slusalice: false,
+            drzaci: false,
+            powerBank: false,
+            memorija: false,
+            tastatura: false,
+            mis: false,
             min: 0,
             max: 0,
             clicked: false,
@@ -34,54 +38,126 @@ export default class Categories extends Component {
         this.setState({ pageOfItems: pageOfItems })
     }
 
-    maskeClicked = () => {
-        this.setState({ maskeClicked: !this.state.maskeClicked })
+    misHandler = () => {
+        this.setState({
+            folije: false,
+            punjaci: false,
+            slusalice: false,
+            drzaci: false,
+            maske: false,
+            powerBank: false,
+            memorija: false,
+            tastatura: false,
+            mis: !this.state.mis
+        })
     }
 
-    knifesHanlder = () => {
+    tastaturaHandler = () => {
         this.setState({
-            bags: false,
-            scope: false,
-            boots: false,
-            kevlar: false,
-            knifes: !this.state.knifes
+            folije: false,
+            punjaci: false,
+            slusalice: false,
+            drzaci: false,
+            maske: false,
+            powerBank: false,
+            memorija: false,
+            mis: false,
+            tastatura: !this.state.tastatura
         })
     }
-    bagsHandler = () => {
+
+    memorijaHandler = () => {
         this.setState({
-            knifes: false,
-            scope: false,
-            boots: false,
-            kevlar: false,
-            bags: !this.state.bags
+            folije: false,
+            punjaci: false,
+            slusalice: false,
+            drzaci: false,
+            maske: false,
+            powerBank: false,
+            tastatura: false,
+            mis: false,
+            memorija: !this.state.memorija
         })
     }
-    scopeHandler = () => {
+
+    powerBankHandler = () => {
         this.setState({
-            knifes: false,
-            bags: false,
-            boots: false,
-            kevlar: false,
-            scope: !this.state.scope
+            folije: false,
+            punjaci: false,
+            slusalice: false,
+            drzaci: false,
+            maske: false,
+            memorija: false,
+            tastatura: false,
+            mis: false,
+            powerBank: !this.state.powerBank
         })
     }
-    bootsHandler = () => {
-        console.log("BOOts:", this.state.boots)
+
+    maskeHanlder = () => {
         this.setState({
-            knifes: false,
-            bags: false,
-            scope: false,
-            kevlar: false,
-            boots: !this.state.boots
+            folije: false,
+            punjaci: false,
+            slusalice: false,
+            drzaci: false,
+            powerBank: false,
+            memorija: false,
+            tastatura: false,
+            mis: false,
+            maske: !this.state.maske
         })
     }
-    kevlarHander = () => {
+    folijeHandler = () => {
         this.setState({
-            knifes: false,
-            bags: false,
-            scope: false,
-            boots: false,
-            kevlar: !this.state.kevlar
+            maske: false,
+            punjaci: false,
+            slusalice: false,
+            drzaci: false,
+            powerBank: false,
+            memorija: false,
+            tastatura: false,
+            mis: false,
+            folije: !this.state.folije
+        })
+    }
+    punjaciHandler = () => {
+        this.setState({
+            maske: false,
+            folije: false,
+            slusalice: false,
+            drzaci: false,
+            powerBank: false,
+            memorija: false,
+            tastatura: false,
+            mis: false,
+            punjaci: !this.state.punjaci
+        })
+    }
+    slusaliceHandler = () => {
+        console.log("BOOts:", this.state.slusalice)
+        this.setState({
+            maske: false,
+            folije: false,
+            punjaci: false,
+            drzaci: false,
+            powerBank: false,
+            memorija: false,
+            tastatura: false,
+            mis: false,
+            slusalice: !this.state.slusalice
+        })
+    }
+    drzaciHander = () => {
+        this.setState({
+            maske: false,
+            folije: false,
+            punjaci: false,
+            slusalice: false,
+            powerBank: false,
+            memorija: false,
+            tastatura: false,
+            mis: false,
+            drzaci: !this.state.drzaci
         })
     }
 
@@ -110,41 +186,69 @@ export default class Categories extends Component {
                 <ProductWrapper className="py-3">
                     <div className="container">
                         <Title name="izaberi" title="kategoriju" />
-                        <div className="row justify-content-center py-2">
-                            <ButtonContainer onClick={this.knifesHanlder}>Maske</ButtonContainer>
-                            <ButtonContainer onClick={this.bagsHandler}>Folije</ButtonContainer>
-                            <ButtonContainer onClick={this.scopeHandler}>Punjaci</ButtonContainer>
-                            <ButtonContainer onClick={this.bootsHandler}>Slusalice</ButtonContainer>
-                            <ButtonContainer onClick={this.kevlarHander}>Drzaci za mobilni</ButtonContainer>
-                        </div>
+                        <Drop className="row justify-content-center py-2">
+                            <ButtonContainer onClick={this.maskeHanlder}>
+                                {this.state.maske === true ? 'Zatvori maske' : 'Maske'}
+                            </ButtonContainer>
+                            <ButtonContainer onClick={this.folijeHandler}>Folije</ButtonContainer>
+                            <ButtonContainer onClick={this.punjaciHandler}>Punjaci</ButtonContainer>
+                            <ButtonContainer onClick={this.slusaliceHandler}>Slusalice</ButtonContainer>
+                            <ButtonContainer onClick={this.drzaciHander}>Drzaci za mobilni</ButtonContainer>
+                            <ButtonContainer onClick={this.powerBankHandler}>Power bank</ButtonContainer>
+                            <ButtonContainer onClick={this.memorijaHandler}>Memorija</ButtonContainer>
+                            <ButtonContainer onClick={this.tastaturaHandler}>Tastature</ButtonContainer>
+                            <ButtonContainer onClick={this.misHandler}>Misevi</ButtonContainer>
+                        </Drop>
                         <div className="row">
                             <ProductConsumer>
                                 {(value) => {
                                     console.log("KATEGORIJE:", this.state.products);
 
-                                    if (this.state.knifes === true) {
+                                    if (this.state.maske === true) {
                                         return (
-                                            <CategoryItem name="knifes" />
+                                            <CategoryItem name="maske" />
                                         )
                                     }
-                                    if (this.state.bags === true) {
+                                    if (this.state.folije === true) {
                                         return (
-                                            <CategoryItem name="bags" />
+                                            <CategoryItem name="folije" />
                                         )
                                     }
-                                    if (this.state.scope === true) {
+                                    if (this.state.punjaci === true) {
                                         return (
-                                            <CategoryItem name="scope" />
+                                            <CategoryItem name="punjaci" />
                                         )
                                     }
-                                    if (this.state.boots === true) {
+                                    if (this.state.slusalice === true) {
                                         return (
-                                            <CategoryItem name="boots" />
+                                            <CategoryItem name="slusalice" />
                                         )
                                     }
-                                    if (this.state.kevlar === true) {
+                                    if (this.state.drzaci === true) {
                                         return (
-                                            <CategoryItem name="kevlar" />
+                                            <CategoryItem name="drzaci" />
+                                        )
+                                    }
+                                    if (this.state.powerBank === true) {
+                                        return (
+                                            <CategoryItem name="powerBank" />
+                                        )
+                                    }
+                                    if (this.state.memorija === true) {
+                                        return (
+                                            <CategoryItem name="memorija" />
+                                        )
+                                    }
+
+                                    if (this.state.tastatura === true) {
+                                        return (
+                                            <CategoryItem name="tastatura" />
+                                        )
+                                    }
+
+                                    if (this.state.mis === true) {
+                                        return (
+                                            <CategoryItem name="mis" />
                                         )
                                     }
                                     return (
@@ -195,6 +299,14 @@ const customStyles = {
     },
 }
 
+const Drop = styled.div`
+    /* display:none;
+    @media(max-width:568px) {
+        display: flex;
+        width:95;
+        margin:auto;
+    } */
+`
 
 const ProductWrapper = styled.section``
 

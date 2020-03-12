@@ -90,15 +90,27 @@ const Item = styled.div`
     &:hover {
         color:green;
     }
+    @media(max-width: 320px) {
+       width:60%;
+       margin:auto;
+    }
+    @media(max-width: 568px) {
+       width:60%;
+       margin:auto;
+    }
 `
 
 const ItemText = styled.h4`
     text-transform:capitalize;
     text-align:center;
     color: var(--mainYellow)!important;
-    padding: 0.3rem 0;
+    padding: 0.3rem 0.3rem;
     &:hover {
         background: var(--lightBlue);
         border-radius: 20px;
     }
+    @media(max-width: 320px) {
+       width:100%;
+    }
+    
 `
