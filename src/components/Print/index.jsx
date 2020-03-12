@@ -32,7 +32,7 @@ const TitleB = styled.h5`
 const Image = styled.img`
     width:250px;
     height:300px;
-    padding: 0.5rem 0.5rem;
+    padding: 1rem 0.5rem;
     border-radius:50px;
     &:hover {
         transform: scale(1.1);
