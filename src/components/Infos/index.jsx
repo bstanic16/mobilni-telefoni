@@ -63,6 +63,7 @@ export default function Infos() {
 
 const ProductWrapper = styled.section`
     padding: 1rem 0rem;
+    overflow: hidden;
 `
 
 const Main = styled.div`
