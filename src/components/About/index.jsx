@@ -2,42 +2,45 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from '../Title';
 import ButtonUp from '../ButtonUp';
+import Bounce from 'react-reveal/Bounce';
 
 export default function About() {
     return (
         <>
             <ProductWrapper>
-                <Title name="o" title="nama" />
-                <WhyUs>
-                    <WhyUsTitle>kupci na prvom mestu</WhyUsTitle>
-                    <WhyUsText>Pre svega nastojimo da zadovoljimo zelje kupaca, i da ponudimo najpovoljnije cena na trzistu</WhyUsText>
-                </WhyUs>
-                <CompanyDesc>
-                    <Text>
-                        BStech je firma koja se bavi prodajom opreme i rezervnih delova za mobilne telefone, tablete i laptop racunare.
-                        Kod nas mozete pronaci veliki izbor artikala renomiranih proizvodjaca po izuzetno povoljnim cenama.
-                        Kupovina na BStech je odlican nacin da opremite Vas mobilni telefon. Mi smo online prodavnica preglednog sadrzaja i jednostavnog procesa kupovine.
+                <Bounce bottom>
+                    <Title name="o" title="nama" />
+                    <WhyUs>
+                        <WhyUsTitle>kupci na prvom mestu</WhyUsTitle>
+                        <WhyUsText>Pre svega nastojimo da zadovoljimo zelje kupaca, i da ponudimo najpovoljnije cena na trzistu</WhyUsText>
+                    </WhyUs>
+                    <CompanyDesc>
+                        <Text>
+                            BStech je firma koja se bavi prodajom opreme i rezervnih delova za mobilne telefone, tablete i laptop racunare.
+                            Kod nas mozete pronaci veliki izbor artikala renomiranih proizvodjaca po izuzetno povoljnim cenama.
+                            Kupovina na BStech je odlican nacin da opremite Vas mobilni telefon. Mi smo online prodavnica preglednog sadrzaja i jednostavnog procesa kupovine.
                     </Text>
-                    <Block></Block>
-                    <Text>
-                        Mobilni telefon ima veliki znacaj u svakodnevnom životu i pomoću njega možemo da stupimo u kontakt sa bilo kim na svetu. Preko njega komuniciramo, informišemo se o svemu što je u našoj sferi interesovanja, igramo se... Naša ideja je da obezbedimo najbolju moguću zaštitu mobilnog telefona i da Vam omogućimo rezervni deo ukoliko je potreban.
-                        U samo par klikova pronađite asortiman artikala namenjen za Vaš mobilni telefon, izaberite artikal i poručite. Ono što vidite na sajtu je dostupno za poručivanje.
+                        <Block></Block>
+                        <Text>
+                            Mobilni telefon ima veliki znacaj u svakodnevnom životu i pomoću njega možemo da stupimo u kontakt sa bilo kim na svetu. Preko njega komuniciramo, informišemo se o svemu što je u našoj sferi interesovanja, igramo se... Naša ideja je da obezbedimo najbolju moguću zaštitu mobilnog telefona i da Vam omogućimo rezervni deo ukoliko je potreban.
+                            U samo par klikova pronađite asortiman artikala namenjen za Vaš mobilni telefon, izaberite artikal i poručite. Ono što vidite na sajtu je dostupno za poručivanje.
                     </Text>
-                </CompanyDesc>
-                <WhyUs>
-                    <WhyUsTitle>zasto mi?</WhyUsTitle>
-                    <WhyUsText>BStech kao mobilna platforma zadovoljava sve kriterijume kvalitete usluga i iskustva, nudi izuzetnu fleksibilnost i interaktivnost. Nasim potrosacima obezbedjujemo trenutno najtrazenije modele mobilnih telefona u skladu sa svim svetskim trendovima. Od dolaska BStech platforme, trudimo se da budemo odgovoran i pouzdan partner nasim korisnicima.</WhyUsText>
-                </WhyUs>
-                <Main>
-                    <SubTitle>
-                        <Titlee>Misija</Titlee>
-                        <Text>Zelimo da budemo prepoznati na trzistu kao kompanija koja podstice primenu novih tehnologija, usmeravajuci kupca da za svoj novac dobije najvise, posebno vodivsi racuna da takva kupovina ima svoju vrednost i u buducnosti.</Text>
-                    </SubTitle>
-                    <SubTitle>
-                        <Titlee>Vizija</Titlee>
-                        <Text>Vizija kompanije BStech je da pruzi najvisi nivo usluge na domacem trzistu uz stalne inovacije i obogacivanje proizvodnog asortimana. Tu viziju ce ostvariti u saradnji sa svojim partnerima, koji dele iste ciljeve.</Text>
-                    </SubTitle>
-                </Main>
+                    </CompanyDesc>
+                    <WhyUs>
+                        <WhyUsTitle>zasto mi?</WhyUsTitle>
+                        <WhyUsText>BStech kao mobilna platforma zadovoljava sve kriterijume kvalitete usluga i iskustva, nudi izuzetnu fleksibilnost i interaktivnost. Nasim potrosacima obezbedjujemo trenutno najtrazenije modele mobilnih telefona u skladu sa svim svetskim trendovima. Od dolaska BStech platforme, trudimo se da budemo odgovoran i pouzdan partner nasim korisnicima.</WhyUsText>
+                    </WhyUs>
+                    <Main>
+                        <SubTitle>
+                            <Titlee>Misija</Titlee>
+                            <Text>Zelimo da budemo prepoznati na trzistu kao kompanija koja podstice primenu novih tehnologija, usmeravajuci kupca da za svoj novac dobije najvise, posebno vodivsi racuna da takva kupovina ima svoju vrednost i u buducnosti.</Text>
+                        </SubTitle>
+                        <SubTitle>
+                            <Titlee>Vizija</Titlee>
+                            <Text>Vizija kompanije BStech je da pruzi najvisi nivo usluge na domacem trzistu uz stalne inovacije i obogacivanje proizvodnog asortimana. Tu viziju ce ostvariti u saradnji sa svojim partnerima, koji dele iste ciljeve.</Text>
+                        </SubTitle>
+                    </Main>
+                </Bounce>
                 <ButtonUp></ButtonUp>
             </ProductWrapper>
         </>
@@ -45,6 +48,7 @@ export default function About() {
 }
 
 const ProductWrapper = styled.section`
+    overflow:hidden;
     padding: 2rem 0rem;
     @media(max-width: 568px) {
         width: 100%;

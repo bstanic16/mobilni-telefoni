@@ -142,7 +142,20 @@ class ProductProvider extends Component {
 
     addTotals = () => {
         let subTotal = 0;
-        this.state.cart.map(item => (subTotal += item.total))
+        let karta = this.state.cart
+        const arr = [];
+        const getUnique = (kartaa) => {
+            for (var value of kartaa) {
+                if (arr.indexOf(value) === -1) {
+                    arr.push(value);
+                }
+            }
+            return arr;
+        }
+        console.log(arr);
+        getUnique(karta);
+        console.log("KARTa", arr)
+        arr.map(item => (subTotal += item.total))
         // TAKSA TAKSA TAKSA TAKSA TAKSA 20%
         const tempTax = subTotal * 0.2;
         const tax = parseFloat(tempTax.toFixed(2));

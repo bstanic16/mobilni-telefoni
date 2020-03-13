@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Input, Text } from '../Input';
 import { ButtonContainer } from '../Button';
 import emailjs from 'emailjs-com';
+import Bounce from 'react-reveal/Bounce';
 
 
 export default class Contact extends Component {
@@ -130,30 +131,32 @@ export default class Contact extends Component {
         console.log(this.state);
         return (
             <ProductWrapper className="py-5">
-                <div className="container">
-                    <Title name="Contact" title="us" />
-                    <div className="row justify-content-center">
-                        <Form action="contact-form" className="row justify-content-center" ref="form">
-                            <div className="col-9 py-2">
-                                <Input type="text" placeholder="Ime" id="name" onChange={this.onNameChange} name="name" required minLength="3" maxLength="20" />
-                                <Error id="nameErr"></Error>
-                                <Input type="text" placeholder="Prezime" id="lastname" onChange={this.onLastnameChange} name="lastname" required minLength="3" maxLength="20" />
-                                <Error id="lastnameErr"></Error>
-                            </div>
-                            <div className="col-9 py-2">
-                                <Input type="text" placeholder="E-mail" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
-                                <Error id="emailErr"></Error>
-                            </div>
-                            <div className="col-9 py-2">
-                                <Text placeholder="Vasa poruka" id="message" onChange={this.onMessageChange} name="message" required minLength="5" maxLenght="500" ></Text>
-                                <Error id="messageErr"></Error>
-                            </div>
-                            <div className="col-9 py-2 justify-content-center align-items-center">
-                                <ButtonContainer onClick={this.handleSubmit}>SUBMIT</ButtonContainer>
-                            </div>
-                        </Form>
+                <Bounce bottom>
+                    <div className="container">
+                        <Title name="Contact" title="us" />
+                        <div className="row justify-content-center">
+                            <Form action="contact-form" className="row justify-content-center" ref="form">
+                                <div className="col-9 py-2">
+                                    <Input type="text" placeholder="Ime" id="name" onChange={this.onNameChange} name="name" required minLength="3" maxLength="20" />
+                                    <Error id="nameErr"></Error>
+                                    <Input type="text" placeholder="Prezime" id="lastname" onChange={this.onLastnameChange} name="lastname" required minLength="3" maxLength="20" />
+                                    <Error id="lastnameErr"></Error>
+                                </div>
+                                <div className="col-9 py-2">
+                                    <Input type="text" placeholder="E-mail" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
+                                    <Error id="emailErr"></Error>
+                                </div>
+                                <div className="col-9 py-2">
+                                    <Text placeholder="Vasa poruka" id="message" onChange={this.onMessageChange} name="message" required minLength="5" maxLenght="500" ></Text>
+                                    <Error id="messageErr"></Error>
+                                </div>
+                                <div className="col-9 py-2 justify-content-center align-items-center">
+                                    <ButtonContainer onClick={this.handleSubmit}>SUBMIT</ButtonContainer>
+                                </div>
+                            </Form>
+                        </div>
                     </div>
-                </div>
+                </Bounce>
             </ProductWrapper>
         )
     }

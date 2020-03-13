@@ -22,6 +22,7 @@ export default class ProductList extends Component {
     }
 
     onChangePage(pageOfItems) {
+        window.scrollTo(0, 0);
         this.setState({ pageOfItems: pageOfItems })
     }
 

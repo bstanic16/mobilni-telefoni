@@ -146,7 +146,7 @@ export default class CheckoutForm extends Component {
     }
 
     render() {
-        const product = this.props.value.cart.map(item => {
+        const product = this.props.arr.map(item => {
 
             return {
                 id: item.id,

@@ -23,6 +23,7 @@ LightDark.propTypes = {
 export default LightDark
 
 const ToggleContainer = styled.button`
+  z-index:1;
   border: 2px solid var(--mainBlue);
   border-radius: 20px;
   cursor: pointer;

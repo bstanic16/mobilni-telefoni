@@ -18,6 +18,19 @@ class CartTotals extends Component {
         const { cartSubTotal, cartTax, cartTotal, clearCart, cart } = this.props.value;
         console.log("VAZNO:", this.props.value);
         console.log("Cart count:", cart.count);
+        let karta = cart
+        const arr = [];
+        const getUnique = (kartaa) => {
+            for (var value of kartaa) {
+                if (arr.indexOf(value) === -1) {
+                    arr.push(value);
+                }
+            }
+            return arr;
+        }
+        console.log(arr);
+        getUnique(karta);
+        console.log("KARTICA", arr)
         return (
             <React.Fragment>
                 <div className="container">
@@ -55,7 +68,7 @@ class CartTotals extends Component {
                             {this.state.ren ? 'close order' : 'checkout order'}
                             {/* {this.state.ren ? <PayPalButton value={this.props.value} total={cartTotal} clearCart={clearCart} history={this.props.history} title={title} /> : null} */}
                         </ButtonContainer>
-                        {this.state.ren ? <Checkout value={this.props.value} cartTotal={cartTotal} clicked={this.state.ren} /> : null}
+                        {this.state.ren ? <Checkout value={this.props.value} arr={arr} cartTotal={cartTotal} clicked={this.state.ren} /> : null}
                     </Container>
                 </div>
             </React.Fragment>
