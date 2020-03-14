@@ -9,7 +9,7 @@ const Paypal = styled.div`
     display: inline-block;
 `
 
-function Product({ product, total, result, history }) {
+function Product({ product, total, result, history, arr }) {
     const [paidFor, setPaidFor] = useState(false);
     const [error, setError] = useState(null);
     const paypalRef = useRef();
@@ -54,7 +54,7 @@ function Product({ product, total, result, history }) {
             })
             .render(paypalRef.current);
     }, [result, total]);
-    console.log("Gornji:", product)
+    console.log("Gornji:", arr)
     if (paidFor) {
         return (
             <div>
@@ -79,8 +79,9 @@ class App extends Component {
 
     render() {
         console.log("PAYPAL", this.props.value.cart)
+        console.log("ARR", this.props.arr)
         console.log("total2:", this.props.value.cartTotal)
-        const product = this.props.value.cart.map(item => {
+        const product = this.props.arr.map(item => {
             return {
                 id: item.id,
                 price: item.price,

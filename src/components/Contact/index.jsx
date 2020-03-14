@@ -136,12 +136,18 @@ export default class Contact extends Component {
                         <Title name="Contact" title="us" />
                         <div className="row justify-content-center">
                             <Form action="contact-form" className="row justify-content-center" ref="form">
-                                <div className="col-9 py-2">
-                                    <Input type="text" placeholder="Ime" id="name" onChange={this.onNameChange} name="name" required minLength="3" maxLength="20" />
-                                    <Error id="nameErr"></Error>
-                                    <Input type="text" placeholder="Prezime" id="lastname" onChange={this.onLastnameChange} name="lastname" required minLength="3" maxLength="20" />
-                                    <Error id="lastnameErr"></Error>
-                                </div>
+                                <Flex className="col-9 py-2">
+                                    <Block>
+                                        <Input type="text" placeholder="Ime" id="name" onChange={this.onNameChange} name="name" required minLength="3" maxLength="20" />
+                                        <Error id="nameErr"></Error>
+                                    </Block>
+                                    <Div></Div>
+                                    <Block>
+                                        <Input type="text" placeholder="Prezime" id="lastname" onChange={this.onLastnameChange} name="lastname" required minLength="3" maxLength="20" />
+                                        <Error id="lastnameErr"></Error>
+                                    </Block>
+
+                                </Flex>
                                 <div className="col-9 py-2">
                                     <Input type="text" placeholder="E-mail" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
                                     <Error id="emailErr"></Error>
@@ -161,6 +167,19 @@ export default class Contact extends Component {
         )
     }
 }
+
+const Flex = styled.div`
+    width:100%;
+    display:flex;
+    
+`
+const Div = styled.div`
+    width:2%;
+`
+const Block = styled.div`
+    width:49%;
+    margin:auto;
+`
 
 const Error = styled.div`
     color:red;

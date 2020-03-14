@@ -174,31 +174,45 @@ export default class CheckoutForm extends Component {
                     return (
                         <Main>
                             <Form action="contact-form" className="row justify-content-center" ref="form">
-                                <div className="col-9 py-2">
-                                    <Input cart type="text" placeholder="firstname" id="name" onChange={this.onNameChange} name="name" required minLength="3" maxLength="20" />
-                                    <Error id="nameErr"></Error>
-                                    <Input type="text" placeholder="lastname" id="lastname" onChange={this.onLastnameChange} name="lastname" required minLength="3" maxLength="20" />
-                                    <Error id="lastnameErr"></Error>
-                                </div>
-                                <div className="col-9 py-2">
-                                    <Input type="text" placeholder="Proizvodi" id="result" ref="result" value={"Proizvodi: " + result} />
-                                    <Input type="text" placeholder="cena" value={"Cena: " + this.props.cartTotal + " RSD"} />
-                                </div>
-                                <div className="col-9 py-2">
-                                    <Input type="text" placeholder="email" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
-                                    <Error id="emailErr"></Error>
-                                </div>
-                                <div className="col-9 py-2">
-                                    <Input type="text" placeholder="grad" id="grad" onChange={this.onGradChange} name="grad" required minLength="3" maxLength="20" />
-                                    <Error id="gradErr"></Error>
-                                </div>
-                                <div className="col-9 py-2">
-                                    <Input type="text" placeholder="adresa" id="adress" onChange={this.onAdressChange} name="adress" required minLength="5" maxLength="30" />
+                                <Flex>
+                                    <Block>
+                                        <Input cart type="text" placeholder="Ime" id="name" onChange={this.onNameChange} name="name" required minLength="3" maxLength="20" />
+                                        <Error id="nameErr"></Error>
+                                    </Block>
+                                    <div></div>
+                                    <Block>
+                                        <Input type="text" placeholder="Prezime" id="lastname" onChange={this.onLastnameChange} name="lastname" required minLength="3" maxLength="20" />
+                                        <Error id="lastnameErr"></Error>
+                                    </Block>
+                                </Flex>
+                                <Flex>
+                                    <Block>
+                                        <Input type="text" placeholder="E-mail" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
+                                        <Error id="emailErr"></Error>
+                                    </Block>
+                                    <Block>
+                                        <Input type="text" placeholder="Broj telefona" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
+                                        <Error id="emailErr"></Error>
+                                    </Block>
+                                </Flex>
+
+                                <Flex>
+                                    <Block>
+                                        <Input type="text" placeholder="Mesto" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
+                                        <Error id="emailErr"></Error>
+                                    </Block>
+                                    <Block>
+                                        <Input type="text" placeholder="Postanski broj" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
+                                        <Error id="emailErr"></Error>
+                                    </Block>
+                                </Flex>
+                                <Line>
+                                    <Input type="text" placeholder="Adresa" id="adress" onChange={this.onAdressChange} name="adress" required minLength="5" maxLength="30" />
                                     <Error id="adressErr"></Error>
-                                </div>
-                                <div className="col-9 py-2">
-                                    <Text placeholder="message" id="message" onChange={this.onMessageChange} name="message"></Text>
-                                </div>
+                                </Line>
+                                <Line>
+                                    <Text placeholder="Napomena" id="Napomena" onChange={this.onMessageChange} name="message"></Text>
+                                </Line>
                                 <div className="col-9 py-2 justify-content-center align-items-center">
                                     <ButtonContainer onClick={this.handleSubmit}>SUBMIT</ButtonContainer>
                                 </div>
@@ -212,6 +226,27 @@ export default class CheckoutForm extends Component {
         )
     }
 }
+
+const Flex = styled.div`
+    width:100%;
+    display:flex;
+    padding: 0.5rem 0rem;
+`
+
+const Line = styled.div`
+    width:99%;
+    margin:auto;
+    height:auto;
+    padding: 0.5rem 0rem;
+`
+
+const Div = styled.div`
+    width:2%;
+`
+const Block = styled.div`
+    width:49%;
+    margin:auto;
+`
 
 const Error = styled.div`
     color:green;

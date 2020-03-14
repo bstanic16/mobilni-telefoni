@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import PayPalButton from '../PayPalButton';
+import PayPalButton from '../PayPalButton';
 import { ButtonContainer } from '../../Button'
 import Checkout from '../CheckoutForm';
 import styled from 'styled-components';
@@ -15,7 +15,7 @@ class CartTotals extends Component {
     }
 
     render() {
-        const { cartSubTotal, cartTax, cartTotal, clearCart, cart } = this.props.value;
+        const { cartSubTotal, cartTax, cartTotal, clearCart, cart, title } = this.props.value;
         console.log("VAZNO:", this.props.value);
         console.log("Cart count:", cart.count);
         let karta = cart
@@ -66,9 +66,9 @@ class CartTotals extends Component {
                     <Container>
                         <ButtonContainer cart onClick={this.clickHandler} >
                             {this.state.ren ? 'close order' : 'checkout order'}
-                            {/* {this.state.ren ? <PayPalButton value={this.props.value} total={cartTotal} clearCart={clearCart} history={this.props.history} title={title} /> : null} */}
                         </ButtonContainer>
                         {this.state.ren ? <Checkout value={this.props.value} arr={arr} cartTotal={cartTotal} clicked={this.state.ren} /> : null}
+                        {this.state.ren ? <PayPalButton value={this.props.value} arr={arr} total={cartTotal} clearCart={clearCart} history={this.props.history} title={title} /> : null}
                     </Container>
                 </div>
             </React.Fragment>

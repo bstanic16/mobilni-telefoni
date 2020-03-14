@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const Input = styled.input`
+display:flex;
     width:100%;
-    background: var(--lightBlue);
+    margin:auto;
+    background: #ccc;
     font-size: 1.4rem;
     border: 0.05rem solid var(--mainDark);
     border-color: var(--mainDark);
@@ -13,18 +15,22 @@ export const Input = styled.input`
     margin: 0.2rem 0.5rem 0.2rem 0;
     transition: all 0.5s ease-in-out;
     &:hover {
-        background:var(--mainYellow);
+        background:var(--lightBlue);
+        color: var(--mainDark);
+    }
+    &:active {
+        background:var(--lightBlue);
         color: var(--mainDark);
     }
     &:focus {
         outline:none;
     }
     &:invalid{
-        border-bottom: 6px solid red;
+        border: 2px solid red;
         /* border: 4px solid red; */
     }
     &:valid {
-        border: 0px;
+        border: 2px solid green;
     }
 `
 
@@ -32,7 +38,7 @@ export const Text = styled.textarea`
     width:100%;
     text-transform:capitalize;
     font-size: 1.4rem;
-    background: var(--lightBlue);
+    background: #ccc;
     border: 0.05rem solid var(--mainDark);
     border-color: var(--mainDark);
     color: var(--mainDark);
@@ -42,7 +48,7 @@ export const Text = styled.textarea`
     margin: 0.2rem 0.5rem 0.2rem 0;
     transition: all 0.5s ease-in-out;
     &:hover {
-        background:var(--mainYellow);
+        background:var(--lightBlue);
         color: var(--mainDark);
     }
     &:focus {
@@ -50,10 +56,10 @@ export const Text = styled.textarea`
     }
     &:invalid{
         border:0;
-        border-bottom: 4px solid red;
+        border: 2px solid red;
         /* border: 4px solid red; */
     }
     &:valid {
-        border: 0px;
+        border: 2px solid green;
     }
 `
