@@ -6,7 +6,8 @@ import { storeProducts } from '../../data';
 import Product from '../Product';
 import CategoryItem from './CategoryItem';
 import { ButtonContainer } from '../Button';
-import Pagination from 'jw-react-pagination';
+// import Pagination from 'jw-react-pagination';
+import Pagination from '../Pagination';
 import ButtonUp from '../ButtonUp';
 
 export default class Categories extends Component {
@@ -204,12 +205,19 @@ export default class Categories extends Component {
                             <ProductConsumer>
                                 {(value) => {
                                     console.log("KATEGORIJE:", this.state.products);
-
+                                    console.log("PowerBank", this.state.powerBank)
                                     if (this.state.maske === true) {
                                         return (
                                             <CategoryItem name="maske" />
                                         )
                                     }
+
+                                    if (this.state.powerBank === true) {
+                                        return (
+                                            <CategoryItem name="powerBank" />
+                                        )
+                                    }
+
                                     if (this.state.folije === true) {
                                         return (
                                             <CategoryItem name="folije" />
@@ -230,11 +238,9 @@ export default class Categories extends Component {
                                             <CategoryItem name="drzaci" />
                                         )
                                     }
-                                    if (this.state.powerBank === true) {
-                                        return (
-                                            <CategoryItem name="powerBank" />
-                                        )
-                                    }
+
+
+
                                     if (this.state.memorija === true) {
                                         return (
                                             <CategoryItem name="memorija" />
@@ -256,11 +262,10 @@ export default class Categories extends Component {
                                         <>
                                             {this.state.pageOfItems.map(product => {
                                                 return <Product key={product.id} product={product} />
-
                                             })}
-                                            <Pages>
-                                                <Pagination pageSize={24} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} />
-                                            </Pages>
+                                            {/* <Pages>
+                                                <Pagination pageSize={24} initialPage={1} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} />
+                                            </Pages> */}
                                         </>
                                     )
                                 }}

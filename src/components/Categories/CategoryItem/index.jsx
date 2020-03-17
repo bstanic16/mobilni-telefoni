@@ -4,14 +4,16 @@ import { ProductConsumer } from '../../../context';
 import { storeProducts } from '../../../data';
 import Product from '../../Product';
 import { ButtonContainer } from '../../Button';
-import Pagination from 'jw-react-pagination';
+import Pagination from '../../Pagination';
+// import Pagination from 'jw-react-pagination';
+// import Pagination from '@material-ui/lab/Pagination';
 import ButtonUp from '../../ButtonUp';
 
 export default class CategoryItem extends Component {
     constructor() {
         super()
 
-        let exampleItems = [...storeProducts];
+        let exampleItems = [...storeProducts]
         this.state = {
             products: storeProducts,
             min: 0,
@@ -98,7 +100,6 @@ export default class CategoryItem extends Component {
     }
 
     render() {
-        console.log("CLICKED:", this.state.clicked)
         return (
             <>
                 <ProductWrapper className="">
@@ -158,11 +159,12 @@ export default class CategoryItem extends Component {
                             }}
                         </ProductConsumer>
                     </div>
-                    <Pages>
-                        <Pagination labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} pageSize={24} />
-                    </Pages>
+
                     <ButtonUp></ButtonUp>
                 </ProductWrapper>
+                <Pages>
+                    <Pagination pageSize={24} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} />
+                </Pages>
             </>
         )
     }
