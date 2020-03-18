@@ -189,9 +189,7 @@ export default class Categories extends Component {
                     <div className="container">
                         <Title name="izaberi" title="kategoriju" />
                         <Drop className="row justify-content-center py-2">
-                            <ButtonContainer onClick={this.maskeHanlder}>
-                                {this.state.maske === true ? 'Zatvori maske' : 'Maske'}
-                            </ButtonContainer>
+                            <ButtonContainer onClick={this.maskeHanlder}>Maske</ButtonContainer>
                             <ButtonContainer onClick={this.folijeHandler}>Folije</ButtonContainer>
                             <ButtonContainer onClick={this.punjaciHandler}>Punjaci</ButtonContainer>
                             <ButtonContainer onClick={this.slusaliceHandler}>Slusalice</ButtonContainer>

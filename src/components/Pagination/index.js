@@ -86,7 +86,10 @@ const defaultProps = {
 class JwPagination extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { pager: {} };
+        this.state = {
+            pager: {},
+            red: []
+        };
         this.styles = {};
 
         if (!props.disableDefaultStyles) {
@@ -128,11 +131,16 @@ class JwPagination extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+        console.log("props", this.props.name)
+        if (this.props.name !== prevProps.name) {
+            this.setPage(this.props.initialPage)
+        }
         // reset page if items array has changed
         if (this.props.items !== prevProps.items) {
             this.setPage(this.props.initialPage);
         }
     }
+
 
     setPage(page) {
         var { items, pageSize, maxPages } = this.props;
@@ -151,6 +159,7 @@ class JwPagination extends React.Component {
         });
         let red = pageOfItems.slice(pager.startIndex, pager.endIndex + 1)
         console.log("MAP", red1)
+        // this.setState({ red: red1 })
         console.log("MAPA", red)
 
         // update state
