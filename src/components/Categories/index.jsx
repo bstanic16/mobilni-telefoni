@@ -237,8 +237,6 @@ export default class Categories extends Component {
                                         )
                                     }
 
-
-
                                     if (this.state.memorija === true) {
                                         return (
                                             <CategoryItem name="memorija" />

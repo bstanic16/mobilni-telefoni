@@ -6,6 +6,7 @@ import Bounce from 'react-reveal/Bounce'
 
 const ProductWrapper = styled.div`
     overflow: hidden;
+    width:100%;
 `
 
 const Main = styled.div`
@@ -14,11 +15,43 @@ const Main = styled.div`
     height:auto;
     display:flex;
     padding: 1rem 0rem;
+    @media(max-width: 768px) {
+        width: 100%;
+        height:auto;
+        margin:auto;
+    }
+    @media(max-width: 568px) {
+        display:block;
+    }
 `
 
 const Piece = styled.div`
     width:20%;
     height:auto;
+    padding:0.5rem 0.5rem;
+    @media(max-width: 768px) {
+        width: 40%;
+        height:auto;
+        margin:auto;
+    }
+
+    @media(max-width: 568px) {
+        width:50%;
+        margin:auto;
+    }
+    @media(max-width: 320px) {
+        width:80%;
+        margin:auto;
+    }
+`
+const Piece1 = styled.div`
+    width:20%;
+    height:auto;
+    padding:0.5rem 0.5rem;
+
+    @media(max-width: 768px) {
+        display:none;
+    }
 `
 
 const TitleB = styled.h5`
@@ -31,8 +64,8 @@ const TitleB = styled.h5`
 `
 
 const Image = styled.img`
-    width:250px;
-    height:300px;
+    width:100%;
+    height:auto;
     padding: 1rem 0.5rem;
     border-radius:50px;
     &:hover {
@@ -40,6 +73,14 @@ const Image = styled.img`
         cursor: zoom-in;
         border-top: 4px solid var(--lightBlue);
         border-bottom: 4px solid var(--lightBlue);
+    }
+    @media(max-width: 768px) {
+        width:95%;
+        margin:auto;
+    }
+    @media(max-width: 568px) {
+        width:100%;
+        margin:auto;
     }
 `
 
@@ -49,6 +90,15 @@ const DescMain = styled.div`
     margin:auto;
     text-align:center;
     padding:1rem 0rem;
+    @media(max-width: 768px) {
+        width:50%;
+        margin:auto;
+    }
+    @media(max-width: 568px) {
+        width:100%;
+        margin:auto;
+    }
+    
 `
 
 const Desc = styled.p`
@@ -71,16 +121,15 @@ export default function Print() {
                     <Piece>
                         <Image src={Img} alt="Promo" />
                     </Piece>
-                    <Piece>
+                    <Piece1>
                         <Image src={Img} alt="Promo" />
-                    </Piece>
-                    <Piece>
+                    </Piece1>
+                    <Piece1>
                         <Image src={Img} alt="Promo" />
-
-                    </Piece>
-                    <Piece>
+                    </Piece1>
+                    <Piece1>
                         <Image src={Img} alt="Promo" />
-                    </Piece>
+                    </Piece1>
                 </Main>
                 <Main>
                     <DescMain>

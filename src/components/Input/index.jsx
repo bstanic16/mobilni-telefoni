@@ -32,6 +32,7 @@ display:flex;
     &:valid {
         border: 2px solid green;
     }
+   
 `
 
 export const Text = styled.textarea`

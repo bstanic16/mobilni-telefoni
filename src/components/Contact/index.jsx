@@ -130,13 +130,13 @@ export default class Contact extends Component {
     render() {
         console.log(this.state);
         return (
-            <ProductWrapper className="py-5">
+            <ProductWrapper className="">
                 <Bounce bottom>
                     <div className="container">
                         <Title name="Contact" title="us" />
                         <div className="row justify-content-center">
                             <Form action="contact-form" className="row justify-content-center" ref="form">
-                                <Flex className="col-9 py-2">
+                                <Flex className="">
                                     <Block>
                                         <Input type="text" placeholder="Ime" id="name" onChange={this.onNameChange} name="name" required minLength="3" maxLength="20" />
                                         <Error id="nameErr"></Error>
@@ -146,19 +146,20 @@ export default class Contact extends Component {
                                         <Input type="text" placeholder="Prezime" id="lastname" onChange={this.onLastnameChange} name="lastname" required minLength="3" maxLength="20" />
                                         <Error id="lastnameErr"></Error>
                                     </Block>
-
                                 </Flex>
-                                <div className="col-9 py-2">
-                                    <Input type="text" placeholder="E-mail" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
-                                    <Error id="emailErr"></Error>
-                                </div>
-                                <div className="col-9 py-2">
-                                    <Text placeholder="Vasa poruka" id="message" onChange={this.onMessageChange} name="message" required minLength="5" maxLenght="500" ></Text>
-                                    <Error id="messageErr"></Error>
-                                </div>
-                                <div className="col-9 py-2 justify-content-center align-items-center">
-                                    <ButtonContainer onClick={this.handleSubmit}>SUBMIT</ButtonContainer>
-                                </div>
+                                <Flex1>
+                                    <Block1>
+                                        <Input type="text" placeholder="E-mail" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
+                                        <Error id="emailErr"></Error>
+                                    </Block1>
+                                    <Block1>
+                                        <Text placeholder="Vasa poruka" id="message" onChange={this.onMessageChange} name="message" required minLength="5" maxLenght="500" ></Text>
+                                        <Error id="messageErr"></Error>
+                                    </Block1>
+                                    <Block2 className="text-align-center">
+                                        <ButtonContainer onClick={this.handleSubmit}>SUBMIT</ButtonContainer>
+                                    </Block2>
+                                </Flex1>
                             </Form>
                         </div>
                     </div>
@@ -169,16 +170,72 @@ export default class Contact extends Component {
 }
 
 const Flex = styled.div`
-    width:100%;
+    width:80%;
+    margin:auto;
     display:flex;
-    
+    @media(max-width: 768px) {
+        width:100%;
+        margin:auto;
+    }
+    @media(max-width: 568px) {
+        width:80%;
+        margin:auto;
+        display:block;
+    }
+`
+const Flex1 = styled.div`
+    width:100%;
+    display:block;
+    @media(max-width: 768px) {
+        width:100%;
+        margin:auto;
+    }
+    @media(max-width: 568px) {
+        width:80%;
+        margin:auto;
+    }
 `
 const Div = styled.div`
     width:2%;
+    @media(max-width: 568px) {
+        width: 100%;
+        height:2%;
+    }
 `
 const Block = styled.div`
     width:49%;
     margin:auto;
+    @media(max-width: 568px) {
+        width: 100%;
+    }
+`
+
+const Block1 = styled.div`
+    width:80%;
+    margin:auto;
+    @media(max-width: 768px) {
+        width: 100%;
+    }
+   
+
+    @media(max-width: 568px) {
+        width: 100%;
+    }
+`
+
+const Block2 = styled.div`
+    width:30%;
+    margin:auto;
+    text-align:center;
+
+    @media(max-width: 768px) {
+        width: 15%;
+        margin:auto;
+    }
+
+    @media(max-width: 568px) {
+        width: 100%;
+    }
 `
 
 const Error = styled.div`
@@ -210,5 +267,12 @@ const Form = styled.form`
     @media(max-width: 768px) {
         width: 100%;
         margin:auto;
+    }
+    @media(max-width: 568px) {
+        width: 100%;
+        margin:auto;
+    }
+    @media(max-width: 320px) {
+        width: 100%;
     }
 `
