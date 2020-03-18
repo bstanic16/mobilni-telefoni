@@ -263,9 +263,9 @@ export default class Categories extends Component {
                                             {this.state.pageOfItems.map(product => {
                                                 return <Product key={product.id} product={product} />
                                             })}
-                                            {/* <Pages>
-                                                <Pagination pageSize={24} initialPage={1} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} />
-                                            </Pages> */}
+                                            <Pages>
+                                                <Pagination pageSize={24} initialPage={1} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} name="all" />
+                                            </Pages>
                                         </>
                                     )
                                 }}

@@ -1,3 +1,60 @@
+// import React, { Component } from 'react';
+// import Product from '../Product';
+
+// export default class Pagination extends Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             userId: 1,
+//             data: this.props.data
+//         }
+//         this.getData = this.getData.bind(this)
+//         this.btnClick = this.btnClick.bind(this)
+//     }
+//     getData() {
+//         const { userId } = this.state;
+//         this.setState({ data: this.props.data })
+//     }
+//     componentDidMount() {
+//         this.getData()
+//     }
+
+//     btnClick(e) {
+//         const userId = e.target.value;
+//         console.log(userId);
+//         this.setState({ userId })
+//         this.getData();
+//     };
+
+//     render() {
+//         const theData = this.state.data.map((d) => {
+//             return (
+//                 <Product product={d} />
+//             )
+//         })
+//         console.log("data", this.props.data)
+//         return (
+//             <>
+//                 <div className="row">
+//                     {theData}
+//                 </div>
+//                 <UserIdComponent name="1" onClick={this.btnClick} />
+//                 <UserIdComponent name="2" onClick={this.btnClick} />
+//                 <UserIdComponent name="3" onClick={this.btnClick} />
+//                 <UserIdComponent name="4" onClick={this.btnClick} />
+//             </>
+//         )
+//     }
+// }
+
+// const UserIdComponent = (props) => {
+//     return (
+//         <button value={props.name} onClick={props.onClick}>{props.name}</button>
+//     )
+// };
+
+
+
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -15,7 +72,7 @@ const propTypes = {
 }
 
 const defaultProps = {
-    initialPage: 0,
+    initialPage: 1,
     pageSize: 24,
     maxPages: 100,
     labels: {
@@ -88,13 +145,23 @@ class JwPagination extends React.Component {
         pager = paginate(items.length, page, pageSize, maxPages);
 
         // get new page of items from items array
-        var pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
+        var red1 = items.slice(pager.startIndex, pager.endIndex + 1);
+        let pageOfItems = items.filter((a) => {
+            return a.category === this.props.name
+        });
+        let red = pageOfItems.slice(pager.startIndex, pager.endIndex + 1)
+        console.log("MAP", red1)
+        console.log("MAPA", red)
 
         // update state
         this.setState({ pager: pager });
 
         // call change page function in parent component
-        this.props.onChangePage(pageOfItems);
+        if (this.props.name === 'all') {
+            this.props.onChangePage(red1);
+        } else {
+            this.props.onChangePage(red);
+        }
     }
 
     render() {

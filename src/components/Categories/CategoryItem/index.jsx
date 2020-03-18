@@ -100,6 +100,7 @@ export default class CategoryItem extends Component {
     }
 
     render() {
+        console.log("page", this.state.pageOfItems);
         return (
             <>
                 <ProductWrapper className="">
@@ -159,12 +160,13 @@ export default class CategoryItem extends Component {
                             }}
                         </ProductConsumer>
                     </div>
-
+                    <Pages>
+                        {/* <Pagination data={this.state.exampleItems} /> */}
+                        <Pagination pageSize={24} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} name={this.props.name} />
+                    </Pages>
                     <ButtonUp></ButtonUp>
                 </ProductWrapper>
-                <Pages>
-                    <Pagination pageSize={24} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} />
-                </Pages>
+
             </>
         )
     }
