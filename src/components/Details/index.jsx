@@ -13,12 +13,16 @@ const Main = styled.div`
     }
 `
 const TwoImage = styled.div`
-    width:50%;
+    width:25%;
     height: auto;
-    padding: 2rem 2rem;
+    padding: 1rem 1rem;
+    border: 1px solid gray;
+    img {
+        width:100%;
+    }
     img:hover {
         cursor: zoom-in;
-        transform: scale(1.4);
+        transform: scale(1.3);
         transition: all ease-in-out 0.5s;
     }
     @media(max-width: 768px) {
@@ -29,14 +33,32 @@ const TwoImage = styled.div`
 export default class Details extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            image: ''
+        }
         this.back = this.back.bind(this);
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.image !== prevState.image) {
+            this.imageChange(this.state.image)
+        }
+    }
+
+    imageChange = (img) => {
+        console.log(img);
+        this.setState({
+            image: img
+        })
+    }
+
     back = () => {
-        this.props.history.goBack();
+        window.history.back()
+        // this.props.history.goBack();
         console.log("finish");
     }
     render() {
+        console.log("IMAGE", this.state.image)
         return (
             <ProductConsumer>
                 {(value) => {
@@ -51,12 +73,15 @@ export default class Details extends Component {
                             {/* product info */}
                             <div className="row">
                                 <div className="col-10 mx-auto col-md-6 my-3">
-                                    <img src={img} className="img-fluid" alt="img" width="400px" />
+                                    <img src={this.state.image ? this.state.image : img} className="img-fluid" alt="img" width="400px" />
                                     <Main>
-                                        <TwoImage>
+                                        <TwoImage onClick={() => this.imageChange(img)} >
+                                            <img src={img} className="img-fluid" alt="img" />
+                                        </TwoImage>
+                                        <TwoImage onClick={() => this.imageChange(img2)} >
                                             <img src={img2} className="img-fluid" alt="img" />
                                         </TwoImage>
-                                        <TwoImage>
+                                        <TwoImage onClick={() => this.imageChange(img3)}>
                                             <img src={img3} className="img-fluid" alt="img" />
                                         </TwoImage>
                                     </Main>
