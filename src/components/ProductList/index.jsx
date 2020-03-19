@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Product from '../Product';
 import Title from '../Title';
+import PrintAd from './PrintAd';
 import { ProductConsumer } from '../../context';
 import { storeProducts, detailProduct } from '../../data';
 import styled from 'styled-components';
@@ -48,6 +49,7 @@ export default class ProductList extends Component {
                             <Pagination pageSize={24} labels={customLabels} styles={customStyles} items={this.state.exampleItems} onChangePage={this.onChangePage} />
                         </Pages>
                     </div>
+                    <PrintAd />
                     <ButtonUp></ButtonUp>
                 </ProductWrapper>
             </React.Fragment>
