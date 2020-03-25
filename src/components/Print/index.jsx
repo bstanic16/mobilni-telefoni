@@ -48,7 +48,6 @@ const Piece1 = styled.div`
     width:20%;
     height:auto;
     padding:0.5rem 0.5rem;
-
     @media(max-width: 768px) {
         display:none;
     }
@@ -68,6 +67,7 @@ const Image = styled.img`
     height:auto;
     padding: 1rem 0.5rem;
     border-radius:50px;
+    overflow: hidden;
     &:hover {
         transform: scale(1.1);
         cursor: zoom-in;

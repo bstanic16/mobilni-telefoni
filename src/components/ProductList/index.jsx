@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Product from '../Product';
 import Title from '../Title';
 import PrintAd from './PrintAd';
+import Transport from './Transport';
+import InfoAd from './InfoAd';
 import { ProductConsumer } from '../../context';
 import { storeProducts, detailProduct } from '../../data';
 import styled from 'styled-components';
@@ -36,6 +38,7 @@ export default class ProductList extends Component {
                     <div className="container">
                         <Title name="nasi" title="proizvodi" />
                         <Carousel />
+                        <Title name="Novo - " title="akcija" />
                         <Pro className="row product-list">
                             <ProductConsumer>
                                 {(value) => {
@@ -50,6 +53,8 @@ export default class ProductList extends Component {
                         </Pages>
                     </div>
                     <PrintAd />
+                    <Transport />
+                    <InfoAd />
                     <ButtonUp></ButtonUp>
                 </ProductWrapper>
             </React.Fragment>

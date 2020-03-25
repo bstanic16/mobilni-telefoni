@@ -32,17 +32,17 @@ export default function Infos() {
                         <Details>
                             <TitleB className="titleb">Isporuka</TitleB>
                             <img src={Truck} alt="truck" width="50px" height="50px" />
-                            <ProdDesc>U roku od 2-3 radna dana na vasoj adresi</ProdDesc>
+                            <ProdDesc className="transport">U roku od 2-3 radna dana na vasoj adresi</ProdDesc>
                         </Details>
                         <Details >
                             <TitleB className="titleb">Sigurnost</TitleB>
                             <img src={Lock} alt="lock" width="50px" height="50px" />
-                            <ProdDesc>Vasi podatci ostaju uvek sigurni</ProdDesc>
+                            <ProdDesc className="transport">Vasi podatci ostaju uvek sigurni</ProdDesc>
                         </Details>
                         <Details >
                             <TitleB className="titleb">Kontaktirajte nas</TitleB>
                             <img src={Emails} alt="mails" width="50px" height="50px" />
-                            <ProdDesc>Ukoliko su Vam potrebne dodatne informacije</ProdDesc>
+                            <ProdDesc className="transport">Ukoliko su Vam potrebne dodatne informacije</ProdDesc>
                         </Details>
                     </Transport>
                     <TitleB className="titleb">Uputstvo za online kupovinu: </TitleB>

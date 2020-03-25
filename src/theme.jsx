@@ -14,7 +14,8 @@ export const lightTheme = {
     headlineText: 'var(--mainBlue)',
     descText: 'var(--lightBlue)',
     titleB: 'var(--mainBlue)',
-    lightDark: 'var(--mainBlue)'
+    lightDark: 'var(--mainBlue)',
+    transport: 'var(--mainBlue)'
 }
 
 export const darkTheme = {
@@ -33,5 +34,6 @@ export const darkTheme = {
     headlineText: 'var(--lightBlue)',
     descText: 'var(--mainYellow)',
     titleB: 'var(--mainYellow)',
-    lightDark: 'var(--lightBlue)'
+    lightDark: 'var(--lightBlue)',
+    transport: 'var(--mainYellow)'
 }

@@ -108,6 +108,7 @@ const ItemText = styled.h4`
     &:hover {
         background: var(--lightBlue);
         border-radius: 20px;
+        color: var(--mainBlue)!important;
     }
     @media(max-width: 320px) {
        width:100%;

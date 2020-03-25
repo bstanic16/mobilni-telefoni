@@ -20,7 +20,7 @@ const Main = styled.div`
 `
 
 const Block = styled.div`
-    width:30%;
+    width:25%;
     height:auto;
     margin:auto;
     img {

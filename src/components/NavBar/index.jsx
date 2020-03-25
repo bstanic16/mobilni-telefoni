@@ -71,7 +71,6 @@ class FullPageIntroWithFixedNavbar extends React.Component {
                                 </Link>
                             </div>
                         </MDBCollapse>
-
                     </MDBNavbar>
                 </header>
             </div>

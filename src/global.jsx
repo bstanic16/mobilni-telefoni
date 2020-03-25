@@ -55,5 +55,9 @@ export const GlobalStyles = createGlobalStyle`
   .price-blue {
     color: var(--mainBlue);
   }
+
+  .transport {
+    color: ${({ theme }) => theme.transport};
+  }
   `
 
