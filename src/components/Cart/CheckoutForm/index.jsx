@@ -240,9 +240,6 @@ const Line = styled.div`
     padding: 0.5rem 0rem;
 `
 
-const Div = styled.div`
-    width:2%;
-`
 const Block = styled.div`
     width:49%;
     margin:auto;

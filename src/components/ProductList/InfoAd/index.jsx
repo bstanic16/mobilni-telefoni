@@ -14,12 +14,32 @@ const ProductWrapper = styled.div`
     height:400px;
     display:flex;
     background:var(--mainBlue);
+    @media(max-width: 768px) {
+        display:block;
+        height:auto;
+        padding-bottom: 1rem;
+    }
+    @media(max-width: 568px) {
+    }
 `
 
 const Main = styled.div`
     width:50%;
     height:auto;
     /* border: 1px solid black; */
+    @media(max-width: 768px) {
+        width:50%;
+        margin:auto;
+    }
+    @media(max-width: 568px) {
+        width:80%;
+        margin:auto;
+    }
+
+    @media(max-width: 320px) {
+        width:90%;
+        margin:auto;
+    }
 `
 
 const Title = styled.h4`
@@ -30,15 +50,37 @@ const Title = styled.h4`
     padding: 1rem 0rem;
     border-bottom: 2px solid var(--mainYellow);
     border-radius:50px;
+    @media(max-width: 768px) {
+        width:40%;
+        height:auto;
+        padding-bottom: 1rem;
+    }
+    @media(max-width: 320px) {
+        width:80%;
+        margin:auto;
+    }
 `
 
 const Box = styled.div`
     width:70%;
+    height:250px;
     margin:auto;
     border: 1px solid var(--lightBlue);
     border-radius:50px;
     text-align:center;
     padding: 1rem 0rem;
+    @media(max-width: 768px) {
+        width:95%;
+        margin:auto;
+        height:auto;
+        padding-bottom: 1rem;
+        background:Green;
+    }
+
+    @media(max-width: 568px) {
+        width: 98%;
+    }
+    
 
 `
 
@@ -55,6 +97,12 @@ const BoxMin = styled.div`
     justify-content:center;
     align-items:center;
     text-align:center!important;
+    @media(max-width: 768px) {
+        width:80%;
+    }
+    @media(max-width: 568px) {
+        width:90%;
+    }
 `
 
 const Img = styled.img`
@@ -65,11 +113,22 @@ const Img = styled.img`
 const P = styled.p`
     padding-top:0.7rem;
     text-align: left!important;
-    color:var(--mainYellow);
+    color:var(--mainWhite);
+    letter-spacing: 0.1rem;
+    @media(max-width: 768px) {
+        font-size:1rem;
+    }
 `
 
 const Box1 = styled.div`
     width:30%;
+    @media(max-width: 768px) {
+        width:50%;
+        margin:auto;
+    }
+    @media(max-width: 568px) {
+        width:10%;
+    }
 `
 
 const Box2 = styled.div`
@@ -84,6 +143,7 @@ const H4 = styled.h4`
 
 const Pad = styled.div`
     padding:1rem 0rem;
+    
 `
 
 export default function InfoAd() {

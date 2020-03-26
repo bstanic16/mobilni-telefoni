@@ -17,6 +17,14 @@ const Main = styled.div`
     background-size:cover;
     background-repeat: no-repeat;
     display:flex;
+    @media(max-width: 768px) {
+        width: 100%;
+    }
+    @media(max-width: 568px) {
+        display: block;
+        height:auto;
+        padding-bottom:1rem!important;
+    }
 `
 
 const Block = styled.div`
@@ -28,6 +36,18 @@ const Block = styled.div`
         height:350px;
         margin:auto;
     }
+    @media(max-width: 768px) {
+        width: 40%;
+        margin:auto;
+    }
+    @media(max-width: 568px) {
+        width: 65%;
+        margin:auto;
+    }
+    @media(max-width: 320px) {
+        width:80%;
+        margin:auto;
+    }
 `
 const Block1 = styled.div`
     width:40%;
@@ -35,15 +55,35 @@ const Block1 = styled.div`
     height:auto;
     margin:auto;
     border:2px solid var(--lightBlue);
+    background:var(--mainBlue);
     padding: 1rem 0rem;
     border-radius:30px;
+    @media(max-width: 768px) {
+        width: 50%;
+        margin:auto;
+    }
+
+    @media(max-width: 568px) {
+        width:70%;
+        margin:auto;
+    }
+
+    @media(max-width: 320px) {
+        width:80%;
+        margin:auto;
+    }
+    
 `
 
 const Title = styled.h4`
     width:50%;
     margin:auto;
-    color:var(--mainYellow);
+    color:var(--mainWhite);
     padding: 1rem 0rem;
+    @media(max-width: 768px) {
+        width: 70%;
+        margin:auto;
+    }
 `
 
 export default function PrintAd() {

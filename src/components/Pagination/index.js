@@ -1,61 +1,3 @@
-// import React, { Component } from 'react';
-// import Product from '../Product';
-
-// export default class Pagination extends Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             userId: 1,
-//             data: this.props.data
-//         }
-//         this.getData = this.getData.bind(this)
-//         this.btnClick = this.btnClick.bind(this)
-//     }
-//     getData() {
-//         const { userId } = this.state;
-//         this.setState({ data: this.props.data })
-//     }
-//     componentDidMount() {
-//         this.getData()
-//     }
-
-//     btnClick(e) {
-//         const userId = e.target.value;
-//         console.log(userId);
-//         this.setState({ userId })
-//         this.getData();
-//     };
-
-//     render() {
-//         const theData = this.state.data.map((d) => {
-//             return (
-//                 <Product product={d} />
-//             )
-//         })
-//         console.log("data", this.props.data)
-//         return (
-//             <>
-//                 <div className="row">
-//                     {theData}
-//                 </div>
-//                 <UserIdComponent name="1" onClick={this.btnClick} />
-//                 <UserIdComponent name="2" onClick={this.btnClick} />
-//                 <UserIdComponent name="3" onClick={this.btnClick} />
-//                 <UserIdComponent name="4" onClick={this.btnClick} />
-//             </>
-//         )
-//     }
-// }
-
-// const UserIdComponent = (props) => {
-//     return (
-//         <button value={props.name} onClick={props.onClick}>{props.name}</button>
-//     )
-// };
-
-
-
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import paginate from 'jw-paginate';
@@ -189,18 +131,18 @@ class JwPagination extends React.Component {
                     <a className="page-link" onClick={() => this.setPage(1)} style={styles.a}>{labels.first}</a>
                 </li>
                 <li className={`page-item previous ${pager.currentPage === 1 ? 'disabled' : ''}`} style={styles.li}>
-                    <a className="page-link" onClick={() => this.setPage(pager.currentPage - 1)} style={styles.a}>{labels.previous}</a>
+                    <a className="page-link" href="" onClick={() => this.setPage(pager.currentPage - 1)} style={styles.a}>{labels.previous}</a>
                 </li>
                 {pager.pages.map((page, index) =>
                     <li key={index} className={`page-item page-number ${pager.currentPage === page ? 'active' : ''}`} style={styles.li}>
-                        <a className="page-link" onClick={() => this.setPage(page)} style={styles.a}>{page}</a>
+                        <a className="page-link" href="" onClick={() => this.setPage(page)} style={styles.a}>{page}</a>
                     </li>
                 )}
                 <li className={`page-item next ${pager.currentPage === pager.totalPages ? 'disabled' : ''}`} style={styles.li}>
-                    <a className="page-link" onClick={() => this.setPage(pager.currentPage + 1)} style={styles.a}>{labels.next}</a>
+                    <a className="page-link" href="" onClick={() => this.setPage(pager.currentPage + 1)} style={styles.a}>{labels.next}</a>
                 </li>
                 <li className={`page-item last ${pager.currentPage === pager.totalPages ? 'disabled' : ''}`} style={styles.li}>
-                    <a className="page-link" onClick={() => this.setPage(pager.totalPages)} style={styles.a}>{labels.last}</a>
+                    <a className="page-link" href="" onClick={() => this.setPage(pager.totalPages)} style={styles.a}>{labels.last}</a>
                 </li>
             </ul>
         );
