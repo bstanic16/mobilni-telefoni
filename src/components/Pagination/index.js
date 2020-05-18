@@ -131,18 +131,18 @@ class JwPagination extends React.Component {
                     <a className="page-link" onClick={() => this.setPage(1)} style={styles.a}>{labels.first}</a>
                 </li>
                 <li className={`page-item previous ${pager.currentPage === 1 ? 'disabled' : ''}`} style={styles.li}>
-                    <a className="page-link" href="" onClick={() => this.setPage(pager.currentPage - 1)} style={styles.a}>{labels.previous}</a>
+                    <a className="page-link" onClick={() => this.setPage(pager.currentPage - 1)} style={styles.a}>{labels.previous}</a>
                 </li>
                 {pager.pages.map((page, index) =>
                     <li key={index} className={`page-item page-number ${pager.currentPage === page ? 'active' : ''}`} style={styles.li}>
-                        <a className="page-link" href="" onClick={() => this.setPage(page)} style={styles.a}>{page}</a>
+                        <a className="page-link" onClick={() => this.setPage(page)} style={styles.a}>{page}</a>
                     </li>
                 )}
                 <li className={`page-item next ${pager.currentPage === pager.totalPages ? 'disabled' : ''}`} style={styles.li}>
-                    <a className="page-link" href="" onClick={() => this.setPage(pager.currentPage + 1)} style={styles.a}>{labels.next}</a>
+                    <a className="page-link" onClick={() => this.setPage(pager.currentPage + 1)} style={styles.a}>{labels.next}</a>
                 </li>
                 <li className={`page-item last ${pager.currentPage === pager.totalPages ? 'disabled' : ''}`} style={styles.li}>
-                    <a className="page-link" href="" onClick={() => this.setPage(pager.totalPages)} style={styles.a}>{labels.last}</a>
+                    <a className="page-link" onClick={() => this.setPage(pager.totalPages)} style={styles.a}>{labels.last}</a>
                 </li>
             </ul>
         );
