@@ -90,6 +90,8 @@ const ProductWrapper = styled.div`
     }
 `
 
+
+
 export default class Product extends Component {
 
     render() {
@@ -104,7 +106,8 @@ export default class Product extends Component {
                                 <div className="img-container p-5" onClick={() => {
                                     value.handleDetail(id);
                                 }}>
-                                    <Link to="/details">
+                                    {/* <Link to="details"> */}
+                                    <Link to={`/details/${id}`}>
                                         <img src={img} alt="alt" className="card-img-top" />
                                     </Link>
                                     <button className="cart-btn" disabled={inCart ? true : false} onClick={() => {

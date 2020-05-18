@@ -68,7 +68,7 @@ class CartTotals extends Component {
                             {this.state.ren ? 'close order' : 'checkout order'}
                         </ButtonContainer>
                         {this.state.ren ? <Checkout value={this.props.value} arr={arr} cartTotal={cartTotal} clicked={this.state.ren} /> : null}
-                        {this.state.ren ? <PayPalButton value={this.props.value} arr={arr} total={cartTotal} clearCart={clearCart} history={this.props.history} title={title} /> : null}
+                        {/* {this.state.ren ? <PayPalButton value={this.props.value} arr={arr} total={cartTotal} clearCart={clearCart} history={this.props.history} title={title} /> : null} */}
                     </Container>
                 </div>
             </React.Fragment>

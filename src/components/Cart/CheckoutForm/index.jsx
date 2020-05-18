@@ -52,7 +52,11 @@ export default class CheckoutForm extends Component {
     }
 
     printError = (elemId, hintMsg) => {
-        document.getElementById(elemId).innerHTML = hintMsg;
+        if (elemId == null) {
+            return;
+        } else {
+            document.getElementById(elemId).innerHTML = hintMsg;
+        }
     }
 
     handleSubmit = (e) => {
@@ -97,8 +101,8 @@ export default class CheckoutForm extends Component {
         }
 
         if (this.state.grad.length < 3) {
-            this.printError("gradErr", "Unesite naziv grada")
-            gradErr = true
+            gradErr = true;
+            this.printError("gradErr", "Unesite naziv grada");
         } else if (this.state.grad.length >= 3) {
             gradErr = false
             this.printError("gradErr", "")
