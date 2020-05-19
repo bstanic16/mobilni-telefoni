@@ -9,7 +9,7 @@ const Main = styled.div`
     height: auto;
     @media(max-width: 768px) {
         width: 100%;
-        display:block;
+        display:flex;
     }
 `
 const TwoImage = styled.div`

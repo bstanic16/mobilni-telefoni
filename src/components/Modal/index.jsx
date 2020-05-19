@@ -21,7 +21,7 @@ export default class Modal extends Component {
                                     <div className="row">
                                         <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
                                             <h5>proizvod dodat u korpu</h5>
-                                            <img src={img} alt="slik" className="img-fluid" />
+                                            <img src={"../" + img} alt="slik" className="img-fluid" />
                                             <h5>{title}</h5>
                                             <h5 className="text-muted">cena: $ {price}</h5>
                                             <Link to="/categories">

@@ -39,26 +39,26 @@ class CartTotals extends Component {
                             <Link to="/">
                                 <button className="btn btn-outline-danger text-uppercase mb-3 px-5" type="button"
                                     onClick={() => clearCart()}>
-                                    clear cart
+                                    Ocisti korpu
                             </button>
                             </Link>
                             <h5>
                                 <span className="text-title">
-                                    subtotal:
+                                    Cena:
                             </span>
-                                <strong>$ {cartSubTotal}</strong>
+                                <strong>{cartSubTotal} RSD</strong>
                             </h5>
                             <h5>
                                 <span className="text-title">
-                                    tax:
+                                    PDV:
                             </span>
-                                <strong>$ {cartTax}</strong>
+                                <strong>{cartTax} RSD</strong>
                             </h5>
                             <h5>
                                 <span className="text-title">
-                                    total:
+                                    Cena+PDV:
                             </span>
-                                <strong>$ {cartTotal}</strong>
+                                <strong>{cartTotal} RSD</strong>
                             </h5>
                         </div>
 

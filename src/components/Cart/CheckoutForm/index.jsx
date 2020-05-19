@@ -13,6 +13,8 @@ export default class CheckoutForm extends Component {
         message: '',
         grad: '',
         adress: '',
+        fax: '',
+        number: '',
         clicked: this.props.clicked,
         cartTotal: this.props.cartTotal,
         result: '',
@@ -31,6 +33,14 @@ export default class CheckoutForm extends Component {
         this.setState({ email: event.target.value })
     }
 
+    onNumberChange = (event) => {
+        this.setState({ number: event.target.value })
+    }
+
+    onGradChange = (event) => {
+        this.setState({ grad: event.target.value })
+    }
+
     onMessageChange = (event) => {
         this.setState({ message: event.target.value })
     }
@@ -38,6 +48,10 @@ export default class CheckoutForm extends Component {
     resetForm = () => {
         this.setState({ name: '', lastname: '', email: '', message: '' })
         this.refs.form.reset()
+    }
+
+    onFaxChange = (event) => {
+        this.setState({ fax: event.target.value })
     }
 
     onAdressChange = (event) => {
@@ -64,8 +78,27 @@ export default class CheckoutForm extends Component {
         var nameErr
         var lastnameErr
         var emailErr
+        var numberErr
+        var faxErr
         var gradErr
         var adressErr
+
+
+        //Da li da bude 8 ili 9 jebem li ga
+
+        if (this.state.number.length < 9) {
+            numberErr = true;
+            this.printError("numberErr", "Unesite vas broj");
+        }
+
+        if (this.state.fax.length < 5 && this.state.fax.length > 5) {
+            faxErr = true;
+            this.printError("faxErr", "Unesite postanski broj");
+        } else if (this.state.fax.length == 5) {
+            faxErr = false;
+            this.printError("faxErr", "");
+
+        }
 
         if (this.state.name.length < 3) {
             this.printError("nameErr", "Unesite vase ime")
@@ -120,16 +153,19 @@ export default class CheckoutForm extends Component {
             adressErr = false
         }
 
-        if ((nameErr || lastnameErr || emailErr || gradErr || adressErr) === true) {
+        if ((nameErr || lastnameErr || emailErr || gradErr || adressErr || numberErr || faxErr) === true) {
             return false
         } else {
             var template_params = {
                 email: this.state.email,
                 name: this.state.name,
                 lastname: this.state.lastname,
+                number: this.state.number,
+                fax: this.state.fax,
+                grad: this.state.grad,
                 message: this.state.message,
                 adress: this.state.adress,
-                result: this.refs.form.result.value
+                result: this.state.result
             }
             console.log("TEMPLEJT:", template_params)
             var service_id = "gmail";
@@ -146,7 +182,6 @@ export default class CheckoutForm extends Component {
                     console.log("Failed: ", err);
                 })
         }
-
     }
 
     render() {
@@ -169,9 +204,11 @@ export default class CheckoutForm extends Component {
 
                     var result = '';
                     product.forEach(function (str) {
-                        result += str.description + ' - (' + str.count + 'kom) '
+                        result += str.description + ' - (' + str.count + 'kom) ';
                     })
+
                     console.log("RESULT", result)
+                    this.state.result = result;
                     if (product.length > 0) {
                         product.length = 0
                     }
@@ -191,27 +228,27 @@ export default class CheckoutForm extends Component {
                                 </Flex>
                                 <Flex>
                                     <Block>
-                                        <Input type="text" placeholder="E-mail" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
+                                        <Input type="text" placeholder="E-mail" id="email" onChange={this.onEmailChange} name="email" required minLength="8" maxLength="60" />
                                         <Error id="emailErr"></Error>
                                     </Block>
                                     <Block>
-                                        <Input type="text" placeholder="Broj telefona" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
-                                        <Error id="emailErr"></Error>
+                                        <Input type="text" placeholder="Broj telefona" id="number" onChange={this.onNumberChange} name="number" required minLength="9" maxLength="11" />
+                                        <Error id="numberErr"></Error>
                                     </Block>
                                 </Flex>
 
                                 <Flex>
                                     <Block>
-                                        <Input type="text" placeholder="Mesto" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
-                                        <Error id="emailErr"></Error>
+                                        <Input type="text" placeholder="Grad" id="grad" onChange={this.onGradChange} name="grad" required minLength="3" maxLength="20" />
+                                        <Error id="gradErr"></Error>
                                     </Block>
                                     <Block>
-                                        <Input type="text" placeholder="Postanski broj" id="email" onChange={this.onEmailChange} name="email" required minLength="10" maxLength="50" />
-                                        <Error id="emailErr"></Error>
+                                        <Input type="text" placeholder="Postanski broj" id="fax" onChange={this.onFaxChange} name="fax" required minLength="5" maxLength="5" />
+                                        <Error id="faxErr"></Error>
                                     </Block>
                                 </Flex>
                                 <Line>
-                                    <Input type="text" placeholder="Adresa" id="adress" onChange={this.onAdressChange} name="adress" required minLength="5" maxLength="30" />
+                                    <Input type="text" placeholder="Adresa" id="adress" onChange={this.onAdressChange} name="adress" required minLength="6" maxLength="70" />
                                     <Error id="adressErr"></Error>
                                 </Line>
                                 <Line>
