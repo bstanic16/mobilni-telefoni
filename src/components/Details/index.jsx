@@ -16,7 +16,7 @@ const TwoImage = styled.div`
     width:25%;
     height: auto;
     padding: 1rem 1rem;
-    border: 1px solid gray;
+    border: 1px solid var(--lightBlue);
     img {
         width:100%;
     }

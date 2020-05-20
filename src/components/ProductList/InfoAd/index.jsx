@@ -74,7 +74,7 @@ const Box = styled.div`
         margin:auto;
         height:auto;
         padding-bottom: 1rem;
-        background:Green;
+        /* background:Green; */
     }
 
     @media(max-width: 568px) {
