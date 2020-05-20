@@ -9,7 +9,7 @@ import { storeProducts, detailProduct } from '../../data';
 import styled from 'styled-components';
 import Carousel from '../SliderList';
 import ButtonUp from '../ButtonUp';
-import Pagination from 'jw-react-pagination';
+import Pagination from '../Pagination';
 
 export default class ProductList extends Component {
     constructor() {
@@ -63,8 +63,8 @@ export default class ProductList extends Component {
 }
 
 const customLabels = {
-    first: 'Prva',
-    last: 'Poslednja',
+    first: '<<',
+    last: '>>',
     previous: '<',
     next: '>'
 }

@@ -34,7 +34,8 @@ export default class Details extends Component {
         super(props);
         this.state = {
             image: '',
-            product: ''
+            product: '',
+            exist: false
         }
         this.back = this.back.bind(this);
     }
@@ -62,14 +63,17 @@ export default class Details extends Component {
         return (
             <ProductConsumer>
                 {(value) => {
-                    // const { id, company, img, img2, img3, info, price, title, inCart } = value.detailProduct;
-
+                    //vrti ceo niz i ispisuje u prvom if onaj proizvod koji odgovara ID-u
                     value.products.map(item => {
                         if (this.props.match.params.id == item.id) {
                             console.log("PROPS:", this.props.match.params.id);
                             console.log("id", item);
                             console.log("RADI");
                             this.state.product = item;
+                            this.state.exist = false;
+                            //ispituje da li je proosledjeni ID iz urla veci od duzine niza... ne postoji proizvod
+                        } else if (this.props.match.params.id > value.products.length) {
+                            this.state.exist = true;
                         }
                     })
                     console.log("Test", this.state.product);
@@ -78,6 +82,7 @@ export default class Details extends Component {
 
                     return (
                         <div className="container py-5">
+                            {this.state.exist ? this.props.history.push("/categories") : null}
                             <div className="row">
                                 <div className="col-10 mx-auto text-center text-slanted text-blue my-5 titleb">
                                     <h1>{this.state.product.title}</h1>

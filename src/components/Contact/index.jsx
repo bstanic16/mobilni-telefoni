@@ -213,6 +213,7 @@ const Block = styled.div`
 const Block1 = styled.div`
     width:80%;
     margin:auto;
+    padding-top:0.5rem;
     @media(max-width: 768px) {
         width: 100%;
     }
@@ -227,7 +228,7 @@ const Block2 = styled.div`
     width:30%;
     margin:auto;
     text-align:center;
-
+    padding-top:0.5rem;
     @media(max-width: 768px) {
         width: 15%;
         margin:auto;
@@ -247,6 +248,7 @@ const Error = styled.div`
 const ProductWrapper = styled.section`
     width:100%;
     overflow:hidden;
+    padding: 1rem 0rem;
     @media(max-width: 768px) {
         width: 100%;
         margin:auto;
@@ -264,6 +266,7 @@ const ProductWrapper = styled.section`
 const Form = styled.form`
     width: 90%;
     margin: auto;
+    padding: 1rem 0rem;
     @media(max-width: 768px) {
         width: 100%;
         margin:auto;
