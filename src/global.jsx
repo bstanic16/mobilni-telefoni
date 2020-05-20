@@ -59,5 +59,14 @@ export const GlobalStyles = createGlobalStyle`
   .transport {
     color: ${({ theme }) => theme.transport};
   }
+
+  .print-title{
+    color: ${({ theme }) => theme.printTitle};
+  }
+
+  .print-desc{
+    color: ${({ theme }) => theme.printDesc};
+  }
+
   `
 
