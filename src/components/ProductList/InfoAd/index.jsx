@@ -14,6 +14,7 @@ const ProductWrapper = styled.div`
     height:400px;
     display:flex;
     background:var(--mainBlue);
+    border-bottom: 4px solid var(--mainYellow);
     @media(max-width: 768px) {
         display:block;
         height:auto;

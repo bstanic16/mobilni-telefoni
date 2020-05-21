@@ -34,7 +34,7 @@ export default class ProductList extends Component {
         console.log(this.state.products)
         return (
             <React.Fragment>
-                <ProductWrapper className="py-5">
+                <ProductWrapper className="">
                     <div className="container">
                         <Title name="nasi" title="proizvodi" />
                         <Carousel />
@@ -99,6 +99,7 @@ const Pages = styled.div`
 `
 
 const ProductWrapper = styled.section`
+    padding-top:3rem;
 `
 
 const Pro = styled.div`
