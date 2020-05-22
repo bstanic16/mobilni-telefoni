@@ -236,7 +236,6 @@ export default class CheckoutForm extends Component {
                                         <Error id="numberErr"></Error>
                                     </Block>
                                 </Flex>
-
                                 <Flex>
                                     <Block>
                                         <Input type="text" placeholder="Grad" id="grad" onChange={this.onGradChange} name="grad" required minLength="3" maxLength="20" />
@@ -247,10 +246,13 @@ export default class CheckoutForm extends Component {
                                         <Error id="faxErr"></Error>
                                     </Block>
                                 </Flex>
-                                <Line>
-                                    <Input type="text" placeholder="Adresa" id="adress" onChange={this.onAdressChange} name="adress" required minLength="6" maxLength="70" />
-                                    <Error id="adressErr"></Error>
-                                </Line>
+                                <Flex>
+                                    <Line>
+                                        <Input type="text" placeholder="Adresa" id="adress" onChange={this.onAdressChange} name="adress" required minLength="6" maxLength="70" />
+                                        <Error id="adressErr"></Error>
+                                    </Line>
+                                </Flex>
+
                                 <Line>
                                     <Text placeholder="Napomena" id="Napomena" onChange={this.onMessageChange} name="message"></Text>
                                 </Line>
@@ -272,6 +274,10 @@ const Flex = styled.div`
     width:100%;
     display:flex;
     padding: 0.5rem 0rem;
+    @media(max-width: 768px) {
+        width: 100%;
+        display:block;
+    }
 `
 
 const Line = styled.div`
@@ -279,11 +285,30 @@ const Line = styled.div`
     margin:auto;
     height:auto;
     padding: 0.5rem 0rem;
+    @media(max-width: 768px) {
+        width: 70%;
+        display: block;
+    }
+    @media(max-width: 568px) {
+        width: 80%;
+    }
+    @media(max-width: 320px) {
+        width: 100%;
+    }
 `
 
 const Block = styled.div`
     width:49%;
     margin:auto;
+    @media(max-width: 768px) {
+        width: 70%;
+    }
+    @media(max-width: 568px) {
+        width: 80%;
+    }
+    @media(max-width: 320px) {
+        width: 100%;
+    }
 `
 
 const Error = styled.div`
